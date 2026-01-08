@@ -1,0 +1,68 @@
+version: 2
+
+models:
+  - name: int_sequence_generation
+    description: >
+      Intermediate model that replicates the Informatica sequence generation logic.
+      Extracts year from effective date, looks up the last sequence number for that year 
+      from SEQUENCE_NUM_TBL, and generates unique event IDs by incrementing the sequence.
+      
+      Replicates transformations:
+      - exp_GET_EFFDT_YEAR: Extracts year from effective date
+      - lkp_OLD_SEQUENCE_NUMBER: Looks up last sequence number for the year
+      - exp_MAIN2BIIS: Generates the event ID
+    columns:
+      - name: emplid
+        description: "Employee ID"
+        tests:
+          - not_null
+      - name: empl_rcd
+        description: "Employee record number"
+        tests:
+          - not_null
+      - name: effdt
+        description: "Effective date"
+        tests:
+          - not_null
+      - name: effseq
+        description: "Effective sequence"
+        tests:
+          - not_null
+      - name: event_id
+        description: "Generated unique event ID (year * 1000000 + base_seq + row_seq)"
+        tests:
+          - unique
+          - not_null
+
+  - name: int_employee_enrichment
+    description: >
+      Intermediate model that performs all lookup transformations to enrich employee data.
+      Joins the base job data with multiple reference tables to add employment dates, 
+      personal data, award information, citizenship status, and education details.
+      
+      Replicates Informatica lookups:
+      - lkp_PS_GVT_EMPLOYMENT: Employment dates, tenure, probation info
+      - lkp_PS_GVT_PERS_NID: Social Security Number
+      - lkp_PS_GVT_PERS_DATA: Personal data (name, address, demographics)
+      - lkp_PS_GVT_AWD_DATA: Award and bonus information
+      - lkp_PS_GVT_CITIZENSHIP: Citizenship status
+      - lkp_PS_HE_FILL_POS: Position filling codes
+      - lkp_PS_JPM_JP_ITEMS: Education level and instructional program codes
+    columns:
+      - name: event_id
+        description: "Unique event ID from sequence generation"
+        tests:
+          - unique
+          - not_null
+      - name: emplid
+        description: "Employee ID"
+        tests:
+          - not_null
+      - name: ssn
+        description: "Social Security Number from lkp_PS_GVT_PERS_NID"
+      - name: emp_eod_dte
+        description: "Employee entry on duty date from lkp_PS_GVT_EMPLOYMENT"
+      - name: tenure_cd
+        description: "Tenure code from lkp_PS_GVT_EMPLOYMENT"
+      - name: education_level_cd
+        description: "Education level from lkp_PS_JPM_JP_ITEMS"

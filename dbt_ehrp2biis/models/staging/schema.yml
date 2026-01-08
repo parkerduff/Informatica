@@ -1,0 +1,62 @@
+version: 2
+
+models:
+  - name: stg_ps_gvt_job
+    description: >
+      Staging model for PS_GVT_JOB source table from the EHRP schema.
+      Contains PeopleSoft government job records with 246 fields including 
+      employee ID, position, grade, salary, leave balances, and TSP information.
+      
+      This is the primary source table for the EHRP2BIIS pipeline.
+    columns:
+      - name: emplid
+        description: "Employee ID - primary identifier for employees"
+        tests:
+          - not_null
+      - name: empl_rcd
+        description: "Employee record number - allows for multiple job records per employee"
+        tests:
+          - not_null
+      - name: effdt
+        description: "Effective date of the job record"
+        tests:
+          - not_null
+      - name: effseq
+        description: "Effective sequence - allows multiple actions on the same effective date"
+        tests:
+          - not_null
+      - name: company
+        description: "Company code used to derive agency assignment code"
+      - name: gvt_sub_agency
+        description: "Government sub-agency code"
+      - name: gvt_noa_code
+        description: "Nature of Action code"
+      - name: gvt_work_sched
+        description: "Work schedule code used in base hours calculation"
+      - name: std_hours
+        description: "Standard hours used in base hours calculation"
+
+  - name: stg_nwk_new_ehrp_actions
+    description: >
+      Staging model for NWK_NEW_EHRP_ACTIONS_TBL trigger table from the NKNIGHT schema.
+      This table identifies which employee actions need processing in the current run.
+      
+      The source qualifier in Informatica joins this table with PS_GVT_JOB on 
+      EMPLID, EMPL_RCD, EFFDT, and EFFSEQ to filter the records to process.
+    columns:
+      - name: emplid
+        description: "Employee ID"
+        tests:
+          - not_null
+      - name: empl_rcd
+        description: "Employee record number"
+        tests:
+          - not_null
+      - name: effdt
+        description: "Effective date"
+        tests:
+          - not_null
+      - name: effseq
+        description: "Effective sequence"
+        tests:
+          - not_null
