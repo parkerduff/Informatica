@@ -1,0 +1,42 @@
+name: 'dbt_ehrp2biis'
+version: '1.0.0'
+config-version: 2
+
+profile: 'ehrp2biis'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+vars:
+  source_database: 'EHRP_RAW'
+  source_schema: 'NKNIGHT'
+  target_schema: 'BIIS'
+  historical_schema: 'HISTDBA'
+
+models:
+  dbt_ehrp2biis:
+    staging:
+      +materialized: view
+      +schema: staging
+    intermediate:
+      +materialized: ephemeral
+    marts:
+      +materialized: table
+      +schema: marts
+
+seeds:
+  dbt_ehrp2biis:
+    +schema: seeds
+
+snapshots:
+  dbt_ehrp2biis:
+    +target_schema: snapshots

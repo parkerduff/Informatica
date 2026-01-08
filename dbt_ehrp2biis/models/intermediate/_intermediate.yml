@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: int_ehrp_job_actions
+    description: >
+      Intermediate model that joins the trigger table (new EHRP actions) with the 
+      complete job data from PS_GVT_JOB. This replicates the Source Qualifier join
+      from the Informatica mapping m_EHRP2BIIS_UPDATE.
+    columns:
+      - name: emplid
+        description: Employee ID
+        tests:
+          - not_null
+      - name: empl_rcd
+        description: Employee record number
+        tests:
+          - not_null
+      - name: effdt
+        description: Effective date
+        tests:
+          - not_null
+      - name: effseq
+        description: Effective sequence
+        tests:
+          - not_null
+      - name: effdt_year
+        description: Year extracted from effective date (replaces exp_GET_EFFDT_YEAR)
+        tests:
+          - not_null
+
+  - name: int_biis_event_generation
+    description: >
+      Intermediate model that generates unique BIIS_EVENT_IDs using the sequence
+      logic from the Informatica mapping. Replicates the lkp_OLD_SEQUENCE_NUMBER
+      and exp_MAIN2BIIS transformations.
+    columns:
+      - name: biis_event_id
+        description: Unique event identifier generated as year * 1000000 + sequence
+        tests:
+          - not_null
+          - unique
