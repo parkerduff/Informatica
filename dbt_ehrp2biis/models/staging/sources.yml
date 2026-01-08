@@ -1,0 +1,98 @@
+version: 2
+
+sources:
+  - name: ehrp
+    description: "EHRP (Enterprise Human Resources Platform) source tables containing PeopleSoft government employee data"
+    database: "{{ var('ehrp_database') }}"
+    schema: "{{ var('ehrp_schema') }}"
+    tables:
+      - name: ps_gvt_job
+        description: "PeopleSoft government job records containing 246 fields including employee ID, position, grade, salary, leave balances, and TSP information"
+        columns:
+          - name: emplid
+            description: "Employee ID - primary identifier for employees"
+          - name: empl_rcd
+            description: "Employee record number - allows for multiple job records per employee"
+          - name: effdt
+            description: "Effective date of the job record"
+          - name: effseq
+            description: "Effective sequence - allows multiple actions on the same effective date"
+
+      - name: ps_gvt_employment
+        description: "Employment data including hire dates, tenure, probation, and WGI status"
+        columns:
+          - name: emplid
+            description: "Employee ID"
+          - name: empl_rcd
+            description: "Employee record number"
+          - name: effdt
+            description: "Effective date"
+          - name: effseq
+            description: "Effective sequence"
+
+      - name: ps_gvt_pers_nid
+        description: "Personal National ID data including Social Security Numbers"
+        columns:
+          - name: emplid
+            description: "Employee ID"
+          - name: national_id
+            description: "National ID (SSN)"
+
+      - name: ps_gvt_pers_data
+        description: "Personal data including name, address, and demographics"
+        columns:
+          - name: emplid
+            description: "Employee ID"
+
+      - name: ps_gvt_awd_data
+        description: "Award and bonus information"
+        columns:
+          - name: emplid
+            description: "Employee ID"
+          - name: empl_rcd
+            description: "Employee record number"
+          - name: effdt
+            description: "Effective date"
+          - name: effseq
+            description: "Effective sequence"
+
+      - name: ps_gvt_citizenship
+        description: "Citizenship status information"
+        columns:
+          - name: emplid
+            description: "Employee ID"
+
+      - name: ps_he_fill_pos
+        description: "Position filling codes"
+        columns:
+          - name: emplid
+            description: "Employee ID"
+          - name: empl_rcd
+            description: "Employee record number"
+          - name: effdt
+            description: "Effective date"
+          - name: effseq
+            description: "Effective sequence"
+
+      - name: ps_jpm_jp_items
+        description: "Education level and instructional program codes"
+        columns:
+          - name: emplid
+            description: "Employee ID"
+
+  - name: nknight
+    description: "NKNIGHT schema containing staging and trigger tables"
+    database: "{{ var('ehrp_database') }}"
+    schema: "{{ var('nknight_schema') }}"
+    tables:
+      - name: nwk_new_ehrp_actions_tbl
+        description: "Trigger table that identifies which employee actions need processing"
+        columns:
+          - name: emplid
+            description: "Employee ID"
+          - name: empl_rcd
+            description: "Employee record number"
+          - name: effdt
+            description: "Effective date"
+          - name: effseq
+            description: "Effective sequence"
