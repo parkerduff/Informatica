@@ -1,0 +1,76 @@
+version: 2
+
+models:
+  - name: stg_nwk_new_ehrp_actions
+    description: >
+      Staging model for the trigger table that identifies new EHRP actions to process.
+      This table contains the key fields (EMPLID, EMPL_RCD, EFFDT, EFFSEQ) that identify
+      which records from PS_GVT_JOB need to be processed in the current run.
+      In Snowflake, this is replaced by a Stream on the source table for CDC.
+    columns:
+      - name: emplid
+        description: Employee ID
+        tests:
+          - not_null
+      - name: empl_rcd
+        description: Employee record number
+        tests:
+          - not_null
+      - name: effdt
+        description: Effective date of the action
+        tests:
+          - not_null
+      - name: effseq
+        description: Effective sequence number
+        tests:
+          - not_null
+
+  - name: stg_ps_gvt_job
+    description: >
+      Staging model for the PS_GVT_JOB source table containing complete employee
+      job data with 246 fields covering demographics, position, pay, leave, and benefits.
+    columns:
+      - name: emplid
+        description: Employee ID
+        tests:
+          - not_null
+      - name: empl_rcd
+        description: Employee record number
+        tests:
+          - not_null
+      - name: effdt
+        description: Effective date
+        tests:
+          - not_null
+      - name: effseq
+        description: Effective sequence
+        tests:
+          - not_null
+
+  - name: stg_sequence_num_tbl
+    description: >
+      Staging model for the sequence number table used to generate unique BIIS_EVENT_IDs.
+      Contains the current sequence number for each year.
+    columns:
+      - name: ehrp_year
+        description: Year for the sequence
+        tests:
+          - not_null
+          - unique
+      - name: ehrp_seq_number
+        description: Current sequence number for the year
+        tests:
+          - not_null
+
+sources:
+  - name: ehrp_raw
+    database: "{{ var('source_database') }}"
+    schema: "{{ var('source_schema') }}"
+    tables:
+      - name: nwk_new_ehrp_actions_tbl
+        description: Trigger table with new EHRP actions to process
+      - name: ps_gvt_job
+        description: Complete employee job data from EHRP
+        identifier: PS_GVT_JOB
+      - name: sequence_num_tbl
+        description: Sequence number table for event ID generation

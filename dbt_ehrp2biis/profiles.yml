@@ -1,0 +1,26 @@
+ehrp2biis:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
+      password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
+      role: "{{ env_var('SNOWFLAKE_ROLE', 'TRANSFORMER') }}"
+      database: EHRP_DW
+      warehouse: EHRP_WH
+      schema: DEV
+      threads: 4
+      client_session_keep_alive: False
+
+    prod:
+      type: snowflake
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
+      password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
+      role: "{{ env_var('SNOWFLAKE_ROLE', 'TRANSFORMER') }}"
+      database: EHRP_DW
+      warehouse: EHRP_WH
+      schema: PROD
+      threads: 8
+      client_session_keep_alive: False
