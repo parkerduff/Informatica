@@ -1,0 +1,163 @@
+version: 2
+
+sources:
+  - name: ehrp
+    description: "EHRP (Enterprise Human Resources Platform) source tables from PeopleSoft"
+    database: "{{ var('source_database', 'BIIS_DEV') }}"
+    schema: "{{ var('ehrp_schema', 'EHRP') }}"
+    tables:
+      - name: ps_gvt_job
+        description: "PeopleSoft government job records with employee position, grade, salary, leave balances, and TSP information"
+        columns:
+          - name: emplid
+            description: "Employee ID - primary identifier"
+          - name: empl_rcd
+            description: "Employment record number"
+          - name: effdt
+            description: "Effective date of the action"
+          - name: effseq
+            description: "Effective sequence number"
+
+      - name: ps_gvt_employment
+        description: "Employment dates, tenure, probation info"
+        columns:
+          - name: emplid
+            description: "Employee ID"
+          - name: empl_rcd
+            description: "Employment record number"
+          - name: effdt
+            description: "Effective date"
+          - name: effseq
+            description: "Effective sequence"
+
+      - name: ps_gvt_pers_nid
+        description: "Social Security Number and national ID information"
+        columns:
+          - name: emplid
+            description: "Employee ID"
+          - name: national_id
+            description: "National ID (SSN)"
+
+      - name: ps_gvt_pers_data
+        description: "Personal data including name, address, demographics"
+        columns:
+          - name: emplid
+            description: "Employee ID"
+          - name: first_name
+            description: "First name"
+          - name: last_name
+            description: "Last name"
+
+      - name: ps_gvt_awd_data
+        description: "Award and bonus information"
+        columns:
+          - name: emplid
+            description: "Employee ID"
+          - name: oth_pay
+            description: "Other pay amount"
+          - name: oth_hrs
+            description: "Other hours"
+
+      - name: ps_gvt_citizenship
+        description: "Citizenship status information"
+        columns:
+          - name: emplid
+            description: "Employee ID"
+          - name: citizenship_status
+            description: "Citizenship status code"
+
+      - name: ps_he_fill_pos
+        description: "Position filling codes"
+        columns:
+          - name: emplid
+            description: "Employee ID"
+
+      - name: ps_jpm_jp_items
+        description: "Education level and instructional program codes"
+        columns:
+          - name: emplid
+            description: "Employee ID"
+
+      - name: ps_gvt_ee_data_trk
+        description: "Employee data tracking for WIP status changes"
+        columns:
+          - name: emplid
+            description: "Employee ID"
+          - name: gvt_date_wrk
+            description: "Work date for tracking"
+
+  - name: nknight
+    description: "NKNIGHT schema staging tables"
+    database: "{{ var('source_database', 'BIIS_DEV') }}"
+    schema: "{{ var('nknight_schema', 'NKNIGHT') }}"
+    tables:
+      - name: nwk_new_ehrp_actions_tbl
+        description: "Trigger table that identifies which employee actions need processing"
+        columns:
+          - name: emplid
+            description: "Employee ID"
+          - name: empl_rcd
+            description: "Employment record number"
+          - name: effdt
+            description: "Effective date"
+          - name: effseq
+            description: "Effective sequence"
+
+      - name: sequence_num_tbl
+        description: "Sequence number table for event ID generation"
+        columns:
+          - name: ehrp_year
+            description: "Year for sequence"
+          - name: ehrp_seq_number
+            description: "Current sequence number for the year"
+
+      - name: ehrp_recs_tracking_tbl
+        description: "Tracking table for processed EHRP records"
+        columns:
+          - name: biis_event_id
+            description: "BIIS event ID"
+          - name: emplid
+            description: "Employee ID"
+
+      - name: nwk_action_primary_tbl
+        description: "Primary employee action data"
+        columns:
+          - name: event_id
+            description: "Event ID"
+          - name: load_date
+            description: "Load date"
+
+      - name: nwk_action_secondary_tbl
+        description: "Secondary action data including TSP, leave, and bonus details"
+        columns:
+          - name: event_id
+            description: "Event ID"
+
+      - name: nwk_action_remarks_tbl
+        description: "Action remarks table"
+        columns:
+          - name: event_id
+            description: "Event ID"
+
+  - name: histdba
+    description: "Historical database schema"
+    database: "{{ var('source_database', 'BIIS_DEV') }}"
+    schema: "{{ var('histdba_schema', 'HISTDBA') }}"
+    tables:
+      - name: action_primary_all
+        description: "Historical action primary records"
+        columns:
+          - name: event_id
+            description: "Event ID"
+
+      - name: action_secondary_all
+        description: "Historical action secondary records"
+        columns:
+          - name: event_id
+            description: "Event ID"
+
+      - name: action_remarks_all
+        description: "Historical action remarks records"
+        columns:
+          - name: event_id
+            description: "Event ID"

@@ -1,0 +1,164 @@
+version: 2
+
+models:
+  - name: stg_ps_gvt_job
+    description: "Staging model for PeopleSoft government job records"
+    columns:
+      - name: emplid
+        description: "Employee ID - primary identifier"
+        tests:
+          - not_null
+      - name: empl_rcd
+        description: "Employment record number"
+        tests:
+          - not_null
+      - name: effdt
+        description: "Effective date of the action"
+        tests:
+          - not_null
+      - name: effseq
+        description: "Effective sequence number"
+        tests:
+          - not_null
+
+  - name: stg_nwk_new_ehrp_actions
+    description: "Staging model for trigger table that identifies which employee actions need processing"
+    columns:
+      - name: emplid
+        description: "Employee ID"
+        tests:
+          - not_null
+      - name: empl_rcd
+        description: "Employment record number"
+        tests:
+          - not_null
+      - name: effdt
+        description: "Effective date"
+        tests:
+          - not_null
+      - name: effseq
+        description: "Effective sequence"
+        tests:
+          - not_null
+
+  - name: int_sequence_generation
+    description: "Intermediate model for generating unique event IDs based on year and sequence"
+    columns:
+      - name: emplid
+        description: "Employee ID"
+        tests:
+          - not_null
+      - name: event_id
+        description: "Generated unique event ID"
+        tests:
+          - not_null
+          - unique
+
+  - name: int_employee_enrichment
+    description: "Intermediate model that performs all lookup joins for employee data enrichment"
+    columns:
+      - name: emplid
+        description: "Employee ID"
+        tests:
+          - not_null
+      - name: empl_rcd
+        description: "Employment record number"
+        tests:
+          - not_null
+      - name: effdt
+        description: "Effective date"
+        tests:
+          - not_null
+
+  - name: fct_action_primary
+    description: "Primary employee action data mart - equivalent to NWK_ACTION_PRIMARY_TBL"
+    columns:
+      - name: event_id
+        description: "Unique event identifier"
+        tests:
+          - not_null
+          - unique
+      - name: emplid
+        description: "Employee ID"
+        tests:
+          - not_null
+      - name: agcy_assign_cd
+        description: "Agency assignment code (COMPANY || GVT_SUB_AGENCY)"
+      - name: base_hrs
+        description: "Base hours calculated based on work schedule"
+      - name: ann_lv_cur_bal_hrs
+        description: "Annual leave current balance hours (zero converted to null)"
+        tests:
+          - name: zero_to_null_validation
+            description: "Validates that zero values are converted to NULL"
+      - name: load_date
+        description: "Date when record was loaded"
+        tests:
+          - not_null
+
+  - name: fct_action_secondary
+    description: "Secondary action data mart - equivalent to NWK_ACTION_SECONDARY_TBL"
+    columns:
+      - name: event_id
+        description: "Unique event identifier"
+        tests:
+          - not_null
+          - unique
+          - relationships:
+              to: ref('fct_action_primary')
+              field: event_id
+      - name: retnd1_step_cd
+        description: "Retained step code (0.0000000000000 converted to null)"
+      - name: load_date
+        description: "Date when record was loaded"
+        tests:
+          - not_null
+
+  - name: fct_tracking
+    description: "Tracking table for processed EHRP records - equivalent to EHRP_RECS_TRACKING_TBL"
+    columns:
+      - name: biis_event_id
+        description: "BIIS event identifier"
+        tests:
+          - not_null
+          - unique
+          - relationships:
+              to: ref('fct_action_primary')
+              field: event_id
+      - name: emplid
+        description: "Employee ID"
+        tests:
+          - not_null
+      - name: load_date
+        description: "Date when record was loaded"
+        tests:
+          - not_null
+
+  - name: hist_action_primary
+    description: "Historical incremental model for action primary records - equivalent to ACTION_PRIMARY_ALL"
+    columns:
+      - name: event_id
+        description: "Unique event identifier"
+        tests:
+          - not_null
+          - unique
+      - name: emplid
+        description: "Employee ID"
+        tests:
+          - not_null
+      - name: load_date
+        description: "Date when record was loaded"
+        tests:
+          - not_null
+
+  - name: reconciliation_report
+    description: "Validation report comparing record counts across source, staging, and mart layers"
+    columns:
+      - name: report_section
+        description: "Section of the report (RECORD_COUNTS or CROSS_LAYER_VALIDATION)"
+      - name: table_name
+        description: "Name of the table or validation check"
+      - name: record_count
+        description: "Number of records in the table"
+      - name: validation_status
+        description: "PASS or FAIL status for cross-layer validations"
