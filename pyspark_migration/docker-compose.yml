@@ -1,0 +1,72 @@
+# Docker Compose for PySpark Migration
+# Replaces Informatica PowerCenter multi-service architecture:
+# - Prd_IS (Integration Service) → spark-master + spark-worker
+# - Prd_Repo_Srvc (Repository Service) → configuration via environment
+# - Oracle connections (INFO_TARGET, $Source, INFO_NATE) → oracle service
+#
+# Usage:
+#   docker-compose up -d                    # Start all services
+#   docker-compose run pyspark-job env JOB_NAME=job1_pay_calendar  # Run specific job
+#   docker-compose logs -f pyspark-job      # View logs
+
+version: '3.8'
+
+services:
+  # PySpark job runner (replaces Informatica Integration Service)
+  pyspark-job:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      # Environment configuration (replaces $PMRepositoryServiceName)
+      - ENVIRONMENT=${ENVIRONMENT:-Prod}
+      - REPOSITORY_SERVICE=${REPOSITORY_SERVICE:-Prd_Repo_Srvc}
+      - JOB_NAME=${JOB_NAME:-}
+      # Oracle target connection (replaces INFO_TARGET)
+      - TARGET_DB_HOST=${TARGET_DB_HOST:-}
+      - TARGET_DB_PORT=${TARGET_DB_PORT:-1521}
+      - TARGET_DB_SERVICE=${TARGET_DB_SERVICE:-}
+      - TARGET_DB_USER=${TARGET_DB_USER:-}
+      - TARGET_DB_PASSWORD=${TARGET_DB_PASSWORD:-}
+      # Oracle source connection (replaces $Source)
+      - SOURCE_DB_HOST=${SOURCE_DB_HOST:-}
+      - SOURCE_DB_PORT=${SOURCE_DB_PORT:-1521}
+      - SOURCE_DB_SERVICE=${SOURCE_DB_SERVICE:-}
+      - SOURCE_DB_USER=${SOURCE_DB_USER:-}
+      - SOURCE_DB_PASSWORD=${SOURCE_DB_PASSWORD:-}
+      # Oracle NATE connection (replaces INFO_NATE, used by lkp_PS_JPM_JP_ITEMS)
+      - NATE_DB_HOST=${NATE_DB_HOST:-}
+      - NATE_DB_PORT=${NATE_DB_PORT:-1521}
+      - NATE_DB_SERVICE=${NATE_DB_SERVICE:-}
+      - NATE_DB_USER=${NATE_DB_USER:-}
+      - NATE_DB_PASSWORD=${NATE_DB_PASSWORD:-}
+      # Workflow parameters (replaces /data/BIISINT/control/BIIS_parms.iparms)
+      - WF_PP_END_YEAR=${WF_PP_END_YEAR:-}
+      - WF_PP_NUM=${WF_PP_NUM:-}
+      - WF_PP_YEAR_NUM=${WF_PP_YEAR_NUM:-}
+      - WF_CYCLE_ID=${WF_CYCLE_ID:-}
+      # Email configuration
+      - SMTP_HOST=${SMTP_HOST:-smtp.hhs.gov}
+      - SMTP_PORT=${SMTP_PORT:-25}
+      - EMAIL_FROM=${EMAIL_FROM:-biis-etl@hhs.gov}
+      # Spark configuration
+      - SPARK_EXECUTOR_MEMORY=${SPARK_EXECUTOR_MEMORY:-2g}
+      - SPARK_DRIVER_MEMORY=${SPARK_DRIVER_MEMORY:-1g}
+      - SPARK_SHUFFLE_PARTITIONS=${SPARK_SHUFFLE_PARTITIONS:-200}
+      # Logging
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+    volumes:
+      # Map data directories (replaces Informatica file paths)
+      - ${DATA_ROOT:-./data}/int/in:/data/BIISINT/data/int/in
+      - ${DATA_ROOT:-./data}/int/out:/data/BIISINT/data/int/out
+      - ${DATA_ROOT:-./data}/archive:/data/BIISINT/data/archive
+      - ${DATA_ROOT:-./data}/log:/home/sa-biisint/data/int/log
+      - ${DATA_ROOT:-./data}/bin:/data/BIISINT/bin
+      - ${DATA_ROOT:-./data}/control:/data/BIISINT/control
+    networks:
+      - biis-network
+    restart: "no"
+
+networks:
+  biis-network:
+    driver: bridge
