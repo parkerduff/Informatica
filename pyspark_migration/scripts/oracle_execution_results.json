@@ -1,0 +1,181 @@
+{
+  "job1": {
+    "job_name": "job1_pay_calendar",
+    "workflow": "wf_Pay_Calendar",
+    "job_start_time": "2026-02-25 17:18:13.533964",
+    "job_end_time": "2026-02-25 17:18:18.048338",
+    "total_duration_seconds": 4.514,
+    "total_duration_minutes": 0.0752,
+    "src_success_rows": 26,
+    "src_failed_rows": 0,
+    "tgt_success_rows": 1,
+    "tgt_failed_rows": 0,
+    "transformation_errors": 0,
+    "target_table_row_count": 26,
+    "sessions": [
+      {
+        "name": "s_Pay_Calendar_Reset",
+        "duration_s": 0.033,
+        "rows_read": 26,
+        "rows_written": 1
+      },
+      {
+        "name": "s_Pay_Calendar_Set",
+        "duration_s": 0.061,
+        "rows_read": 26,
+        "rows_written": 1
+      },
+      {
+        "name": "s_Pay_Calendar_Verify",
+        "duration_s": 3.867,
+        "rows_read": 1,
+        "rows_written": 0
+      },
+      {
+        "name": "s_Pay_Calendar_Message",
+        "duration_s": 0.264,
+        "rows_read": 1,
+        "rows_written": 0
+      }
+    ],
+    "status": "SUCCEEDED",
+    "database": "Oracle XE 21c"
+  },
+  "job2": {
+    "job_name": "job2_comptime",
+    "workflow": "wf_COMPTIME",
+    "job_start_time": "2026-02-25 17:18:18.048441",
+    "job_end_time": "2026-02-25 17:18:23.618980",
+    "total_duration_seconds": 5.571,
+    "total_duration_minutes": 0.0928,
+    "src_success_rows": 1000,
+    "src_failed_rows": 100,
+    "tgt_success_rows": 900,
+    "tgt_failed_rows": 0,
+    "transformation_errors": 0,
+    "counter_tbl_value": 900,
+    "oracle_comp_time_daily_count": 900,
+    "oracle_counter_tbl_count": 1,
+    "sessions": [
+      {
+        "name": "s_COMPTIME_Current_Pay_Period",
+        "duration_s": 0.197
+      },
+      {
+        "name": "s_COMPTIME_Load",
+        "duration_s": 4.748,
+        "rows_read": 1000,
+        "rows_written": 900
+      },
+      {
+        "name": "s_COMPTIME_Counters",
+        "duration_s": 0.547,
+        "counters": 1
+      },
+      {
+        "name": "email_COMPTIME",
+        "duration_s": 0.0
+      }
+    ],
+    "status": "SUCCEEDED",
+    "database": "Oracle XE 21c"
+  },
+  "job3": {
+    "job_name": "job3_pseudossn",
+    "workflow": "m_Pseudossn",
+    "job_start_time": "2026-02-25 17:18:23.619273",
+    "job_end_time": "2026-02-25 17:18:24.534281",
+    "total_duration_seconds": 0.915,
+    "total_duration_minutes": 0.0153,
+    "src_success_rows": 500,
+    "src_failed_rows": 100,
+    "tgt_success_rows": 400,
+    "tgt_failed_rows": 100,
+    "transformation_errors": 100,
+    "oracle_pseudossn_count": 400,
+    "status": "SUCCEEDED",
+    "database": "Oracle XE 21c"
+  },
+  "job4": {
+    "job_name": "job4_cpm_extract",
+    "workflow": "CPM_Agency_Extracts",
+    "job_start_time": "2026-02-25 17:18:24.534403",
+    "job_end_time": "2026-02-25 17:18:25.637716",
+    "total_duration_seconds": 1.103,
+    "total_duration_minutes": 0.0184,
+    "src_success_rows": 1000,
+    "src_failed_rows": 0,
+    "tgt_success_rows": 1000,
+    "tgt_failed_rows": 0,
+    "transformation_errors": 0,
+    "agency_details": {
+      "NIH": {
+        "rows": 334,
+        "file_size_bytes": 31950
+      },
+      "CDC": {
+        "rows": 333,
+        "file_size_bytes": 31857
+      },
+      "OIG": {
+        "rows": 333,
+        "file_size_bytes": 31851
+      }
+    },
+    "status": "SUCCEEDED",
+    "database": "Oracle XE 21c"
+  },
+  "job5": {
+    "job_name": "job5_fda_leave",
+    "workflow": "wf_FDA_Leave",
+    "job_start_time": "2026-02-25 17:18:25.637829",
+    "job_end_time": "2026-02-25 17:18:30.073821",
+    "total_duration_seconds": 4.436,
+    "total_duration_minutes": 0.0739,
+    "src_success_rows": 800,
+    "src_failed_rows": 0,
+    "tgt_success_rows": 500,
+    "tgt_failed_rows": 0,
+    "transformation_errors": 3200,
+    "counter_values": {
+      "COUNT_READ_IN (TATRAN Records Read)": 800,
+      "LEAVE_REC_COUNT (Leave Records)": 500,
+      "ERROR_REC_COUNT (Error Records)": 3200,
+      "WRITTEN_REC_COUNT (Records Written)": 500
+    },
+    "error_tbl_rows": 3200,
+    "post_sql_deleted": 600,
+    "oracle_error_tbl_total": 3200,
+    "oracle_counter_tbl_total": 5,
+    "oracle_fda_tatran_remaining": 200,
+    "status": "SUCCEEDED",
+    "database": "Oracle XE 21c"
+  },
+  "job6": {
+    "job_name": "job6_ehrp2biis_update",
+    "workflow": "wf_EHRP2BIIS_UPDATE",
+    "job_start_time": "2026-02-25 17:18:30.073935",
+    "job_end_time": "2026-02-25 17:18:34.375136",
+    "total_duration_seconds": 4.301,
+    "total_duration_minutes": 0.0717,
+    "src_success_rows": 200,
+    "src_failed_rows": 0,
+    "tgt_success_rows": 600,
+    "tgt_failed_rows": 0,
+    "transformation_errors": 0,
+    "lookups_executed": 8,
+    "target_tables": {
+      "NWK_ACTION_PRIMARY_TBL": 200,
+      "NWK_ACTION_SECONDARY_TBL": 200,
+      "EHRP_RECS_TRACKING_TBL": 200
+    },
+    "oracle_verification": {
+      "NWK_ACTION_PRIMARY_TBL": 200,
+      "NWK_ACTION_SECONDARY_TBL": 200,
+      "EHRP_RECS_TRACKING_TBL": 200
+    },
+    "mode": "single_batch",
+    "status": "SUCCEEDED",
+    "database": "Oracle XE 21c"
+  }
+}

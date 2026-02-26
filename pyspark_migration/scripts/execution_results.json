@@ -1,0 +1,163 @@
+{
+  "job1": {
+    "job_name": "job1_pay_calendar",
+    "workflow": "wf_Pay_Calendar",
+    "job_start_time": "2026-02-25 12:25:54.837030",
+    "job_end_time": "2026-02-25 12:26:00.050893",
+    "total_duration_seconds": 5.214,
+    "total_duration_minutes": 0.0869,
+    "src_success_rows": 10,
+    "src_failed_rows": 0,
+    "tgt_success_rows": 1,
+    "tgt_failed_rows": 0,
+    "transformation_errors": 0,
+    "sessions": [
+      {
+        "name": "s_Pay_Calendar_Reset",
+        "duration_s": 4.275,
+        "rows_read": 10,
+        "rows_written": 10
+      },
+      {
+        "name": "s_Pay_Calendar_Set",
+        "duration_s": 0.317,
+        "rows_read": 10,
+        "rows_written": 1
+      },
+      {
+        "name": "s_Pay_Calendar_Verify",
+        "duration_s": 0.363,
+        "rows_read": 1,
+        "rows_written": 0
+      },
+      {
+        "name": "s_Pay_Calendar_Message",
+        "duration_s": 0.259,
+        "rows_read": 1,
+        "rows_written": 0
+      }
+    ],
+    "status": "SUCCEEDED"
+  },
+  "job2": {
+    "job_name": "job2_comptime",
+    "workflow": "wf_COMPTIME",
+    "job_start_time": "2026-02-25 12:26:00.051010",
+    "job_end_time": "2026-02-25 12:26:01.640190",
+    "total_duration_seconds": 1.589,
+    "total_duration_minutes": 0.0265,
+    "src_success_rows": 500,
+    "src_failed_rows": 50,
+    "tgt_success_rows": 450,
+    "tgt_failed_rows": 0,
+    "transformation_errors": 0,
+    "counter_tbl_value": 450,
+    "sessions": [
+      {
+        "name": "s_COMPTIME_Current_Pay_Period",
+        "duration_s": 0.221
+      },
+      {
+        "name": "s_COMPTIME_Load",
+        "duration_s": 1.159,
+        "rows_read": 500,
+        "rows_written": 450
+      },
+      {
+        "name": "s_COMPTIME_Counters",
+        "duration_s": 0.209,
+        "counters": 3
+      },
+      {
+        "name": "email_COMPTIME",
+        "duration_s": 0.0
+      }
+    ],
+    "status": "SUCCEEDED"
+  },
+  "job3": {
+    "job_name": "job3_pseudossn",
+    "workflow": "m_Pseudossn",
+    "job_start_time": "2026-02-25 12:26:01.640350",
+    "job_end_time": "2026-02-25 12:26:02.387947",
+    "total_duration_seconds": 0.748,
+    "total_duration_minutes": 0.0125,
+    "src_success_rows": 200,
+    "src_failed_rows": 159,
+    "tgt_success_rows": 41,
+    "tgt_failed_rows": 159,
+    "transformation_errors": 159,
+    "status": "SUCCEEDED"
+  },
+  "job4": {
+    "job_name": "job4_cpm_extract",
+    "workflow": "CPM_Agency_Extracts",
+    "job_start_time": "2026-02-25 12:26:02.388158",
+    "job_end_time": "2026-02-25 12:26:03.818537",
+    "total_duration_seconds": 1.43,
+    "total_duration_minutes": 0.0238,
+    "src_success_rows": 300,
+    "src_failed_rows": 0,
+    "tgt_success_rows": 300,
+    "tgt_failed_rows": 0,
+    "transformation_errors": 0,
+    "agency_details": {
+      "NIH": {
+        "rows": 100,
+        "file_size_bytes": 4909
+      },
+      "CDC": {
+        "rows": 100,
+        "file_size_bytes": 4913
+      },
+      "OIG": {
+        "rows": 100,
+        "file_size_bytes": 4913
+      }
+    },
+    "status": "SUCCEEDED"
+  },
+  "job5": {
+    "job_name": "job5_fda_leave",
+    "workflow": "wf_FDA_Leave",
+    "job_start_time": "2026-02-25 12:26:03.818684",
+    "job_end_time": "2026-02-25 12:26:06.959301",
+    "total_duration_seconds": 3.141,
+    "total_duration_minutes": 0.0523,
+    "src_success_rows": 400,
+    "src_failed_rows": 0,
+    "tgt_success_rows": 300,
+    "tgt_failed_rows": 0,
+    "transformation_errors": 200,
+    "counter_values": {
+      "COUNT_READ_IN": 400,
+      "LEAVE_REC_COUNT": 300,
+      "ERROR_REC_COUNT": 200,
+      "WRITTEN_REC_COUNT": 300
+    },
+    "error_tbl_rows": 200,
+    "post_sql_deleted": 320,
+    "status": "SUCCEEDED"
+  },
+  "job6": {
+    "job_name": "job6_ehrp2biis_update",
+    "workflow": "wf_EHRP2BIIS_UPDATE",
+    "job_start_time": "2026-02-25 12:26:06.959514",
+    "job_end_time": "2026-02-25 12:26:12.866917",
+    "total_duration_seconds": 5.907,
+    "total_duration_minutes": 0.0985,
+    "src_success_rows": 100,
+    "src_failed_rows": 0,
+    "tgt_success_rows": 300,
+    "tgt_failed_rows": 0,
+    "transformation_errors": 0,
+    "lookups_executed": 9,
+    "target_tables": {
+      "NWK_ACTION_PRIMARY_TBL": 100,
+      "NWK_ACTION_SECONDARY_TBL": 100,
+      "EHRP_RECS_TRACKING_TBL": 100
+    },
+    "mode": "single_batch",
+    "status": "SUCCEEDED"
+  }
+}
