@@ -138,7 +138,7 @@ class DatabaseManager:
         else:
             df = self.spark.read.jdbc(url=jdbc_url, table=table, properties=props)
 
-        logger.info(f"Read {df.count()} rows from {table} via {connection}")
+        logger.info(f"Read from {table} via {connection}")
         return df
 
     def write_jdbc(self, df: DataFrame, table: str, mode: str = "append",
@@ -224,6 +224,8 @@ class DatabaseManager:
             dsn=conn_config.dsn
         )
         output_lines = []
+        has_errors = False
+        first_error = None
         try:
             cursor = conn.cursor()
             # Split and execute individual statements
@@ -235,6 +237,15 @@ class DatabaseManager:
                         output_lines.append(f"OK: {statement[:80]}...")
                     except oracledb.Error as e:
                         output_lines.append(f"ERROR: {e} - {statement[:80]}...")
+                        has_errors = True
+                        if first_error is None:
+                            first_error = e
+            if has_errors:
+                conn.rollback()
+                cursor.close()
+                raise oracledb.Error(
+                    f"SQL file execution had errors, rolled back: {first_error}"
+                )
             conn.commit()
             cursor.close()
         except oracledb.Error as e:

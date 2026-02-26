@@ -234,10 +234,14 @@ class PseudossnJob:
 
         try:
             # Read the TK_NUM value from the flat file or computed value
-            # and update PSEUDOSSN_TBL accordingly
+            # and update PSEUDOSSN_TBL accordingly.
+            # Use ROWID-based counting to assign sequential TK_NUM values
+            # (replicates Informatica DD_UPDATE row-by-row incrementing behavior)
             self.db.execute_sql(
-                "UPDATE PSEUDOSSN_TBL SET TK_NUM = "
-                "(SELECT MAX(TK_NUM) FROM PSEUDOSSN_TBL) + 1 "
+                "UPDATE PSEUDOSSN_TBL p SET TK_NUM = "
+                "(SELECT MAX(TK_NUM) FROM PSEUDOSSN_TBL) + "
+                "(SELECT COUNT(*) FROM PSEUDOSSN_TBL p2 "
+                "WHERE p2.TK_NUM IS NULL AND p2.ROWID <= p.ROWID) "
                 "WHERE TK_NUM IS NULL",
                 connection="target"
             )

@@ -190,13 +190,15 @@ class FDALeaveJob:
         """
         logger.info("Step 2: Validating parameters")
 
-        default_to_curr_pp = not self.wf_pp_end_year and not self.wf_pp_num
+        # Use 'or' to match _set_pay_calendar's defaulting logic:
+        # if either param is empty, _set_pay_calendar already populated both from DB
+        default_to_curr_pp = not self.wf_pp_end_year or not self.wf_pp_num
 
-        if not str(self.wf_pp_end_year).isnumeric() and not default_to_curr_pp:
+        if not default_to_curr_pp and not str(self.wf_pp_end_year).isnumeric():
             raise ValueError(
                 f"!!!! The value : {self.wf_pp_end_year} is not a valid pay period year"
             )
-        if not str(self.wf_pp_num).isnumeric() and not default_to_curr_pp:
+        if not default_to_curr_pp and not str(self.wf_pp_num).isnumeric():
             raise ValueError(
                 f"!!!! The value : {self.wf_pp_num} is not a valid pay period number"
             )

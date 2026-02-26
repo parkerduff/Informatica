@@ -36,6 +36,7 @@ from pyspark.sql import SparkSession
 from pyspark.sql.functions import (
     col, when, regexp_replace, to_date, count, lit, current_timestamp
 )
+from pyspark.sql.types import StructType, StructField, StringType
 
 from pyspark_migration.common.config import MigrationConfig
 from pyspark_migration.common.db_manager import DatabaseManager
@@ -211,7 +212,21 @@ class CompTimeJob:
                 self.config.paths.comptime_input_dir, comptime_filename
             )
             
-            raw_df = self.spark.read.option("header", "false").csv(input_path)
+            # Define schema matching the COMPTIME flat file layout
+            # (SQ_U0287D01 Source Qualifier columns from XML/COMPTIME)
+            comptime_schema = StructType([
+                StructField("RECORD_TYPE_FLAG", StringType(), True),
+                StructField("SSN", StringType(), True),
+                StructField("EMPLOYEE_NAME", StringType(), True),
+                StructField("PP_END_DATE", StringType(), True),
+                StructField("COMP_HOURS", StringType(), True),
+                StructField("COMP_TYPE", StringType(), True),
+                StructField("ORG_CODE", StringType(), True),
+                StructField("PAY_PLAN", StringType(), True),
+                StructField("GRADE", StringType(), True),
+                StructField("STEP", StringType(), True),
+            ])
+            raw_df = self.spark.read.option("header", "false").schema(comptime_schema).csv(input_path)
             metrics.src_success_rows = raw_df.count()
             logger.info(f"Read {metrics.src_success_rows} rows from {input_path}")
 

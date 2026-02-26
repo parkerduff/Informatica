@@ -318,8 +318,15 @@ class EHRP2BIISUpdateJob:
 
         try:
             # Use pushdown query for efficient source join
+            # Select gvt.* and only non-overlapping nwk columns to avoid
+            # duplicate column names (EMPLID, EMPL_RCD, EFFDT, EFFSEQ exist in both)
             source_query = """
-                (SELECT gvt.*, nwk.*
+                (SELECT gvt.*,
+                        nwk.ACTION, nwk.ACTION_REASON, nwk.ACTION_DT,
+                        nwk.DEPTID AS NWK_DEPTID, nwk.JOBCODE AS NWK_JOBCODE,
+                        nwk.POSITION_NBR AS NWK_POSITION_NBR,
+                        nwk.GVT_PAR_NBR, nwk.GVT_NOA_CODE, nwk.GVT_LEG_AUTH_1,
+                        nwk.PROCESSED_FLAG, nwk.CREATED_DATE, nwk.PROCESSED_DATE
                  FROM PS_GVT_JOB gvt
                  INNER JOIN NWK_NEW_EHRP_ACTIONS_TBL nwk
                      ON nwk.EMPLID = gvt.EMPLID
