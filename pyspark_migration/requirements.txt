@@ -1,0 +1,12 @@
+# PySpark Migration Dependencies
+# ================================
+# Core
+pyspark>=3.4.0
+cx-Oracle>=8.3.0
+
+# Airflow
+apache-airflow>=2.7.0
+apache-airflow-providers-apache-spark>=4.1.0
+
+# Email (stdlib smtplib is used; no extra deps needed)
+# Oracle JDBC driver must be on the Spark classpath (ojdbc8.jar)
