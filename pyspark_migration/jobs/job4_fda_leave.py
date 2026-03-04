@@ -429,12 +429,14 @@ class FDALeaveJob:
                     ytd_error_count = ytd_missing.count()
 
                     if ytd_error_count > 0:
+                        ytd_missing = ytd_missing.withColumn(
+                            "ERROR_MSG",
+                            F.lit("Employee not found in CPM_YTD_DETAIL_STG_TBL"),
+                        )
                         self._counter.write_error_dataframe(
                             ytd_missing,
                             process_name="FDA_Leave_YTD",
-                            error_message_col=F.lit(
-                                "Employee not found in CPM_YTD_DETAIL_STG_TBL"
-                            ).alias("err"),
+                            error_message_col="ERROR_MSG",
                             source_key_col="FDA_EMP_ID",
                             pp_end_year=str(self.map_pp_end_year),
                             pp_num=str(self.map_pp_num),

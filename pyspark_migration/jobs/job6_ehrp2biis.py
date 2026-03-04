@@ -339,10 +339,14 @@ class EHRP2BIISUpdateJob:
                 lookup_df = self._cross_db.read_jdbc(table_name)
 
                 # Deterministic dedup: row_number() replacing "Use Any Value"
-                if len(keys) > 1:
-                    w = Window.partitionBy(*keys).orderBy(
-                        F.col(keys[0]).desc()
-                    )
+                # Partition by entity keys (EMPLID, EMPL_RCD), order by
+                # effective date/sequence DESC to pick the latest record.
+                if len(keys) > 2:
+                    partition_keys = keys[:2]  # EMPLID, EMPL_RCD
+                    order_cols = [F.col(k).desc() for k in keys[2:]]  # EFFDT DESC, EFFSEQ DESC
+                    w = Window.partitionBy(*partition_keys).orderBy(*order_cols)
+                elif len(keys) == 2:
+                    w = Window.partitionBy(keys[0]).orderBy(F.col(keys[1]).desc())
                 else:
                     w = Window.partitionBy(*keys).orderBy(F.col(keys[0]))
 
