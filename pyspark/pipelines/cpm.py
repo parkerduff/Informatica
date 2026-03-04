@@ -614,11 +614,11 @@ def build_newpay_records(
         return 0
 
     # Build type 1/2 newpay records
-    newpay_type12_df = pm1_df.select(
-        F.lit(pp_end_year).alias("PP_END_YEAR"),
-        F.lit(pp_num).alias("PP_NUM"),
-        F.col("*"),
-        F.current_timestamp().alias("PROCESS_DATE"),
+    newpay_type12_df = (
+        pm1_df
+        .withColumn("PP_END_YEAR", F.lit(pp_end_year))
+        .withColumn("PP_NUM", F.lit(pp_num))
+        .withColumn("PROCESS_DATE", F.current_timestamp())
     )
     write_table(
         newpay_type12_df, config.db,
@@ -628,11 +628,11 @@ def build_newpay_records(
     # Build type 3 newpay records from PM3
     pm3_df = read_table(spark, config.db, table_name="CPM_PM3_STG_TBL")
     if pm3_df.count() > 0:
-        newpay_type3_df = pm3_df.select(
-            F.lit(pp_end_year).alias("PP_END_YEAR"),
-            F.lit(pp_num).alias("PP_NUM"),
-            F.col("*"),
-            F.current_timestamp().alias("PROCESS_DATE"),
+        newpay_type3_df = (
+            pm3_df
+            .withColumn("PP_END_YEAR", F.lit(pp_end_year))
+            .withColumn("PP_NUM", F.lit(pp_num))
+            .withColumn("PROCESS_DATE", F.current_timestamp())
         )
         write_table(
             newpay_type3_df, config.db,
@@ -641,11 +641,11 @@ def build_newpay_records(
 
     # Build newpay detail records
     if ytd_detail_df.count() > 0:
-        newpay_detail_df = ytd_detail_df.select(
-            F.lit(pp_end_year).alias("PP_END_YEAR"),
-            F.lit(pp_num).alias("PP_NUM"),
-            F.col("*"),
-            F.current_timestamp().alias("PROCESS_DATE"),
+        newpay_detail_df = (
+            ytd_detail_df
+            .withColumn("PP_END_YEAR", F.lit(pp_end_year))
+            .withColumn("PP_NUM", F.lit(pp_num))
+            .withColumn("PROCESS_DATE", F.current_timestamp())
         )
         write_table(
             newpay_detail_df, config.db,
@@ -654,11 +654,11 @@ def build_newpay_records(
 
     # Build newpay YTD state records
     if ytd_state_df.count() > 0:
-        newpay_ytd_state_df = ytd_state_df.select(
-            F.lit(pp_end_year).alias("PP_END_YEAR"),
-            F.lit(pp_num).alias("PP_NUM"),
-            F.col("*"),
-            F.current_timestamp().alias("PROCESS_DATE"),
+        newpay_ytd_state_df = (
+            ytd_state_df
+            .withColumn("PP_END_YEAR", F.lit(pp_end_year))
+            .withColumn("PP_NUM", F.lit(pp_num))
+            .withColumn("PROCESS_DATE", F.current_timestamp())
         )
         write_table(
             newpay_ytd_state_df, config.db,
