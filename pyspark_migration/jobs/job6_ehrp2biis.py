@@ -129,7 +129,16 @@ class EHRP2BIISUpdateJob:
             JobMetrics with execution results.
         """
         self._session_start_time = datetime.now()
+        # Reset metrics and counters for each run() call so that
+        # run_forever() iterations don't accumulate stale sessions.
+        self._job_metrics = JobMetrics(
+            job_name="EHRP2BIIS_UPDATE",
+            workflow_name=self.WORKFLOW_NAME,
+        )
         self._job_metrics.start()
+        self.tracking_count = 0
+        self.primary_count = 0
+        self.secondary_count = 0
 
         # Install signal handlers for graceful shutdown
         self._install_signal_handlers()
@@ -324,7 +333,6 @@ class EHRP2BIISUpdateJob:
         join_keys = ["EMPLID", "EMPL_RCD", "EFFDT", "EFFSEQ"]
 
         lookup_tables = [
-            ("SEQUENCE_NUM_TBL", "lkp_OLD_SEQUENCE_NUMBER", ["EHRP_YEAR"]),
             ("PS_GVT_EMPLOYMENT", "lkp_PS_GVT_EMPLOYMENT", join_keys),
             ("PS_GVT_PERS_NID", "lkp_PS_GVT_PERS_NID", join_keys),
             ("PS_GVT_AWD_DATA", "lkp_PS_GVT_AWD_DATA", join_keys),
@@ -384,6 +392,60 @@ class EHRP2BIISUpdateJob:
                     table_name,
                     str(exc),
                 )
+
+        # Special lookup: SEQUENCE_NUM_TBL (join key derived from EFFDT year)
+        # Informatica: lkp_OLD_SEQUENCE_NUMBER
+        #   Condition: EHRP_YEAR = o_CURRENT_YEAR
+        #   o_CURRENT_YEAR = GET_DATE_PART(EFFDT, 'YYYY') from exp_GET_EFFDT_YEAR
+        try:
+            seq_df = self._cross_db.read_jdbc("SEQUENCE_NUM_TBL")
+
+            # Derive EHRP_YEAR from source EFFDT (matches Informatica
+            # exp_GET_EFFDT_YEAR: GET_DATE_PART(EFFDT, 'YYYY'))
+            result_df = result_df.withColumn(
+                "_EHRP_YEAR",
+                F.year(F.col("EFFDT")).cast(StringType()),
+            )
+
+            # Dedup SEQUENCE_NUM_TBL by EHRP_YEAR (pick latest sequence)
+            w_seq = Window.partitionBy("EHRP_YEAR").orderBy(
+                F.col("EHRP_SEQ_NUMBER").desc()
+            )
+            seq_dedup = (
+                seq_df.withColumn("_rn", F.row_number().over(w_seq))
+                .filter(F.col("_rn") == 1)
+                .drop("_rn")
+            )
+
+            existing_cols = set(result_df.columns)
+            new_cols = [
+                c
+                for c in seq_dedup.columns
+                if c not in existing_cols and c != "EHRP_YEAR"
+            ]
+            if new_cols:
+                select_cols = ["EHRP_YEAR"] + new_cols
+                seq_subset = seq_dedup.select(*[F.col(c) for c in select_cols])
+
+                result_df = result_df.join(
+                    F.broadcast(seq_subset),
+                    result_df["_EHRP_YEAR"] == seq_subset["EHRP_YEAR"],
+                    "left",
+                ).drop("_EHRP_YEAR", "EHRP_YEAR")
+            else:
+                result_df = result_df.drop("_EHRP_YEAR")
+
+            logger.info(
+                "Lookup lkp_OLD_SEQUENCE_NUMBER (SEQUENCE_NUM_TBL): completed"
+            )
+
+        except Exception as exc:
+            logger.warning(
+                "Lookup SEQUENCE_NUM_TBL skipped: %s", str(exc)
+            )
+            # Drop derived column if it was added
+            if "_EHRP_YEAR" in result_df.columns:
+                result_df = result_df.drop("_EHRP_YEAR")
 
         # Special lookup: PS_JPM_JP_ITEMS (different join key)
         try:
