@@ -1,0 +1,8 @@
+.coverage
+.pytest_cache/
+**/__pycache__/
+# Keep JDBC driver local; don't commit
+pyspark_migration/ojdbc11.jar
+# Spark warehouse / derby
+/tmp/spark-warehouse-test/
+/tmp/derby-test/

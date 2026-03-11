@@ -1,0 +1,58 @@
+version: "3.8"
+
+services:
+  oracle-xe:
+    image: gvenzl/oracle-xe:21-slim
+    container_name: oracle-xe
+    environment:
+      ORACLE_PASSWORD: ${ORACLE_SYS_PASSWORD:-biis_test_pwd}
+      ORACLE_DATABASE: BIISDB
+      APP_USER: biis_user
+      APP_USER_PASSWORD: ${ORACLE_APP_PASSWORD:-biis_user_pwd}
+    ports:
+      - "1521:1521"
+    healthcheck:
+      test: ["CMD", "healthcheck.sh"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+    volumes:
+      - oracle_data:/opt/oracle/oradata
+
+  pyspark-migration:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pyspark-migration
+    depends_on:
+      oracle-xe:
+        condition: service_healthy
+    environment:
+      ORACLE_HOST: oracle-xe
+      ORACLE_PORT: "1521"
+      ORACLE_SERVICE_NAME: XEPDB1
+      ORACLE_USERNAME: biis_user
+      ORACLE_PASSWORD: ${ORACLE_APP_PASSWORD:-biis_user_pwd}
+      ORACLE_SYS_PASSWORD: ${ORACLE_SYS_PASSWORD:-biis_test_pwd}
+      ORACLE_CROSS_DB_PASSWORD: ${ORACLE_CROSS_DB_PASSWORD:-nate_user_pwd}
+      SMTP_HOST: localhost
+      SMTP_PORT: "25"
+      EMAIL_SENDER: "biis-migration@hhs.gov"
+      EMAIL_RECIPIENTS: "peter.chen@hhs.gov,nathan.knight@hhs.gov,marvin.simon@hhs.gov,mariappan.muthiah@hhs.gov"
+      EMAIL_ENV_PREFIX: "[TEST] "
+      SOURCE_DIR: /app/test_data/source
+      TARGET_DIR: /app/test_data/target
+      ARCHIVE_DIR: /app/test_data/archive
+      REJECT_DIR: /app/test_data/reject
+    volumes:
+      - ./test_data:/app/test_data
+    command: >
+      bash -c "
+        echo 'Waiting for Oracle XE...' &&
+        python -m pyspark_migration.scripts.setup_oracle_schema --tier functional &&
+        echo 'Running tests...' &&
+        python -m pytest tests/ -v --tb=short
+      "
+
+volumes:
+  oracle_data:

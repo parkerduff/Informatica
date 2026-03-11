@@ -1,0 +1,161 @@
+{
+  "cpm_newpay_read": {
+    "table": "CPM_NEWPAY_TBL",
+    "row_count": 100502,
+    "duration_seconds": 2.029,
+    "throughput_rows_per_sec": 49527.0
+  },
+  "pseudossn_read": {
+    "table": "PSEUDOSSN_TBL",
+    "row_count": 50200,
+    "duration_seconds": 1.051,
+    "throughput_rows_per_sec": 47761.4
+  },
+  "ps_gvt_job_large_read": {
+    "table": "PS_GVT_JOB",
+    "row_count": 10103,
+    "duration_seconds": 0.328,
+    "throughput_rows_per_sec": 30764.2
+  },
+  "pay_period_read": {
+    "table": "PAY_PERIOD",
+    "row_count": 27,
+    "duration_seconds": 0.187,
+    "throughput_rows_per_sec": 144.8
+  },
+  "pseudossn_dedup": {
+    "input_rows": 50200,
+    "output_rows": 50200,
+    "duration_seconds": 1.436,
+    "throughput_rows_per_sec": 34957.5
+  },
+  "broadcast_join_10k": {
+    "source_rows": 10000,
+    "output_rows": 10000,
+    "duration_seconds": 0.496,
+    "throughput_rows_per_sec": 20157.4
+  },
+  "cpm_aggregation_100k": {
+    "input_rows": 100502,
+    "groups": 2,
+    "duration_seconds": 3.642,
+    "throughput_rows_per_sec": 27597.4
+  },
+  "cpm_filter_100k": {
+    "input_rows": 100502,
+    "output_rows": 100501,
+    "duration_seconds": 1.904,
+    "throughput_rows_per_sec": 52787.0
+  },
+  "write_10k_counter": {
+    "rows_written": 10000,
+    "duration_seconds": 0.6,
+    "throughput_rows_per_sec": 16670.7
+  },
+  "shuffle_2_dedup": {
+    "rows": 10000,
+    "duration_seconds": 0.534
+  },
+  "shuffle_8_dedup": {
+    "rows": 10000,
+    "duration_seconds": 0.395
+  },
+  "metrics_throughput": {
+    "rows": 5000,
+    "duration": 0.236,
+    "throughput": 21172.2
+  },
+  "job_metrics_aggregation": {
+    "job_name": "perf_job",
+    "workflow_name": "wf_perf",
+    "start_time": "2026-03-02T20:18:08.200878",
+    "end_time": "2026-03-02T20:18:08.200939",
+    "status": "SUCCEEDED",
+    "total_src_success_rows": 15000,
+    "total_tgt_success_rows": 15000,
+    "total_errors": 0,
+    "total_duration_seconds": 0.0,
+    "sessions": [
+      {
+        "session_name": "session_0",
+        "mapping_name": "mapping_0",
+        "start_time": "2026-03-02T20:18:08.200892",
+        "end_time": "2026-03-02T20:18:08.200897",
+        "duration_seconds": 0.0,
+        "src_success_rows": 1000,
+        "src_failed_rows": 0,
+        "tgt_success_rows": 1000,
+        "tgt_failed_rows": 0,
+        "total_trans_errors": 0,
+        "first_error_code": 0,
+        "first_error_msg": "",
+        "status": "SUCCEEDED",
+        "throughput_rows_per_sec": 222766763.2
+      },
+      {
+        "session_name": "session_1",
+        "mapping_name": "mapping_1",
+        "start_time": "2026-03-02T20:18:08.200906",
+        "end_time": "2026-03-02T20:18:08.200910",
+        "duration_seconds": 0.0,
+        "src_success_rows": 2000,
+        "src_failed_rows": 0,
+        "tgt_success_rows": 2000,
+        "tgt_failed_rows": 0,
+        "total_trans_errors": 0,
+        "first_error_code": 0,
+        "first_error_msg": "",
+        "status": "SUCCEEDED",
+        "throughput_rows_per_sec": 567054153.7
+      },
+      {
+        "session_name": "session_2",
+        "mapping_name": "mapping_2",
+        "start_time": "2026-03-02T20:18:08.200916",
+        "end_time": "2026-03-02T20:18:08.200919",
+        "duration_seconds": 0.0,
+        "src_success_rows": 3000,
+        "src_failed_rows": 0,
+        "tgt_success_rows": 3000,
+        "tgt_failed_rows": 0,
+        "total_trans_errors": 0,
+        "first_error_code": 0,
+        "first_error_msg": "",
+        "status": "SUCCEEDED",
+        "throughput_rows_per_sec": 1113172541.7
+      },
+      {
+        "session_name": "session_3",
+        "mapping_name": "mapping_3",
+        "start_time": "2026-03-02T20:18:08.200924",
+        "end_time": "2026-03-02T20:18:08.200927",
+        "duration_seconds": 0.0,
+        "src_success_rows": 4000,
+        "src_failed_rows": 0,
+        "tgt_success_rows": 4000,
+        "tgt_failed_rows": 0,
+        "total_trans_errors": 0,
+        "first_error_code": 0,
+        "first_error_msg": "",
+        "status": "SUCCEEDED",
+        "throughput_rows_per_sec": 1670843776.1
+      },
+      {
+        "session_name": "session_4",
+        "mapping_name": "mapping_4",
+        "start_time": "2026-03-02T20:18:08.200932",
+        "end_time": "2026-03-02T20:18:08.200934",
+        "duration_seconds": 0.0,
+        "src_success_rows": 5000,
+        "src_failed_rows": 0,
+        "tgt_success_rows": 5000,
+        "tgt_failed_rows": 0,
+        "total_trans_errors": 0,
+        "first_error_code": 0,
+        "first_error_msg": "",
+        "status": "SUCCEEDED",
+        "throughput_rows_per_sec": 1869158878.5
+      }
+    ]
+  }
+}
