@@ -1,0 +1,29 @@
+# PySpark Migration Dependencies
+# HHS BIIS Data Warehouse ETL System
+
+# Core
+pyspark>=3.4.0,<4.0.0
+
+# Oracle Database Connectivity
+cx_Oracle>=8.3.0
+jaydebeapi>=1.2.3
+
+# SFTP Transfers
+paramiko>=3.3.0
+
+# Orchestration
+apache-airflow>=2.7.0
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+pytest-mock>=3.11.0
+
+# Code Quality
+flake8>=6.1.0
+black>=23.9.0
+isort>=5.12.0
+mypy>=1.5.0
+
+# Utilities
+python-dotenv>=1.0.0
