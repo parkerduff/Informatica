@@ -1,0 +1,33 @@
+database:
+  driver: "com.microsoft.sqlserver.jdbc.SQLServerDriver"
+  host: "localhost"
+  port: 1433
+  name: "biis_dev"
+  schema: "dbo"
+  user: "sa"
+  password: "TestP@ssw0rd!"
+
+secrets:
+  provider: "local"
+
+notifications:
+  provider: "log"
+  recipients: "biis-dev@hhs.gov"
+
+paths:
+  landing: "/data/biis/dev/landing"
+  staging: "/data/biis/dev/staging"
+  archive: "/data/biis/dev/archive"
+
+sftp:
+  host: "localhost"
+  port: 2222
+  user: "testuser"
+  password: "testpass"
+  routes:
+    nih_cpm: "/outbound"
+    nih_les: "/outbound"
+    oig: "/outbound"
+    cdc: "/outbound"
+    fda: "/outbound"
+    afps: "/outbound"

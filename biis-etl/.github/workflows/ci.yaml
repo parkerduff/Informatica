@@ -1,0 +1,64 @@
+name: BIIS ETL CI - Full Validation
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+defaults:
+  run:
+    working-directory: biis-etl
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    services:
+      sqlserver:
+        image: mcr.microsoft.com/mssql/server:2019-latest
+        env:
+          SA_PASSWORD: "TestP@ssw0rd!"
+          ACCEPT_EULA: "Y"
+        ports: ["1433:1433"]
+        options: >-
+          --health-cmd "/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P 'TestP@ssw0rd!' -Q 'SELECT 1' -C"
+          --health-interval 10s
+          --health-retries 10
+          --health-start-period 30s
+      sftp:
+        image: atmoz/sftp
+        ports: ["2222:22"]
+        options: "testuser:testpass:::outbound"
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/setup-java@v4
+        with:
+          distribution: "temurin"
+          java-version: "11"
+      - name: Install unixODBC + msodbcsql18
+        run: |
+          sudo ACCEPT_EULA=Y apt-get update
+          sudo ACCEPT_EULA=Y apt-get install -y unixodbc unixodbc-dev
+          curl https://packages.microsoft.com/keys/microsoft.asc | sudo tee /etc/apt/trusted.gpg.d/microsoft.asc
+          curl https://packages.microsoft.com/config/ubuntu/22.04/prod.list | sudo tee /etc/apt/sources.list.d/mssql-release.list
+          sudo apt-get update
+          sudo ACCEPT_EULA=Y apt-get install -y msodbcsql18
+      - name: Full validation
+        run: |
+          make setup
+          make build
+          make lint
+          make db-seed
+          make run-all
+          make test
+          make validate
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-reports
+          path: biis-etl/reports/
