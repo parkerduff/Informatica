@@ -1,0 +1,1 @@
+[["EMPLID", "varchar2", 8, 0], ["EMPL_RCD", "number(p,s)", 2, 0], ["EFFDT", "date", 19, 0], ["EFFSEQ", "number(p,s)", 3, 0], ["EVENT_SUBMITTED_DT", "date", 19, 0], ["GVT_WIP_STATUS", "varchar2", 3, 0], ["NOA_CD", "varchar2", 3, 0], ["NOA_SUFFIX_CD", "varchar2", 1, 0], ["BIIS_EVENT_ID", "number(p,s)", 10, 0], ["LOAD_DATE", "date", 19, 0]]

@@ -1,0 +1,75 @@
+name: BIIS ETL CI - Full Validation
+
+on:
+  push:
+    branches: [main]
+    paths: ["biis-etl/**", ".github/workflows/biis-etl-ci.yml"]
+  pull_request:
+    paths: ["biis-etl/**", ".github/workflows/biis-etl-ci.yml"]
+
+defaults:
+  run:
+    working-directory: biis-etl
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    env:
+      SETUPTOOLS_USE_DISTUTILS: local
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: "temurin"
+          java-version: "11"
+
+      - name: Setup environment (venv + deps)
+        run: make setup
+
+      - name: Build & compile check
+        run: make build
+
+      - name: Lint (flake8 + mypy)
+        run: make lint
+
+      - name: Seed database (DDL + golden inputs)
+        run: make db-seed
+
+      - name: Run all jobs
+        run: make run-all
+
+      - name: Unit tests
+        run: make test-unit
+
+      - name: Functional tests
+        run: make test-functional
+
+      - name: Regression tests (golden dataset comparison)
+        run: make test-regression
+
+      - name: Performance tests
+        run: make test-performance
+
+      - name: Source-target reconciliation (zero-diff gate)
+        run: make validate
+
+      - name: Upload test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: biis-etl-reports
+          path: biis-etl/reports/
+          if-no-files-found: ignore
+
+  airflow-dags:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate Airflow DAGs parse (no import errors)
+        run: docker compose -f docker-compose.yml run --rm airflow

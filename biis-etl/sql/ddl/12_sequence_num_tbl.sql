@@ -1,0 +1,8 @@
+-- Auto-generated from utils.schemas for SQL Server
+IF OBJECT_ID('dbo.SEQUENCE_NUM_TBL', 'U') IS NOT NULL DROP TABLE dbo.SEQUENCE_NUM_TBL;
+GO
+CREATE TABLE SEQUENCE_NUM_TBL (
+    SEQ_NAME VARCHAR(30),
+    SEQ_VALUE BIGINT
+);
+GO
