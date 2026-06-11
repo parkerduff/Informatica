@@ -1,0 +1,91 @@
+name: BIIS ETL CI - Full Validation
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  full-validation:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: biis-etl
+    services:
+      sqlserver:
+        image: mcr.microsoft.com/mssql/server:2022-latest
+        env:
+          ACCEPT_EULA: "Y"
+          MSSQL_SA_PASSWORD: "TestP@ssw0rd!"
+        ports:
+          - 1433:1433
+        options: >-
+          --health-cmd "/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P 'TestP@ssw0rd!' -C -Q 'SELECT 1' || exit 1"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 10
+          --health-start-period 30s
+      sftp:
+        image: atmoz/sftp:alpine
+        ports:
+          - 2222:22
+        env:
+          SFTP_USERS: "testuser:testpass:::outbound"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Install ODBC Driver 18
+        run: |
+          curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --batch --yes --dearmor -o /usr/share/keyrings/microsoft-prod.gpg
+          echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft-prod.gpg] https://packages.microsoft.com/ubuntu/24.04/prod noble main" | sudo tee /etc/apt/sources.list.d/mssql-release.list
+          sudo apt-get update
+          sudo ACCEPT_EULA=Y apt-get install -y msodbcsql18 unixodbc-dev
+
+      - name: Provision SFTP host key
+        run: |
+          mkdir -p ~/.ssh
+          for i in $(seq 1 10); do
+            ssh-keyscan -p 2222 localhost >> ~/.ssh/known_hosts 2>/dev/null && break
+            sleep 3
+          done
+
+      - name: Setup
+        run: make setup
+
+      - name: Build
+        run: make build
+
+      - name: Lint
+        run: make lint
+
+      - name: Wait for database
+        run: venv/bin/python scripts/wait_for_db.py --timeout 180
+
+      - name: Apply DDL and seed golden data
+        run: make db-seed
+
+      - name: Run all jobs
+        run: make run-all
+
+      - name: Test
+        run: make test
+
+      - name: Validate (zero-diff reconciliation)
+        run: make validate
+
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reports
+          path: biis-etl/reports/

@@ -1,0 +1,214 @@
+{
+ "sources": {
+  "PAY_PERIOD": {
+   "dbtype": "Oracle",
+   "fields": [
+    {
+     "name": "PP_NUM",
+     "datatype": "number(p,s)",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "PRIMARY KEY",
+     "physicallength": "2",
+     "physicaloffset": "0"
+    },
+    {
+     "name": "PP_END_YEAR",
+     "datatype": "number(p,s)",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "PRIMARY KEY",
+     "physicallength": "4",
+     "physicaloffset": "2"
+    },
+    {
+     "name": "PP_START_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "19",
+     "physicaloffset": "6"
+    },
+    {
+     "name": "PP_END_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "19",
+     "physicaloffset": "25"
+    },
+    {
+     "name": "LV_NUM",
+     "datatype": "number(p,s)",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "2",
+     "physicaloffset": "44"
+    },
+    {
+     "name": "LV_YEAR",
+     "datatype": "number(p,s)",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "4",
+     "physicaloffset": "46"
+    },
+    {
+     "name": "PAY_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "19",
+     "physicaloffset": "50"
+    },
+    {
+     "name": "CURR_PP_FLAG",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "69"
+    },
+    {
+     "name": "HOLIDAY_1",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "19",
+     "physicaloffset": "70"
+    },
+    {
+     "name": "HOLIDAY_2",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "19",
+     "physicaloffset": "89"
+    }
+   ]
+  }
+ },
+ "targets": {
+  "PAY_PERIOD_VERIFY_FILE": {
+   "dbtype": "Flat File",
+   "fields": [
+    {
+     "name": "SUBJECT",
+     "datatype": "string",
+     "precision": "100",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    }
+   ]
+  },
+  "PAY_PERIOD_MESSAGE_FILE": {
+   "dbtype": "Flat File",
+   "fields": [
+    {
+     "name": "SUBJECT",
+     "datatype": "string",
+     "precision": "100",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "MESSAGE",
+     "datatype": "string",
+     "precision": "300",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    }
+   ]
+  },
+  "PAY_PERIOD": {
+   "dbtype": "Oracle",
+   "fields": [
+    {
+     "name": "PP_NUM",
+     "datatype": "number(p,s)",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "PRIMARY KEY"
+    },
+    {
+     "name": "PP_END_YEAR",
+     "datatype": "number(p,s)",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "PRIMARY KEY"
+    },
+    {
+     "name": "PP_START_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PP_END_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "LV_NUM",
+     "datatype": "number(p,s)",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "LV_YEAR",
+     "datatype": "number(p,s)",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PAY_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CURR_PP_FLAG",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    }
+   ]
+  }
+ }
+}
