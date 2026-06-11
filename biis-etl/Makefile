@@ -15,7 +15,10 @@ MYPY        := $(VENV)/bin/mypy
 SPARK_SUBMIT := $(VENV)/bin/spark-submit
 
 BIIS_ENV    ?= test
-RUN_DATE    ?= $(shell date +%F)
+# Fixed, golden-aligned run date so the pipeline is deterministic regardless of
+# the wall-clock (pay period 12/2026 -- the seeded "current" period -- spans
+# 2026-06-07..2026-06-20). Override on the CLI for ad-hoc runs.
+RUN_DATE    ?= 2026-06-11
 GOLDEN_DIR  := tests/fixtures/golden
 REPORT_DIR  := reports
 
@@ -130,7 +133,12 @@ test-performance: setup
 # ---------------------------------------------------------------------------
 # Reconciliation - the final zero-deprecation gate
 # ---------------------------------------------------------------------------
+# The final gate re-establishes a clean golden state (the functional and
+# performance suites intentionally mutate the database) and re-runs every job
+# once, so reconciliation is deterministic no matter what ran before it.
 validate: setup
+	$(MAKE) db-seed
+	$(MAKE) run-all
 	$(PY) scripts/reconcile.py --env $(BIIS_ENV) --report-dir $(REPORT_DIR)/reconciliation
 	$(PY) scripts/check_reconciliation.py --report-dir $(REPORT_DIR)/reconciliation
 
