@@ -56,6 +56,15 @@ make report       # generate reports/migration_validation_report.html
 - Python 3.9+, Java 8/11/17 (for PySpark)
 - Microsoft ODBC Driver 18 for SQL Server (`pyodbc`)
 
+Install the ODBC driver on Ubuntu 22.04:
+
+```bash
+curl -sSL -o /tmp/p.deb https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb
+sudo dpkg -i /tmp/p.deb
+sudo apt-get update
+sudo ACCEPT_EULA=Y apt-get install -y msodbcsql18
+```
+
 ## Migration notes
 
 - **I/O strategy**: reads are materialised into Spark DataFrames and all
