@@ -2,7 +2,7 @@ name: BIIS ETL CI - Full Validation
 
 on:
   push:
-    branches: [main]
+    branches: [master, main]
     paths: ["biis-etl/**", ".github/workflows/biis-etl-ci.yml"]
   pull_request:
     paths: ["biis-etl/**", ".github/workflows/biis-etl-ci.yml"]
