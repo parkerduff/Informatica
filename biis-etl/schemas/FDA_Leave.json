@@ -1,0 +1,848 @@
+{
+ "sources": {
+  "HI_GENERIC_SRC_TBL": {
+   "dbtype": "Oracle",
+   "fields": [
+    {
+     "name": "ID",
+     "datatype": "number(p,s)",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "10",
+     "physicaloffset": "0"
+    }
+   ]
+  },
+  "HI_PM_FDA_TATRAN_TBL": {
+   "dbtype": "Oracle",
+   "fields": [
+    {
+     "name": "FDA_BATCH_ID",
+     "datatype": "number(p,s)",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "PRIMARY KEY",
+     "physicallength": "19",
+     "physicaloffset": "0"
+    },
+    {
+     "name": "FDA_TK_NO",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "PRIMARY KEY",
+     "physicallength": "10",
+     "physicaloffset": "19"
+    },
+    {
+     "name": "FDA_EMP_ID",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "PRIMARY KEY",
+     "physicallength": "10",
+     "physicaloffset": "29"
+    },
+    {
+     "name": "FDA_PP_YEAR",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "PRIMARY KEY",
+     "physicallength": "10",
+     "physicaloffset": "39"
+    },
+    {
+     "name": "FDA_PP_NUM",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "PRIMARY KEY",
+     "physicallength": "10",
+     "physicaloffset": "49"
+    },
+    {
+     "name": "FDA_REC_TYPE",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "PRIMARY KEY",
+     "physicallength": "10",
+     "physicaloffset": "59"
+    },
+    {
+     "name": "FDA_SEQ",
+     "datatype": "number(p,s)",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "PRIMARY KEY",
+     "physicallength": "19",
+     "physicaloffset": "69"
+    },
+    {
+     "name": "FDA_DATA",
+     "datatype": "varchar2",
+     "precision": "200",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "200",
+     "physicaloffset": "88"
+    }
+   ]
+  },
+  "ERROR_TBL": {
+   "dbtype": "Oracle",
+   "fields": [
+    {
+     "name": "PROCESS_NAME",
+     "datatype": "varchar2",
+     "precision": "100",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "100",
+     "physicaloffset": "0"
+    },
+    {
+     "name": "ERROR_MESSAGE",
+     "datatype": "varchar2",
+     "precision": "200",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "200",
+     "physicaloffset": "100"
+    },
+    {
+     "name": "SOURCE_KEY",
+     "datatype": "varchar2",
+     "precision": "50",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "50",
+     "physicaloffset": "300"
+    },
+    {
+     "name": "ERROR_DATE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "19",
+     "physicaloffset": "350"
+    },
+    {
+     "name": "PP_END_YEAR",
+     "datatype": "number(p,s)",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "4",
+     "physicaloffset": "369"
+    },
+    {
+     "name": "PP_NUM",
+     "datatype": "number(p,s)",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "2",
+     "physicaloffset": "373"
+    },
+    {
+     "name": "CYCLE_ID",
+     "datatype": "number(p,s)",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "3",
+     "physicaloffset": "375"
+    },
+    {
+     "name": "ERROR_CODE",
+     "datatype": "varchar2",
+     "precision": "50",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "50",
+     "physicaloffset": "378"
+    }
+   ]
+  },
+  "CPM_CYCLE_TBL": {
+   "dbtype": "Oracle",
+   "fields": [
+    {
+     "name": "PROCESS_NAME",
+     "datatype": "varchar2",
+     "precision": "30",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "PRIMARY KEY",
+     "physicallength": "30",
+     "physicaloffset": "0"
+    },
+    {
+     "name": "PP_END_YEAR",
+     "datatype": "number(p,s)",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "4",
+     "physicaloffset": "30"
+    },
+    {
+     "name": "PP_NUM",
+     "datatype": "number(p,s)",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "2",
+     "physicaloffset": "34"
+    },
+    {
+     "name": "PP_END_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "19",
+     "physicaloffset": "36"
+    },
+    {
+     "name": "CYCLE_ID",
+     "datatype": "number(p,s)",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "3",
+     "physicaloffset": "55"
+    }
+   ]
+  },
+  "HI_PM_FDA_TATRAN_FLAT_FILE_NAME": {
+   "dbtype": "Flat File",
+   "fields": [
+    {
+     "name": "FDA_TK_NO",
+     "datatype": "string",
+     "precision": "5",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "5",
+     "physicaloffset": "0"
+    },
+    {
+     "name": "FDA_EMP_ID",
+     "datatype": "string",
+     "precision": "9",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "9",
+     "physicaloffset": "5"
+    },
+    {
+     "name": "FDA_PP_YEAR",
+     "datatype": "string",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "4",
+     "physicaloffset": "14"
+    },
+    {
+     "name": "FDA_PP_NUM",
+     "datatype": "string",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "2",
+     "physicaloffset": "18"
+    },
+    {
+     "name": "FDA_REC_TYPE",
+     "datatype": "string",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "2",
+     "physicaloffset": "20"
+    },
+    {
+     "name": "FDA_DATA",
+     "datatype": "string",
+     "precision": "118",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "118",
+     "physicaloffset": "22"
+    },
+    {
+     "name": "CurrentlyProcessedFileName",
+     "datatype": "string",
+     "precision": "256",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "256",
+     "physicaloffset": "140"
+    }
+   ]
+  },
+  "HI_PM_FDA_TATRAN_FLAT": {
+   "dbtype": "Flat File",
+   "fields": [
+    {
+     "name": "FDA_TK_NO",
+     "datatype": "string",
+     "precision": "5",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "5",
+     "physicaloffset": "0"
+    },
+    {
+     "name": "FDA_EMP_ID",
+     "datatype": "string",
+     "precision": "9",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "9",
+     "physicaloffset": "5"
+    },
+    {
+     "name": "FDA_PP_YEAR",
+     "datatype": "string",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "4",
+     "physicaloffset": "14"
+    },
+    {
+     "name": "FDA_PP_NUM",
+     "datatype": "string",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "2",
+     "physicaloffset": "18"
+    },
+    {
+     "name": "FDA_REC_TYPE",
+     "datatype": "string",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "2",
+     "physicaloffset": "20"
+    },
+    {
+     "name": "FDA_DATA",
+     "datatype": "string",
+     "precision": "118",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "118",
+     "physicaloffset": "22"
+    }
+   ]
+  },
+  "PAY_PERIOD": {
+   "dbtype": "Oracle",
+   "fields": [
+    {
+     "name": "PP_NUM",
+     "datatype": "number(p,s)",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "PRIMARY KEY",
+     "physicallength": "2",
+     "physicaloffset": "0"
+    },
+    {
+     "name": "PP_END_YEAR",
+     "datatype": "number(p,s)",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "PRIMARY KEY",
+     "physicallength": "4",
+     "physicaloffset": "2"
+    },
+    {
+     "name": "PP_START_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "19",
+     "physicaloffset": "6"
+    },
+    {
+     "name": "PP_END_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "19",
+     "physicaloffset": "25"
+    },
+    {
+     "name": "LV_NUM",
+     "datatype": "number(p,s)",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "2",
+     "physicaloffset": "44"
+    },
+    {
+     "name": "LV_YEAR",
+     "datatype": "number(p,s)",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "4",
+     "physicaloffset": "46"
+    },
+    {
+     "name": "PAY_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "19",
+     "physicaloffset": "50"
+    },
+    {
+     "name": "CURR_PP_FLAG",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "69"
+    },
+    {
+     "name": "HOLIDAY_1",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "19",
+     "physicaloffset": "70"
+    },
+    {
+     "name": "HOLIDAY_2",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "19",
+     "physicaloffset": "89"
+    }
+   ]
+  }
+ },
+ "targets": {
+  "ERROR_TBL": {
+   "dbtype": "Oracle",
+   "fields": [
+    {
+     "name": "PROCESS_NAME",
+     "datatype": "varchar2",
+     "precision": "100",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "ERROR_MESSAGE",
+     "datatype": "varchar2",
+     "precision": "200",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SOURCE_KEY",
+     "datatype": "varchar2",
+     "precision": "50",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "ERROR_DATE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PP_END_YEAR",
+     "datatype": "number(p,s)",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PP_NUM",
+     "datatype": "number(p,s)",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CYCLE_ID",
+     "datatype": "number(p,s)",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "ERROR_CODE",
+     "datatype": "varchar2",
+     "precision": "50",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    }
+   ]
+  },
+  "HI_PM_FDA_TATRAN_FLAT": {
+   "dbtype": "Flat File",
+   "fields": [
+    {
+     "name": "FDA_TK_NO",
+     "datatype": "string",
+     "precision": "5",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "FDA_EMP_ID",
+     "datatype": "string",
+     "precision": "9",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "FDA_PP_YEAR",
+     "datatype": "string",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "FDA_PP_NUM",
+     "datatype": "string",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "FDA_REC_TYPE",
+     "datatype": "string",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "FDA_DATA",
+     "datatype": "string",
+     "precision": "114",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    }
+   ]
+  },
+  "CPM_FDA_CPM_PAY_PERIOD_FILE": {
+   "dbtype": "Flat File",
+   "fields": [
+    {
+     "name": "CPM_PAY_PERIOD",
+     "datatype": "string",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    }
+   ]
+  },
+  "GENERIC_TARGET_FILE": {
+   "dbtype": "Flat File",
+   "fields": [
+    {
+     "name": "ID",
+     "datatype": "number",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    }
+   ]
+  },
+  "FDA_EXTRACT_MESSAGE_FILE": {
+   "dbtype": "Flat File",
+   "fields": [
+    {
+     "name": "COUNT_DESC",
+     "datatype": "string",
+     "precision": "50",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "COUNT_VALUE",
+     "datatype": "number",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    }
+   ]
+  },
+  "COUNTER_TBL": {
+   "dbtype": "Oracle",
+   "fields": [
+    {
+     "name": "RUN_DATE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PROCESS_NAME",
+     "datatype": "varchar2",
+     "precision": "100",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "COUNTER_DESCRIPTION",
+     "datatype": "varchar2",
+     "precision": "200",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "COUNTER_VALUE",
+     "datatype": "number",
+     "precision": "15",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PP_END_YEAR",
+     "datatype": "number(p,s)",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PP_NUM",
+     "datatype": "number(p,s)",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CYCLE_ID",
+     "datatype": "number(p,s)",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    }
+   ]
+  },
+  "CPM_CYCLE_TBL": {
+   "dbtype": "Oracle",
+   "fields": [
+    {
+     "name": "PROCESS_NAME",
+     "datatype": "varchar2",
+     "precision": "30",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "PRIMARY KEY"
+    },
+    {
+     "name": "PP_END_YEAR",
+     "datatype": "number(p,s)",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PP_NUM",
+     "datatype": "number(p,s)",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PP_END_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CYCLE_ID",
+     "datatype": "number(p,s)",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    }
+   ]
+  },
+  "HI_PM_FDA_TATRAN_TBL": {
+   "dbtype": "Oracle",
+   "fields": [
+    {
+     "name": "FDA_BATCH_ID",
+     "datatype": "number(p,s)",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "PRIMARY KEY"
+    },
+    {
+     "name": "FDA_TK_NO",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "PRIMARY KEY"
+    },
+    {
+     "name": "FDA_EMP_ID",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "PRIMARY KEY"
+    },
+    {
+     "name": "FDA_PP_YEAR",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "PRIMARY KEY"
+    },
+    {
+     "name": "FDA_PP_NUM",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "PRIMARY KEY"
+    },
+    {
+     "name": "FDA_REC_TYPE",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "PRIMARY KEY"
+    },
+    {
+     "name": "FDA_SEQ",
+     "datatype": "number(p,s)",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "PRIMARY KEY"
+    },
+    {
+     "name": "FDA_DATA",
+     "datatype": "varchar2",
+     "precision": "200",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    }
+   ]
+  },
+  "CPM_FDA_PAY_PERIOD_FILE": {
+   "dbtype": "Flat File",
+   "fields": [
+    {
+     "name": "CPM_PAY_PERIOD",
+     "datatype": "string",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    }
+   ]
+  }
+ }
+}

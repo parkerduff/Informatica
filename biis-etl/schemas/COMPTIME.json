@@ -1,0 +1,456 @@
+{
+ "sources": {
+  "U0287D01": {
+   "dbtype": "Flat File",
+   "fields": [
+    {
+     "name": "SSN",
+     "datatype": "string",
+     "precision": "9",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "9",
+     "physicaloffset": "0"
+    },
+    {
+     "name": "NAME",
+     "datatype": "string",
+     "precision": "30",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "30",
+     "physicaloffset": "9"
+    },
+    {
+     "name": "CURRENT_ACCT",
+     "datatype": "string",
+     "precision": "6",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "6",
+     "physicaloffset": "39"
+    },
+    {
+     "name": "CURRENT_ORG",
+     "datatype": "string",
+     "precision": "7",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "7",
+     "physicaloffset": "45"
+    },
+    {
+     "name": "FLSA_STATUS",
+     "datatype": "string",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "52"
+    },
+    {
+     "name": "COMP_TIME_CUR_BAL",
+     "datatype": "number",
+     "precision": "8",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "8",
+     "physicaloffset": "53"
+    },
+    {
+     "name": "COMP_TIME_YEAR_EARNED",
+     "datatype": "number",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "4",
+     "physicaloffset": "61"
+    },
+    {
+     "name": "PP_END_DATE",
+     "datatype": "string",
+     "precision": "8",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "8",
+     "physicaloffset": "65"
+    },
+    {
+     "name": "DAILY_DATE_EARNED",
+     "datatype": "string",
+     "precision": "8",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "8",
+     "physicaloffset": "73"
+    },
+    {
+     "name": "COMP_TIME_RATE",
+     "datatype": "number",
+     "precision": "6",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "6",
+     "physicaloffset": "81"
+    },
+    {
+     "name": "COMP_TIME_HOURS",
+     "datatype": "number",
+     "precision": "8",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "8",
+     "physicaloffset": "87"
+    },
+    {
+     "name": "COMP_TIME_UNDEF",
+     "datatype": "number",
+     "precision": "6",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "6",
+     "physicaloffset": "95"
+    }
+   ]
+  },
+  "PAY_PERIOD": {
+   "dbtype": "Oracle",
+   "fields": [
+    {
+     "name": "PP_NUM",
+     "datatype": "number(p,s)",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "PRIMARY KEY",
+     "physicallength": "2",
+     "physicaloffset": "0"
+    },
+    {
+     "name": "PP_END_YEAR",
+     "datatype": "number(p,s)",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "PRIMARY KEY",
+     "physicallength": "4",
+     "physicaloffset": "2"
+    },
+    {
+     "name": "PP_START_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "19",
+     "physicaloffset": "6"
+    },
+    {
+     "name": "PP_END_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "19",
+     "physicaloffset": "25"
+    },
+    {
+     "name": "LV_NUM",
+     "datatype": "number(p,s)",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "2",
+     "physicaloffset": "44"
+    },
+    {
+     "name": "LV_YEAR",
+     "datatype": "number(p,s)",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "4",
+     "physicaloffset": "46"
+    },
+    {
+     "name": "PAY_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "19",
+     "physicaloffset": "50"
+    },
+    {
+     "name": "CURR_PP_FLAG",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "69"
+    },
+    {
+     "name": "HOLIDAY_1",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "19",
+     "physicaloffset": "70"
+    },
+    {
+     "name": "HOLIDAY_2",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "19",
+     "physicaloffset": "89"
+    }
+   ]
+  }
+ },
+ "targets": {
+  "COUNTER_TBL": {
+   "dbtype": "Oracle",
+   "fields": [
+    {
+     "name": "RUN_DATE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PROCESS_NAME",
+     "datatype": "varchar2",
+     "precision": "100",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "COUNTER_DESCRIPTION",
+     "datatype": "varchar2",
+     "precision": "200",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "COUNTER_VALUE",
+     "datatype": "number",
+     "precision": "15",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PP_END_YEAR",
+     "datatype": "number(p,s)",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PP_NUM",
+     "datatype": "number(p,s)",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CYCLE_ID",
+     "datatype": "number(p,s)",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    }
+   ]
+  },
+  "COMPTIME_MESSAGE_FILE": {
+   "dbtype": "Flat File",
+   "fields": [
+    {
+     "name": "SUBJECT",
+     "datatype": "string",
+     "precision": "100",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "MESSAGE",
+     "datatype": "string",
+     "precision": "300",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    }
+   ]
+  },
+  "COMP_TIME_DAILY_TBL": {
+   "dbtype": "Oracle",
+   "fields": [
+    {
+     "name": "PP_END_YEAR",
+     "datatype": "number(p,s)",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PP_NUM",
+     "datatype": "number(p,s)",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PP_YEAR_NUM",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SSN",
+     "datatype": "varchar2",
+     "precision": "9",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "NAME",
+     "datatype": "varchar2",
+     "precision": "30",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CURRENT_ACCT",
+     "datatype": "varchar2",
+     "precision": "6",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CURRENT_ORG",
+     "datatype": "varchar2",
+     "precision": "7",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "FLSA_STATUS",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "COMP_TIME_CUR_BAL",
+     "datatype": "number(p,s)",
+     "precision": "8",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "COMP_TIME_YEAR_EARNED",
+     "datatype": "number(p,s)",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PP_END_DATE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "DAILY_DATE_EARNED",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "COMP_TIME_RATE",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "COMP_TIME_HOURS",
+     "datatype": "number(p,s)",
+     "precision": "8",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "COMP_TIME_UNDEF",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    }
+   ]
+  },
+  "COMP_TIME_DATE_FILE": {
+   "dbtype": "Flat File",
+   "fields": [
+    {
+     "name": "PAY_PERIOD",
+     "datatype": "string",
+     "precision": "6",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    }
+   ]
+  }
+ }
+}

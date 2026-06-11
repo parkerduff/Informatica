@@ -1,0 +1,6363 @@
+{
+ "sources": {
+  "NWK_NEW_EHRP_ACTIONS_TBL": {
+   "dbtype": "Oracle",
+   "fields": [
+    {
+     "name": "EMPLID",
+     "datatype": "varchar2",
+     "precision": "11",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "11",
+     "physicaloffset": "0"
+    },
+    {
+     "name": "EMPL_RCD",
+     "datatype": "number(p,s)",
+     "precision": "38",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "38",
+     "physicaloffset": "11"
+    },
+    {
+     "name": "EFFDT",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "19",
+     "physicaloffset": "49"
+    },
+    {
+     "name": "EFFSEQ",
+     "datatype": "number(p,s)",
+     "precision": "38",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "38",
+     "physicaloffset": "68"
+    }
+   ]
+  },
+  "PS_GVT_JOB": {
+   "dbtype": "Oracle",
+   "fields": [
+    {
+     "name": "EMPLID",
+     "datatype": "varchar2",
+     "precision": "11",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "11",
+     "physicaloffset": "0"
+    },
+    {
+     "name": "EMPL_RCD",
+     "datatype": "number(p,s)",
+     "precision": "38",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "38",
+     "physicaloffset": "11"
+    },
+    {
+     "name": "EFFDT",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "19",
+     "physicaloffset": "49"
+    },
+    {
+     "name": "EFFSEQ",
+     "datatype": "number(p,s)",
+     "precision": "38",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "38",
+     "physicaloffset": "68"
+    },
+    {
+     "name": "DEPTID",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "10",
+     "physicaloffset": "106"
+    },
+    {
+     "name": "JOBCODE",
+     "datatype": "varchar2",
+     "precision": "6",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "6",
+     "physicaloffset": "116"
+    },
+    {
+     "name": "POSITION_NBR",
+     "datatype": "varchar2",
+     "precision": "8",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "8",
+     "physicaloffset": "122"
+    },
+    {
+     "name": "POSITION_OVERRIDE",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "130"
+    },
+    {
+     "name": "POSN_CHANGE_RECORD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "131"
+    },
+    {
+     "name": "EMPL_STATUS",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "132"
+    },
+    {
+     "name": "ACTION",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "3",
+     "physicaloffset": "133"
+    },
+    {
+     "name": "ACTION_DT",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "19",
+     "physicaloffset": "136"
+    },
+    {
+     "name": "ACTION_REASON",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "3",
+     "physicaloffset": "155"
+    },
+    {
+     "name": "LOCATION",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "10",
+     "physicaloffset": "158"
+    },
+    {
+     "name": "TAX_LOCATION_CD",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "10",
+     "physicaloffset": "168"
+    },
+    {
+     "name": "JOB_ENTRY_DT",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "19",
+     "physicaloffset": "178"
+    },
+    {
+     "name": "DEPT_ENTRY_DT",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "19",
+     "physicaloffset": "197"
+    },
+    {
+     "name": "POSITION_ENTRY_DT",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "19",
+     "physicaloffset": "216"
+    },
+    {
+     "name": "SHIFT",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "235"
+    },
+    {
+     "name": "REG_TEMP",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "236"
+    },
+    {
+     "name": "FULL_PART_TIME",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "237"
+    },
+    {
+     "name": "COMPANY",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "3",
+     "physicaloffset": "238"
+    },
+    {
+     "name": "PAYGROUP",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "3",
+     "physicaloffset": "241"
+    },
+    {
+     "name": "BAS_GROUP_ID",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "3",
+     "physicaloffset": "244"
+    },
+    {
+     "name": "ELIG_CONFIG1",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "10",
+     "physicaloffset": "247"
+    },
+    {
+     "name": "ELIG_CONFIG2",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "10",
+     "physicaloffset": "257"
+    },
+    {
+     "name": "ELIG_CONFIG3",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "10",
+     "physicaloffset": "267"
+    },
+    {
+     "name": "ELIG_CONFIG4",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "10",
+     "physicaloffset": "277"
+    },
+    {
+     "name": "ELIG_CONFIG5",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "10",
+     "physicaloffset": "287"
+    },
+    {
+     "name": "ELIG_CONFIG6",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "10",
+     "physicaloffset": "297"
+    },
+    {
+     "name": "ELIG_CONFIG7",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "10",
+     "physicaloffset": "307"
+    },
+    {
+     "name": "ELIG_CONFIG8",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "10",
+     "physicaloffset": "317"
+    },
+    {
+     "name": "ELIG_CONFIG9",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "10",
+     "physicaloffset": "327"
+    },
+    {
+     "name": "BEN_STATUS",
+     "datatype": "varchar2",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "4",
+     "physicaloffset": "337"
+    },
+    {
+     "name": "BAS_ACTION",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "3",
+     "physicaloffset": "341"
+    },
+    {
+     "name": "COBRA_ACTION",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "3",
+     "physicaloffset": "344"
+    },
+    {
+     "name": "EMPL_TYPE",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "347"
+    },
+    {
+     "name": "HOLIDAY_SCHEDULE",
+     "datatype": "varchar2",
+     "precision": "6",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "6",
+     "physicaloffset": "348"
+    },
+    {
+     "name": "STD_HOURS",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "2",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "6",
+     "physicaloffset": "354"
+    },
+    {
+     "name": "STD_HRS_FREQUENCY",
+     "datatype": "varchar2",
+     "precision": "5",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "5",
+     "physicaloffset": "360"
+    },
+    {
+     "name": "OFFICER_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "365"
+    },
+    {
+     "name": "EMPL_CLASS",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "3",
+     "physicaloffset": "366"
+    },
+    {
+     "name": "SAL_ADMIN_PLAN",
+     "datatype": "varchar2",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "4",
+     "physicaloffset": "369"
+    },
+    {
+     "name": "GRADE",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "3",
+     "physicaloffset": "373"
+    },
+    {
+     "name": "GRADE_ENTRY_DT",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "19",
+     "physicaloffset": "376"
+    },
+    {
+     "name": "STEP",
+     "datatype": "number(p,s)",
+     "precision": "38",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "38",
+     "physicaloffset": "395"
+    },
+    {
+     "name": "STEP_ENTRY_DT",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "19",
+     "physicaloffset": "433"
+    },
+    {
+     "name": "GL_PAY_TYPE",
+     "datatype": "varchar2",
+     "precision": "6",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "6",
+     "physicaloffset": "452"
+    },
+    {
+     "name": "ACCT_CD",
+     "datatype": "varchar2",
+     "precision": "25",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "25",
+     "physicaloffset": "458"
+    },
+    {
+     "name": "EARNS_DIST_TYPE",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "483"
+    },
+    {
+     "name": "COMP_FREQUENCY",
+     "datatype": "varchar2",
+     "precision": "5",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "5",
+     "physicaloffset": "484"
+    },
+    {
+     "name": "COMPRATE",
+     "datatype": "number(p,s)",
+     "precision": "18",
+     "scale": "6",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "18",
+     "physicaloffset": "489"
+    },
+    {
+     "name": "CHANGE_AMT",
+     "datatype": "number(p,s)",
+     "precision": "18",
+     "scale": "6",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "18",
+     "physicaloffset": "507"
+    },
+    {
+     "name": "CHANGE_PCT",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "3",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "6",
+     "physicaloffset": "525"
+    },
+    {
+     "name": "ANNUAL_RT",
+     "datatype": "number(p,s)",
+     "precision": "18",
+     "scale": "3",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "18",
+     "physicaloffset": "531"
+    },
+    {
+     "name": "MONTHLY_RT",
+     "datatype": "number(p,s)",
+     "precision": "18",
+     "scale": "3",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "18",
+     "physicaloffset": "549"
+    },
+    {
+     "name": "DAILY_RT",
+     "datatype": "number(p,s)",
+     "precision": "18",
+     "scale": "3",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "18",
+     "physicaloffset": "567"
+    },
+    {
+     "name": "HOURLY_RT",
+     "datatype": "number(p,s)",
+     "precision": "18",
+     "scale": "6",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "18",
+     "physicaloffset": "585"
+    },
+    {
+     "name": "ANNL_BENEF_BASE_RT",
+     "datatype": "number(p,s)",
+     "precision": "18",
+     "scale": "3",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "18",
+     "physicaloffset": "603"
+    },
+    {
+     "name": "SHIFT_RT",
+     "datatype": "number(p,s)",
+     "precision": "18",
+     "scale": "6",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "18",
+     "physicaloffset": "621"
+    },
+    {
+     "name": "SHIFT_FACTOR",
+     "datatype": "number(p,s)",
+     "precision": "4",
+     "scale": "3",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "4",
+     "physicaloffset": "639"
+    },
+    {
+     "name": "CURRENCY_CD",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "3",
+     "physicaloffset": "643"
+    },
+    {
+     "name": "BUSINESS_UNIT",
+     "datatype": "varchar2",
+     "precision": "5",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "5",
+     "physicaloffset": "646"
+    },
+    {
+     "name": "SETID_DEPT",
+     "datatype": "varchar2",
+     "precision": "5",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "5",
+     "physicaloffset": "651"
+    },
+    {
+     "name": "SETID_JOBCODE",
+     "datatype": "varchar2",
+     "precision": "5",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "5",
+     "physicaloffset": "656"
+    },
+    {
+     "name": "SETID_LOCATION",
+     "datatype": "varchar2",
+     "precision": "5",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "5",
+     "physicaloffset": "661"
+    },
+    {
+     "name": "SETID_SALARY",
+     "datatype": "varchar2",
+     "precision": "5",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "5",
+     "physicaloffset": "666"
+    },
+    {
+     "name": "REG_REGION",
+     "datatype": "varchar2",
+     "precision": "5",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "5",
+     "physicaloffset": "671"
+    },
+    {
+     "name": "DIRECTLY_TIPPED",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "676"
+    },
+    {
+     "name": "FLSA_STATUS",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "677"
+    },
+    {
+     "name": "EEO_CLASS",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "678"
+    },
+    {
+     "name": "FUNCTION_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "2",
+     "physicaloffset": "679"
+    },
+    {
+     "name": "TARIFF_GER",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "2",
+     "physicaloffset": "681"
+    },
+    {
+     "name": "TARIFF_AREA_GER",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "3",
+     "physicaloffset": "683"
+    },
+    {
+     "name": "PERFORM_GROUP_GER",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "2",
+     "physicaloffset": "686"
+    },
+    {
+     "name": "LABOR_TYPE_GER",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "688"
+    },
+    {
+     "name": "SPK_COMM_ID_GER",
+     "datatype": "varchar2",
+     "precision": "9",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "9",
+     "physicaloffset": "689"
+    },
+    {
+     "name": "HOURLY_RT_FRA",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "3",
+     "physicaloffset": "698"
+    },
+    {
+     "name": "ACCDNT_CD_FRA",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "701"
+    },
+    {
+     "name": "VALUE_1_FRA",
+     "datatype": "varchar2",
+     "precision": "5",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "5",
+     "physicaloffset": "702"
+    },
+    {
+     "name": "VALUE_2_FRA",
+     "datatype": "varchar2",
+     "precision": "5",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "5",
+     "physicaloffset": "707"
+    },
+    {
+     "name": "VALUE_3_FRA",
+     "datatype": "varchar2",
+     "precision": "5",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "5",
+     "physicaloffset": "712"
+    },
+    {
+     "name": "VALUE_4_FRA",
+     "datatype": "varchar2",
+     "precision": "5",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "5",
+     "physicaloffset": "717"
+    },
+    {
+     "name": "VALUE_5_FRA",
+     "datatype": "varchar2",
+     "precision": "5",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "5",
+     "physicaloffset": "722"
+    },
+    {
+     "name": "CTG_RATE",
+     "datatype": "number(p,s)",
+     "precision": "38",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "38",
+     "physicaloffset": "727"
+    },
+    {
+     "name": "PAID_HOURS",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "2",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "6",
+     "physicaloffset": "765"
+    },
+    {
+     "name": "PAID_FTE",
+     "datatype": "number(p,s)",
+     "precision": "7",
+     "scale": "6",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "7",
+     "physicaloffset": "771"
+    },
+    {
+     "name": "PAID_HRS_FREQUENCY",
+     "datatype": "varchar2",
+     "precision": "5",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "5",
+     "physicaloffset": "778"
+    },
+    {
+     "name": "GVT_EFFDT",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "19",
+     "physicaloffset": "783"
+    },
+    {
+     "name": "GVT_EFFDT_PROPOSED",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "19",
+     "physicaloffset": "802"
+    },
+    {
+     "name": "GVT_TRANS_NBR",
+     "datatype": "number(p,s)",
+     "precision": "38",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "38",
+     "physicaloffset": "821"
+    },
+    {
+     "name": "GVT_TRANS_NBR_SEQ",
+     "datatype": "number(p,s)",
+     "precision": "38",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "38",
+     "physicaloffset": "859"
+    },
+    {
+     "name": "GVT_WIP_STATUS",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "3",
+     "physicaloffset": "897"
+    },
+    {
+     "name": "GVT_STATUS_TYPE",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "3",
+     "physicaloffset": "900"
+    },
+    {
+     "name": "GVT_NOA_CODE",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "3",
+     "physicaloffset": "903"
+    },
+    {
+     "name": "GVT_LEG_AUTH_1",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "3",
+     "physicaloffset": "906"
+    },
+    {
+     "name": "GVT_PAR_AUTH_D1",
+     "datatype": "varchar2",
+     "precision": "25",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "25",
+     "physicaloffset": "909"
+    },
+    {
+     "name": "GVT_PAR_AUTH_D1_2",
+     "datatype": "varchar2",
+     "precision": "25",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "25",
+     "physicaloffset": "934"
+    },
+    {
+     "name": "GVT_LEG_AUTH_2",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "3",
+     "physicaloffset": "959"
+    },
+    {
+     "name": "GVT_PAR_AUTH_D2",
+     "datatype": "varchar2",
+     "precision": "25",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "25",
+     "physicaloffset": "962"
+    },
+    {
+     "name": "GVT_PAR_AUTH_D2_2",
+     "datatype": "varchar2",
+     "precision": "25",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "25",
+     "physicaloffset": "987"
+    },
+    {
+     "name": "GVT_PAR_NTE_DATE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "19",
+     "physicaloffset": "1012"
+    },
+    {
+     "name": "GVT_WORK_SCHED",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1031"
+    },
+    {
+     "name": "GVT_SUB_AGENCY",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "2",
+     "physicaloffset": "1032"
+    },
+    {
+     "name": "GVT_ELIG_FEHB",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "3",
+     "physicaloffset": "1034"
+    },
+    {
+     "name": "GVT_FEHB_DT",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "19",
+     "physicaloffset": "1037"
+    },
+    {
+     "name": "GVT_PAY_RATE_DETER",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1056"
+    },
+    {
+     "name": "GVT_STEP",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "2",
+     "physicaloffset": "1057"
+    },
+    {
+     "name": "GVT_RTND_PAY_PLAN",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "2",
+     "physicaloffset": "1059"
+    },
+    {
+     "name": "GVT_RTND_SAL_PLAN",
+     "datatype": "varchar2",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "4",
+     "physicaloffset": "1061"
+    },
+    {
+     "name": "GVT_RTND_GRADE",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "3",
+     "physicaloffset": "1065"
+    },
+    {
+     "name": "GVT_RTND_STEP",
+     "datatype": "number(p,s)",
+     "precision": "38",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "38",
+     "physicaloffset": "1068"
+    },
+    {
+     "name": "GVT_RTND_GVT_STEP",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "2",
+     "physicaloffset": "1106"
+    },
+    {
+     "name": "GVT_PAY_BASIS",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "2",
+     "physicaloffset": "1108"
+    },
+    {
+     "name": "GVT_COMPRATE",
+     "datatype": "number(p,s)",
+     "precision": "18",
+     "scale": "6",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "18",
+     "physicaloffset": "1110"
+    },
+    {
+     "name": "GVT_LOCALITY_ADJ",
+     "datatype": "number(p,s)",
+     "precision": "8",
+     "scale": "2",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "8",
+     "physicaloffset": "1128"
+    },
+    {
+     "name": "GVT_BIWEEKLY_RT",
+     "datatype": "number(p,s)",
+     "precision": "9",
+     "scale": "2",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "9",
+     "physicaloffset": "1136"
+    },
+    {
+     "name": "GVT_DAILY_RT",
+     "datatype": "number(p,s)",
+     "precision": "9",
+     "scale": "2",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "9",
+     "physicaloffset": "1145"
+    },
+    {
+     "name": "GVT_HRLY_RT_NO_LOC",
+     "datatype": "number(p,s)",
+     "precision": "18",
+     "scale": "6",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "18",
+     "physicaloffset": "1154"
+    },
+    {
+     "name": "GVT_DLY_RT_NO_LOC",
+     "datatype": "number(p,s)",
+     "precision": "9",
+     "scale": "2",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "9",
+     "physicaloffset": "1172"
+    },
+    {
+     "name": "GVT_BW_RT_NO_LOC",
+     "datatype": "number(p,s)",
+     "precision": "9",
+     "scale": "2",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "9",
+     "physicaloffset": "1181"
+    },
+    {
+     "name": "GVT_MNLY_RT_NO_LOC",
+     "datatype": "number(p,s)",
+     "precision": "18",
+     "scale": "3",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "18",
+     "physicaloffset": "1190"
+    },
+    {
+     "name": "GVT_ANNL_RT_NO_LOC",
+     "datatype": "number(p,s)",
+     "precision": "18",
+     "scale": "3",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "18",
+     "physicaloffset": "1208"
+    },
+    {
+     "name": "GVT_XFER_FROM_AGCY",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "2",
+     "physicaloffset": "1226"
+    },
+    {
+     "name": "GVT_XFER_TO_AGCY",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "2",
+     "physicaloffset": "1228"
+    },
+    {
+     "name": "GVT_RETIRE_PLAN",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "2",
+     "physicaloffset": "1230"
+    },
+    {
+     "name": "GVT_ANN_IND",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1232"
+    },
+    {
+     "name": "GVT_FEGLI",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "2",
+     "physicaloffset": "1233"
+    },
+    {
+     "name": "GVT_FEGLI_LIVING",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1235"
+    },
+    {
+     "name": "GVT_LIVING_AMT",
+     "datatype": "number(p,s)",
+     "precision": "38",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "38",
+     "physicaloffset": "1236"
+    },
+    {
+     "name": "GVT_ANNUITY_OFFSET",
+     "datatype": "number(p,s)",
+     "precision": "10",
+     "scale": "2",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "10",
+     "physicaloffset": "1274"
+    },
+    {
+     "name": "GVT_CSRS_FROZN_SVC",
+     "datatype": "varchar2",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "4",
+     "physicaloffset": "1284"
+    },
+    {
+     "name": "GVT_PREV_RET_COVRG",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1288"
+    },
+    {
+     "name": "GVT_FERS_COVERAGE",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1289"
+    },
+    {
+     "name": "GVT_TYPE_OF_APPT",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "2",
+     "physicaloffset": "1290"
+    },
+    {
+     "name": "GVT_POI",
+     "datatype": "varchar2",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "4",
+     "physicaloffset": "1292"
+    },
+    {
+     "name": "GVT_POSN_OCCUPIED",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1296"
+    },
+    {
+     "name": "GVT_CONT_EMPLID",
+     "datatype": "varchar2",
+     "precision": "11",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "11",
+     "physicaloffset": "1297"
+    },
+    {
+     "name": "GVT_ROUTE_NEXT",
+     "datatype": "varchar2",
+     "precision": "11",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "11",
+     "physicaloffset": "1308"
+    },
+    {
+     "name": "GVT_CHANGE_FLAG",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1319"
+    },
+    {
+     "name": "GVT_TSP_UPD_IND",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1320"
+    },
+    {
+     "name": "GVT_PI_UPD_IND",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1321"
+    },
+    {
+     "name": "GVT_SF52_NBR",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "10",
+     "physicaloffset": "1322"
+    },
+    {
+     "name": "GVT_S113G_CEILING",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1332"
+    },
+    {
+     "name": "GVT_LEO_POSITION",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1333"
+    },
+    {
+     "name": "GVT_ANNUIT_COM_DT",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "19",
+     "physicaloffset": "1334"
+    },
+    {
+     "name": "GVT_BASIC_LIFE_RED",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "2",
+     "physicaloffset": "1353"
+    },
+    {
+     "name": "GVT_DED_PRORT_DT",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "19",
+     "physicaloffset": "1355"
+    },
+    {
+     "name": "GVT_FEGLI_BASC_PCT",
+     "datatype": "number(p,s)",
+     "precision": "7",
+     "scale": "6",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "7",
+     "physicaloffset": "1374"
+    },
+    {
+     "name": "GVT_FEGLI_OPT_PCT",
+     "datatype": "number(p,s)",
+     "precision": "7",
+     "scale": "6",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "7",
+     "physicaloffset": "1381"
+    },
+    {
+     "name": "GVT_FEHB_PCT",
+     "datatype": "number(p,s)",
+     "precision": "7",
+     "scale": "6",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "7",
+     "physicaloffset": "1388"
+    },
+    {
+     "name": "GVT_RETRO_FLAG",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1395"
+    },
+    {
+     "name": "GVT_RETRO_DED_FLAG",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1396"
+    },
+    {
+     "name": "GVT_RETRO_JOB_FLAG",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1397"
+    },
+    {
+     "name": "GVT_RETRO_BSE_FLAG",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1398"
+    },
+    {
+     "name": "GVT_OTH_PAY_CHG",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1399"
+    },
+    {
+     "name": "GVT_DETL_POSN_NBR",
+     "datatype": "varchar2",
+     "precision": "8",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "8",
+     "physicaloffset": "1400"
+    },
+    {
+     "name": "ANNL_BEN_BASE_OVRD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1408"
+    },
+    {
+     "name": "BENEFIT_PROGRAM",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "3",
+     "physicaloffset": "1409"
+    },
+    {
+     "name": "UPDATE_PAYROLL",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1412"
+    },
+    {
+     "name": "GVT_PAY_PLAN",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "2",
+     "physicaloffset": "1413"
+    },
+    {
+     "name": "GVT_PAY_FLAG",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1415"
+    },
+    {
+     "name": "GVT_NID_CHANGE",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1416"
+    },
+    {
+     "name": "UNION_FULL_PART",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1417"
+    },
+    {
+     "name": "UNION_POS",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1418"
+    },
+    {
+     "name": "MATRICULA_NBR",
+     "datatype": "number(p,s)",
+     "precision": "38",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "38",
+     "physicaloffset": "1419"
+    },
+    {
+     "name": "SOC_SEC_RISK_CODE",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "3",
+     "physicaloffset": "1457"
+    },
+    {
+     "name": "UNION_FEE_AMOUNT",
+     "datatype": "number(p,s)",
+     "precision": "8",
+     "scale": "2",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "8",
+     "physicaloffset": "1460"
+    },
+    {
+     "name": "UNION_FEE_START_DT",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "19",
+     "physicaloffset": "1468"
+    },
+    {
+     "name": "UNION_FEE_END_DT",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "19",
+     "physicaloffset": "1487"
+    },
+    {
+     "name": "EXEMPT_JOB_LBR",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1506"
+    },
+    {
+     "name": "EXEMPT_HOURS_MONTH",
+     "datatype": "number(p,s)",
+     "precision": "38",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "38",
+     "physicaloffset": "1507"
+    },
+    {
+     "name": "WRKS_CNCL_FUNCTION",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1545"
+    },
+    {
+     "name": "INTERCTR_WRKS_CNCL",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1546"
+    },
+    {
+     "name": "CURRENCY_CD1",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "3",
+     "physicaloffset": "1547"
+    },
+    {
+     "name": "PAY_UNION_FEE",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1550"
+    },
+    {
+     "name": "UNION_CD",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "3",
+     "physicaloffset": "1551"
+    },
+    {
+     "name": "BARG_UNIT",
+     "datatype": "varchar2",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "4",
+     "physicaloffset": "1554"
+    },
+    {
+     "name": "UNION_SENIORITY_DT",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "19",
+     "physicaloffset": "1558"
+    },
+    {
+     "name": "ENTRY_DATE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "19",
+     "physicaloffset": "1577"
+    },
+    {
+     "name": "LABOR_AGREEMENT",
+     "datatype": "varchar2",
+     "precision": "6",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "6",
+     "physicaloffset": "1596"
+    },
+    {
+     "name": "EMPL_CTG",
+     "datatype": "varchar2",
+     "precision": "6",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "6",
+     "physicaloffset": "1602"
+    },
+    {
+     "name": "EMPL_CTG_L1",
+     "datatype": "varchar2",
+     "precision": "6",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "6",
+     "physicaloffset": "1608"
+    },
+    {
+     "name": "EMPL_CTG_L2",
+     "datatype": "varchar2",
+     "precision": "6",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "6",
+     "physicaloffset": "1614"
+    },
+    {
+     "name": "SETID_LBR_AGRMNT",
+     "datatype": "varchar2",
+     "precision": "5",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "5",
+     "physicaloffset": "1620"
+    },
+    {
+     "name": "WPP_STOP_FLAG",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1625"
+    },
+    {
+     "name": "LABOR_FACILITY_ID",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "10",
+     "physicaloffset": "1626"
+    },
+    {
+     "name": "LBR_FAC_ENTRY_DT",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "19",
+     "physicaloffset": "1636"
+    },
+    {
+     "name": "LAYOFF_EXEMPT_FLAG",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1655"
+    },
+    {
+     "name": "LAYOFF_EXEMPT_RSN",
+     "datatype": "varchar2",
+     "precision": "11",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "11",
+     "physicaloffset": "1656"
+    },
+    {
+     "name": "GP_PAYGROUP",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "10",
+     "physicaloffset": "1667"
+    },
+    {
+     "name": "GP_DFLT_ELIG_GRP",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1677"
+    },
+    {
+     "name": "GP_ELIG_GRP",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "10",
+     "physicaloffset": "1678"
+    },
+    {
+     "name": "GP_DFLT_CURRTTYP",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1688"
+    },
+    {
+     "name": "CUR_RT_TYPE",
+     "datatype": "varchar2",
+     "precision": "5",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "5",
+     "physicaloffset": "1689"
+    },
+    {
+     "name": "GP_DFLT_EXRTDT",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1694"
+    },
+    {
+     "name": "GP_ASOF_DT_EXG_RT",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1695"
+    },
+    {
+     "name": "ADDS_TO_FTE_ACTUAL",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1696"
+    },
+    {
+     "name": "CLASS_INDC",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1697"
+    },
+    {
+     "name": "ENCUMB_OVERRIDE",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1698"
+    },
+    {
+     "name": "FICA_STATUS_EE",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1699"
+    },
+    {
+     "name": "FTE",
+     "datatype": "number(p,s)",
+     "precision": "7",
+     "scale": "6",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "7",
+     "physicaloffset": "1700"
+    },
+    {
+     "name": "PRORATE_CNT_AMT",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1707"
+    },
+    {
+     "name": "PAY_SYSTEM_FLG",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "2",
+     "physicaloffset": "1708"
+    },
+    {
+     "name": "BORDER_WALKER",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1710"
+    },
+    {
+     "name": "LUMP_SUM_PAY",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1711"
+    },
+    {
+     "name": "CONTRACT_NUM",
+     "datatype": "varchar2",
+     "precision": "25",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "25",
+     "physicaloffset": "1712"
+    },
+    {
+     "name": "JOB_INDICATOR",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1737"
+    },
+    {
+     "name": "WRKS_CNCL_ROLE_CHE",
+     "datatype": "varchar2",
+     "precision": "30",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "30",
+     "physicaloffset": "1738"
+    },
+    {
+     "name": "BENEFIT_SYSTEM",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "2",
+     "physicaloffset": "1768"
+    },
+    {
+     "name": "WORK_DAY_HOURS",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "2",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "6",
+     "physicaloffset": "1770"
+    },
+    {
+     "name": "SUPERVISOR_ID",
+     "datatype": "varchar2",
+     "precision": "11",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "11",
+     "physicaloffset": "1776"
+    },
+    {
+     "name": "REPORTS_TO",
+     "datatype": "varchar2",
+     "precision": "8",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "8",
+     "physicaloffset": "1787"
+    },
+    {
+     "name": "ESTABID",
+     "datatype": "varchar2",
+     "precision": "12",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "12",
+     "physicaloffset": "1795"
+    },
+    {
+     "name": "HE_NOA_EXT",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "1807"
+    },
+    {
+     "name": "HE_AL_CARRYOVER",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "2",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "6",
+     "physicaloffset": "1808"
+    },
+    {
+     "name": "HE_AL_ACCRUAL",
+     "datatype": "number(p,s)",
+     "precision": "5",
+     "scale": "2",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "5",
+     "physicaloffset": "1814"
+    },
+    {
+     "name": "HE_AL_RED_CRED",
+     "datatype": "number(p,s)",
+     "precision": "5",
+     "scale": "2",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "5",
+     "physicaloffset": "1819"
+    },
+    {
+     "name": "HE_AL_TOTAL",
+     "datatype": "number(p,s)",
+     "precision": "5",
+     "scale": "2",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "5",
+     "physicaloffset": "1824"
+    },
+    {
+     "name": "HE_AL_BALANCE",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "2",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "6",
+     "physicaloffset": "1829"
+    },
+    {
+     "name": "HE_SL_CARRYOVER",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "2",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "6",
+     "physicaloffset": "1835"
+    },
+    {
+     "name": "HE_SL_ACCRUAL",
+     "datatype": "number(p,s)",
+     "precision": "5",
+     "scale": "2",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "5",
+     "physicaloffset": "1841"
+    },
+    {
+     "name": "HE_SL_RED_CRED",
+     "datatype": "number(p,s)",
+     "precision": "5",
+     "scale": "2",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "5",
+     "physicaloffset": "1846"
+    },
+    {
+     "name": "HE_SL_TOTAL",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "2",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "6",
+     "physicaloffset": "1851"
+    },
+    {
+     "name": "HE_SL_BALANCE",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "2",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "6",
+     "physicaloffset": "1857"
+    },
+    {
+     "name": "HE_RES_LASTYR",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "2",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "6",
+     "physicaloffset": "1863"
+    },
+    {
+     "name": "HE_RES_TWOYRS",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "2",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "6",
+     "physicaloffset": "1869"
+    },
+    {
+     "name": "HE_RES_THREEYRS",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "2",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "6",
+     "physicaloffset": "1875"
+    },
+    {
+     "name": "HE_RES_BALANCE",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "2",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "6",
+     "physicaloffset": "1881"
+    },
+    {
+     "name": "HE_LUMP_HRS",
+     "datatype": "number(p,s)",
+     "precision": "38",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "38",
+     "physicaloffset": "1887"
+    },
+    {
+     "name": "HE_AWOP_SEP",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "2",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "6",
+     "physicaloffset": "1925"
+    },
+    {
+     "name": "HE_AWOP_WIGI",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "2",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "6",
+     "physicaloffset": "1931"
+    },
+    {
+     "name": "HE_REG_MILITARY",
+     "datatype": "number(p,s)",
+     "precision": "38",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "38",
+     "physicaloffset": "1937"
+    },
+    {
+     "name": "HE_SPC_MILITARY",
+     "datatype": "number(p,s)",
+     "precision": "38",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "38",
+     "physicaloffset": "1975"
+    },
+    {
+     "name": "HE_FROZEN_SL",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "2",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "6",
+     "physicaloffset": "2013"
+    },
+    {
+     "name": "HE_TSPA_PR_YR",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "2",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "6",
+     "physicaloffset": "2019"
+    },
+    {
+     "name": "HE_TSPA_SUB_YR",
+     "datatype": "number(p,s)",
+     "precision": "7",
+     "scale": "2",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "7",
+     "physicaloffset": "2025"
+    },
+    {
+     "name": "HE_UNOFF_AL",
+     "datatype": "number(p,s)",
+     "precision": "38",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "38",
+     "physicaloffset": "2032"
+    },
+    {
+     "name": "HE_UNOFF_SL",
+     "datatype": "number(p,s)",
+     "precision": "38",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "38",
+     "physicaloffset": "2070"
+    },
+    {
+     "name": "HE_TLTR_NO",
+     "datatype": "number(p,s)",
+     "precision": "38",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "38",
+     "physicaloffset": "2108"
+    },
+    {
+     "name": "HE_UDED_PAY_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "2146"
+    },
+    {
+     "name": "HE_TSP_CANC_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "1",
+     "physicaloffset": "2147"
+    },
+    {
+     "name": "HE_PP_UDED_AMT",
+     "datatype": "number(p,s)",
+     "precision": "9",
+     "scale": "2",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "9",
+     "physicaloffset": "2148"
+    },
+    {
+     "name": "HE_EMP_UDED_AMT",
+     "datatype": "number(p,s)",
+     "precision": "9",
+     "scale": "2",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "9",
+     "physicaloffset": "2157"
+    },
+    {
+     "name": "HE_GVT_UDED_AMT",
+     "datatype": "number(p,s)",
+     "precision": "9",
+     "scale": "2",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "9",
+     "physicaloffset": "2166"
+    },
+    {
+     "name": "HE_NO_TSP_PAYPER",
+     "datatype": "number(p,s)",
+     "precision": "38",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY",
+     "physicallength": "38",
+     "physicaloffset": "2175"
+    }
+   ]
+  }
+ },
+ "targets": {
+  "EHRP_RECS_TRACKING_TBL": {
+   "dbtype": "Oracle",
+   "fields": [
+    {
+     "name": "EMPLID",
+     "datatype": "varchar2",
+     "precision": "8",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "EMPL_RCD",
+     "datatype": "number(p,s)",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "EFFDT",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "EFFSEQ",
+     "datatype": "number(p,s)",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "EVENT_SUBMITTED_DT",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "GVT_WIP_STATUS",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "NOA_CD",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "NOA_SUFFIX_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "BIIS_EVENT_ID",
+     "datatype": "number(p,s)",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "LOAD_DATE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    }
+   ]
+  },
+  "NWK_ACTION_PRIMARY_TBL": {
+   "dbtype": "Oracle",
+   "fields": [
+    {
+     "name": "EVENT_ID",
+     "datatype": "number(p,s)",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "AGCY_ASSIGN_CD",
+     "datatype": "varchar2",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "AGCY_SUBELEMENT_CD",
+     "datatype": "varchar2",
+     "precision": "15",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "AGCY_SUBELEMENT_PRIOR_CD",
+     "datatype": "varchar2",
+     "precision": "15",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "ANN_LV_45DAY_CEIL_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "ANN_LV_CATGRY_CD",
+     "datatype": "number(p,s)",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "ANN_LV_CRDT_REDUCTN_HRS",
+     "datatype": "number(p,s)",
+     "precision": "5",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "ANN_LV_CUR_BAL_HRS",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "ANN_LV_LUMP_SUM_PAID_HRS",
+     "datatype": "number(p,s)",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "ANN_LV_PRIOR_YEAR_BAL_HRS",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "ANN_LV_RESTORED_BAL_LV_HRS",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "ANN_LV_RESTORED_BAL1_HRS",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "ANN_LV_RESTORED_BAL2_HRS",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "ANN_LV_RESTORED_BAL3_HRS",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "ANN_LV_TRANFR_IN_BAL_HRS",
+     "datatype": "number(p,s)",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "ANN_LV_YTD_ACCRD_HRS",
+     "datatype": "number(p,s)",
+     "precision": "5",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "ANN_LV_YTD_USED_HRS",
+     "datatype": "number(p,s)",
+     "precision": "5",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "ANN_SALARY_RATE_AMT",
+     "datatype": "number(p,s)",
+     "precision": "14",
+     "scale": "4",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "ANNUITANT_IND_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "APPOINTING_OFFICE_CHANGE_CD",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "APPT_LMT_NTE_90DAY_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "APPT_LMT_NTE_90DAY_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "APPT_LMT_NTE_HRS",
+     "datatype": "number(p,s)",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "APPT_NTE_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "APPT_STATUS_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "APPT_TYPE_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "AUO_PAY_PCT",
+     "datatype": "number(p,s)",
+     "precision": "15",
+     "scale": "4",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "AUO_PAY_PRIOR_PCT",
+     "datatype": "number(p,s)",
+     "precision": "15",
+     "scale": "4",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "AUTHENTICATION_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "AVAILABILITY_PAY_PCT",
+     "datatype": "number(p,s)",
+     "precision": "15",
+     "scale": "4",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "AWOP_WGI_START_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "AWOP_YTD_HRS",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "BARGAINING_UNIT_CD",
+     "datatype": "varchar2",
+     "precision": "15",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "BASE_HRS",
+     "datatype": "number(p,s)",
+     "precision": "5",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "BIRTH_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CAN_CD",
+     "datatype": "varchar2",
+     "precision": "15",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CAN_NEW_CD",
+     "datatype": "varchar2",
+     "precision": "15",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CAREER_START_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CASH_AWARD_AMT",
+     "datatype": "number(p,s)",
+     "precision": "15",
+     "scale": "4",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CASH_AWARD_BNFT_AMT",
+     "datatype": "number(p,s)",
+     "precision": "10",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CEIL_REPORTING_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CHRTY_AREA_CD",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CHRTY_DED_AMT",
+     "datatype": "number(p,s)",
+     "precision": "14",
+     "scale": "4",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CITY_TAX_CD",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CITY_TAX_DED_AMT",
+     "datatype": "number(p,s)",
+     "precision": "5",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CITY_TAX_DED_PCT",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "3",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CITY_TAX_MARTL_STATUS_CD",
+     "datatype": "varchar2",
+     "precision": "17",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CITY_TAX_RESID_CD",
+     "datatype": "varchar2",
+     "precision": "17",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CITY_TAX_TOT_EXEMPT_COUNT",
+     "datatype": "number(p,s)",
+     "precision": "15",
+     "scale": "4",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CNTY_TAX_CD",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CNTY_TAX_DED_PCT",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "3",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CNTY_TAX_MARTL_STATUS_CD",
+     "datatype": "varchar2",
+     "precision": "17",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CNTY_TAX_RESID_CD",
+     "datatype": "varchar2",
+     "precision": "17",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CNTY_TAX_TOT_EXEMPT_COUNT",
+     "datatype": "number(p,s)",
+     "precision": "15",
+     "scale": "4",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "COMPETITIVE_LEVEL_CD",
+     "datatype": "varchar2",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "COMPUTER_POSITION_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CORR_CANCL_EFF_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CORR_CANCL_LEGAL_AUTH_CD",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CORR_CANCL_LEGAL_AUTH_TXT",
+     "datatype": "varchar2",
+     "precision": "250",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CORR_CANCL_LEGAL_AUTH2_CD",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CORR_CANCL_LEGAL_AUTH2_TXT",
+     "datatype": "varchar2",
+     "precision": "250",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CORR_CANCL_NOA_CD",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CORR_CANCL_NOA_SUFFIX_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CRDTBL_MIL_SRVC_PERIOD",
+     "datatype": "varchar2",
+     "precision": "8",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "DETAIL_TIMEKEEPER_NUM",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "DUTY_STATION_CD",
+     "datatype": "varchar2",
+     "precision": "15",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "DUTY_STATION_PRIOR_CD",
+     "datatype": "varchar2",
+     "precision": "15",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "EDUCATION_ALLOWC_AMT",
+     "datatype": "number(p,s)",
+     "precision": "7",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "EDUCATION_LEVEL_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "EMP_EOD_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "EMP_FIRST_NAME",
+     "datatype": "varchar2",
+     "precision": "40",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "EMP_GRADE_START_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "EMP_LAST_NAME",
+     "datatype": "varchar2",
+     "precision": "40",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "EMP_MID_INIT",
+     "datatype": "varchar2",
+     "precision": "40",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "EMP_PREV_FIRST_NAME",
+     "datatype": "varchar2",
+     "precision": "40",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "EMP_PREV_LAST_NAME",
+     "datatype": "varchar2",
+     "precision": "40",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "EMP_PREV_MID_INIT",
+     "datatype": "varchar2",
+     "precision": "40",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "EMP_RESID_CITY_ST_NAME",
+     "datatype": "varchar2",
+     "precision": "60",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "EMP_RESID_GEOGPHCL_LOC_CD",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "EMP_RESID_POSTAL_CD",
+     "datatype": "varchar2",
+     "precision": "12",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "EMP_RESID_STREET_NAME",
+     "datatype": "varchar2",
+     "precision": "40",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "EVENT_EFF_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "EVENT_SUBMITTED_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "FED_TAX_EIC_CD",
+     "datatype": "varchar2",
+     "precision": "17",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "FED_TAX_EXEMPT_CD",
+     "datatype": "varchar2",
+     "precision": "17",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "FED_TAX_MARTL_STATUS_CD",
+     "datatype": "varchar2",
+     "precision": "17",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "FED_TAX_MEDICARE_NON_RESID_CD",
+     "datatype": "varchar2",
+     "precision": "17",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "FED_TAX_OPT_DED_AMT",
+     "datatype": "number(p,s)",
+     "precision": "15",
+     "scale": "4",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "FED_TAX_TOT_EXEMPT_COUNT",
+     "datatype": "number(p,s)",
+     "precision": "15",
+     "scale": "4",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "FEGLI_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "FEGLI_EFF_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "FEGLI_LIVING_BNFT_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "FEGLI_LIVING_BNFT_REMAIN_AMT",
+     "datatype": "number(p,s)",
+     "precision": "14",
+     "scale": "4",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "FEHB_DED_AMT",
+     "datatype": "number(p,s)",
+     "precision": "15",
+     "scale": "4",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "FEHB_GOVT_CONTB_AMT",
+     "datatype": "number(p,s)",
+     "precision": "15",
+     "scale": "4",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "FEHB_PLAN_CD",
+     "datatype": "varchar2",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "FEHB_PREV_PLAN_CD",
+     "datatype": "varchar2",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "FERS_CONV_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "FERS_COV_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "FERS_DISABILITY_SSA_BNFT_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "FERS_SSA_BNFT_AMT",
+     "datatype": "number(p,s)",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "FILLING_POSITION_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "FLSA_CATGRY_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "FRINGE_BNFT_AMT",
+     "datatype": "number(p,s)",
+     "precision": "5",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "FROZEN_SERVICE_PERIOD",
+     "datatype": "varchar2",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "FUNCTNL_CLASSFCTN_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "FUNCTNL_CLASSFCTN_PRIOR_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "GRADE_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "GRADE_PRIOR_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "HANDICAP_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "HRLY_RATE_AMT",
+     "datatype": "number(p,s)",
+     "precision": "14",
+     "scale": "4",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "INDIAN_PREFERENCE_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "INSTRUCTIONAL_PROGRAM_CD",
+     "datatype": "varchar2",
+     "precision": "6",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "LEGAL_AUTH_CD",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "LEGAL_AUTH_TXT",
+     "datatype": "varchar2",
+     "precision": "250",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "LEGAL_AUTH2_CD",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "LEGAL_AUTH2_TXT",
+     "datatype": "varchar2",
+     "precision": "250",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "LOCALITY_PAY_AMT",
+     "datatype": "number(p,s)",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "LOCALITY_PAY_PCT",
+     "datatype": "number(p,s)",
+     "precision": "15",
+     "scale": "4",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "LOCALITY_PAY_PRIOR_AMT",
+     "datatype": "number(p,s)",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "LV_REDUCTN_HRS",
+     "datatype": "number(p,s)",
+     "precision": "5",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "LV_SCD_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "LWOP_AWOP_WGI_HRS",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "MEDICAL_OFFICER_IND_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "MEDICAL_OFFICER_IND_PRIOR_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "MSA_CD",
+     "datatype": "varchar2",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "NATL_UNION_DUES_BWKLY_DED_AMT",
+     "datatype": "number(p,s)",
+     "precision": "14",
+     "scale": "4",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "NATL_UNION_DUES_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "NATL_UNION_DUES_HRLY_RATE_AMT",
+     "datatype": "number(p,s)",
+     "precision": "15",
+     "scale": "4",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "NOA_CD",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "NOA_SUFFIX_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "OATH_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "OCCUPATION_CD",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "OCCUPATION_PRIOR_CD",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "OCCUPATIONAL_CATGRY_CD",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "ORGTNL_COMPONENT_CD",
+     "datatype": "varchar2",
+     "precision": "15",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "ORGTNL_COMPONENT_PRIOR_CD",
+     "datatype": "varchar2",
+     "precision": "15",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "OT_RATE_AMT",
+     "datatype": "number(p,s)",
+     "precision": "5",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PAY_BASIS_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PAY_BASIS_PRIOR_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PAY_PLAN_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PAY_PLAN_PRIOR_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PCA_CATGRY_CD",
+     "datatype": "varchar2",
+     "precision": "15",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PCA_CONTRACT_LENGTH_YRS",
+     "datatype": "varchar2",
+     "precision": "15",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PCA_CONTRACT_NTE_AMT",
+     "datatype": "number(p,s)",
+     "precision": "14",
+     "scale": "4",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PCA_CONTRACT_NTE_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PERMANENT_TEMP_POSITION_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PERSONNEL_OFFICE_ID_CD",
+     "datatype": "varchar2",
+     "precision": "15",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PERSONNEL_OFFICE_ID_DIFFRNT_CD",
+     "datatype": "varchar2",
+     "precision": "15",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "POSITION_CHANGE_END_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "POSITION_NUM",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "POSITION_OCCUPIED_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "POSITION_PRIOR_NUM",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "POSITION_SENSITIVITY_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "POSITION_TITLE_NAME",
+     "datatype": "varchar2",
+     "precision": "32",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "POSITION_TITLE_PRIOR_NAME",
+     "datatype": "varchar2",
+     "precision": "32",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PRD_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PRD_EFF_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PRD_PRIOR_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PREV_RETMT_COV_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PROB_TRIAL_PERIOD_START_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PSP_CONTRACT_EFF_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PSP_CONTRACT_LENGTH_YRS",
+     "datatype": "number(p,s)",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PSP_CONTRACT_NTE_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PSP_LENGTH_SRVC_INCREASE_AMT",
+     "datatype": "number(p,s)",
+     "precision": "7",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PSP_LENGTH_SRVC_CHANGE_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PSP_TOT_AMT",
+     "datatype": "number(p,s)",
+     "precision": "14",
+     "scale": "4",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "QUARTERS_DED_AMT",
+     "datatype": "number(p,s)",
+     "precision": "14",
+     "scale": "4",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "RACE_NATL_ORIGIN_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "RATING_RECORD_PATTERN_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "REEMP_ANNUITANT_HRLY_RATE_AMT",
+     "datatype": "number(p,s)",
+     "precision": "14",
+     "scale": "4",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "REEMP_ANNUITANT_MONTHLY_AMT",
+     "datatype": "number(p,s)",
+     "precision": "15",
+     "scale": "4",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "REGION_OPDIV_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "RETMT_PLAN_CD",
+     "datatype": "varchar2",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SCHLD_ANN_SALARY_AMT",
+     "datatype": "number(p,s)",
+     "precision": "15",
+     "scale": "4",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SCHLD_ANN_SALARY_PRIOR_AMT",
+     "datatype": "number(p,s)",
+     "precision": "14",
+     "scale": "4",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SCHLD_HRLY_RATE_AMT",
+     "datatype": "number(p,s)",
+     "precision": "14",
+     "scale": "4",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SES_POSITION_LEAVING_REASON_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SES_SABBATICAL_NTE_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SEVERANCE_PAY_AMT",
+     "datatype": "number(p,s)",
+     "precision": "7",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SEVERANCE_PAY_FINAL_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SEVERANCE_PAY_START_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SEVERANCE_PAY_TOT_AMT",
+     "datatype": "number(p,s)",
+     "precision": "8",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SEVERANCE_PAY_WEEKS_COUNT",
+     "datatype": "number(p,s)",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SEX_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SICK_LV_CRDT_REDUCTN_HRS",
+     "datatype": "number(p,s)",
+     "precision": "5",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SICK_LV_CUR_BAL_HRS",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SICK_LV_FERS_ELECT_BAL_HRS",
+     "datatype": "number(p,s)",
+     "precision": "8",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SICK_LV_PRIOR_YEAR_BAL_HRS",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SICK_LV_TRANFR_IN_BAL_HRS",
+     "datatype": "number(p,s)",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SICK_LV_YTD_ACCRD_HRS",
+     "datatype": "number(p,s)",
+     "precision": "5",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SICK_LV_YTD_USED_HRS",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SPECIAL_PAY_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SPECIAL_PAY_REASON_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SPECIAL_PROGRAM_CD",
+     "datatype": "number(p,s)",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SSN",
+     "datatype": "varchar2",
+     "precision": "20",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "ST_TAX_CD",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "ST_TAX_MARTL_STATUS_CD",
+     "datatype": "varchar2",
+     "precision": "17",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "ST_TAX_NON_RESID_CD",
+     "datatype": "varchar2",
+     "precision": "17",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "ST_TAX_OPT_DED_AMT",
+     "datatype": "number(p,s)",
+     "precision": "15",
+     "scale": "4",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "ST_TAX_TOT_EXEMPT_COUNT",
+     "datatype": "number(p,s)",
+     "precision": "15",
+     "scale": "4",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "STEP_CD",
+     "datatype": "varchar2",
+     "precision": "15",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "STEP_PRIOR_CD",
+     "datatype": "varchar2",
+     "precision": "15",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SUPERVSRY_MGRL_PROB_START_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SUPERVSRY_STATUS_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SUSPENSION_END_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TEMP_PROMTN_EXP_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TENURE_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TERMINAL_SITE_CD",
+     "datatype": "number(p,s)",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TERMINAL_SITE_DIFFRNT_CD",
+     "datatype": "number(p,s)",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TIMEKEEPER_NUM",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TSTG_DESIGNTD_POSITION_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TSTG_DESIGNTD_POSITION_EFF_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "UNION_CD",
+     "datatype": "varchar2",
+     "precision": "15",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "UNION_DED_AMT",
+     "datatype": "number(p,s)",
+     "precision": "14",
+     "scale": "4",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "UNION_DED_TYPE_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "US_CITIZENSHIP_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "VETERANS_PREFERENCE_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "VETERANS_STATUS_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "VLNTRY_SEP_INCENTIVE_PYMT_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "WAGE_BOARD_SHIFT2_AMT",
+     "datatype": "number(p,s)",
+     "precision": "4",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "WAGE_BOARD_SHIFT3_AMT",
+     "datatype": "number(p,s)",
+     "precision": "4",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "WGI_START_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "WGI_STATUS_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "WORK_SCHEDULE_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "WORK_SCHEDULE_CHANGE_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "WORK_SCHEDULE_PRIOR_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "YEAR_DEGREE_ATTAINED_DTE",
+     "datatype": "number(p,s)",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "AS_OF_DAY",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "LOAD_ID",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "HB_PRETAX_CODE",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "HB_PRETAX_PP_DED",
+     "datatype": "number(p,s)",
+     "precision": "7",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "HB_PRETAX_TOTAL_PREPAID",
+     "datatype": "number(p,s)",
+     "precision": "7",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "EMP_ID",
+     "datatype": "varchar2",
+     "precision": "8",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "LOAD_DATE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "NEW_SSN",
+     "datatype": "varchar2",
+     "precision": "9",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "OLD_SSN",
+     "datatype": "varchar2",
+     "precision": "9",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "EFFSEQ",
+     "datatype": "number(p,s)",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "EMPL_REC_NO",
+     "datatype": "number(p,s)",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "EHRP_TYPE_ACTION",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "EHRP_ACTION_REASON",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "GVT_WIP_STATUS",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "GVT_STATUS_TYPE",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "EHRP_POSITION_NUMBER",
+     "datatype": "varchar2",
+     "precision": "8",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "EHRP_POSITION_PRIOR_NUMBER",
+     "datatype": "varchar2",
+     "precision": "8",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CORR_CANCL_EFFSEQ",
+     "datatype": "number(p,s)",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TITLE42_IND",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TITLE38_IND",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "OPDIV",
+     "datatype": "varchar2",
+     "precision": "8",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "OPDIV_PRIOR",
+     "datatype": "varchar2",
+     "precision": "8",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SETID",
+     "datatype": "varchar2",
+     "precision": "5",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CURR_APPT_AUTH1_CD",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CURR_APPT_AUTH2_CD",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "LEO_POSITION_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TEMP_GVT_EFFDT",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "REPORTS_TO",
+     "datatype": "varchar2",
+     "precision": "8",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "POSITION_ENTRY_DT",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "WGI_DUE_DT",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "EHRP_CHANGED_WIP_STATUS_DT",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "BIIS_CHANGED_WIP_STATUS_DT",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    }
+   ]
+  },
+  "NWK_ACTION_SECONDARY_TBL": {
+   "dbtype": "Oracle",
+   "fields": [
+    {
+     "name": "EVENT_ID",
+     "datatype": "number(p,s)",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NOTNULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "ADTNL_OPT_LIFE_INS_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "ALLOT_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "ALLOT_DED_AMT",
+     "datatype": "number(p,s)",
+     "precision": "8",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "ALLOT_EFF_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "ALLOT_EMP_ACCT_NUM",
+     "datatype": "varchar2",
+     "precision": "17",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "ALLOT_EMP_ACCT_TYPE_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "ALLOT_FINCL_INSTN_CITY_ST_NAME",
+     "datatype": "varchar2",
+     "precision": "60",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "ALLOT_FINCL_INSTN_NAME",
+     "datatype": "varchar2",
+     "precision": "43",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "ALLOT_FINCL_INSTN_NUM",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "ALLOT_FINCL_INSTN_POSTAL_CD",
+     "datatype": "varchar2",
+     "precision": "12",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "ALLOT_FINCL_INSTN_STREET_NAME",
+     "datatype": "varchar2",
+     "precision": "40",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "BOND_COBEN_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "BOND_COBEN_NAME",
+     "datatype": "varchar2",
+     "precision": "120",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "BOND_COBEN_SSN",
+     "datatype": "varchar2",
+     "precision": "20",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "BOND_DENOM_CD",
+     "datatype": "varchar2",
+     "precision": "15",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "BOND_INSCRIPTION_NUM",
+     "datatype": "varchar2",
+     "precision": "15",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "BOND_NOTE_TOT_DED_AMT",
+     "datatype": "number(p,s)",
+     "precision": "7",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "BOND_OWNER_CITY_NAME",
+     "datatype": "varchar2",
+     "precision": "30",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "BOND_OWNER_NAME",
+     "datatype": "varchar2",
+     "precision": "120",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "BOND_OWNER_POSTAL_CD",
+     "datatype": "varchar2",
+     "precision": "12",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "BOND_OWNER_SSN",
+     "datatype": "varchar2",
+     "precision": "20",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "BOND_OWNER_ST_NAME",
+     "datatype": "varchar2",
+     "precision": "30",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "BOND_OWNER_STREET_NAME",
+     "datatype": "varchar2",
+     "precision": "40",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "BOND_REFUND_IND",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "BUYOUT_AMT",
+     "datatype": "number(p,s)",
+     "precision": "7",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "BUYOUT_EFF_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CLAIM_TYPE_CD",
+     "datatype": "number(p,s)",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "COLA_PCT",
+     "datatype": "number(p,s)",
+     "precision": "8",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "COURT_ORDER_APPLCTN_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CSA_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CSA_DED_AMT",
+     "datatype": "number(p,s)",
+     "precision": "8",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CSA_DED_PCT",
+     "datatype": "number(p,s)",
+     "precision": "8",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CSA_RECIPIENT_NAME",
+     "datatype": "varchar2",
+     "precision": "120",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "CSRS_ADMIN_FEE_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "ENVIRN_DIF_PCT",
+     "datatype": "number(p,s)",
+     "precision": "8",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "FAMILY_LIFE_INS_CD",
+     "datatype": "number(p,s)",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "FORGN_LANG_AWARD_AMT",
+     "datatype": "number(p,s)",
+     "precision": "5",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "FORGN_LANG_AWARD_SEP_AMT",
+     "datatype": "number(p,s)",
+     "precision": "5",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "FORGN_POST_ALLOWC_TOT_AMT",
+     "datatype": "number(p,s)",
+     "precision": "7",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "FORGN_POST_DIF_PAY_PCT",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "3",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "FURLOUGH_EXP_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "HAZARD_DUTY_DIF_PCT",
+     "datatype": "number(p,s)",
+     "precision": "8",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "INDVDL_GROUP_AWARD",
+     "datatype": "varchar2",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "LAUNDRY_DED_AMT",
+     "datatype": "number(p,s)",
+     "precision": "7",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "LIFE_INS_AMT",
+     "datatype": "number(p,s)",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "LIFE_INS_REDUCTN_CD",
+     "datatype": "number(p,s)",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "LIVING_QUARTERS_ALLOWC_TOT_AMT",
+     "datatype": "number(p,s)",
+     "precision": "7",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "LWOP_EXP_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "LWP_EXP_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "MERIT_PAY_AGGREGATE_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "MERIT_PAY_CERTIFICATE_IND",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "MERIT_PAY_CRITICAL_ELEMENT_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "MERIT_PAY_GRADE_CD",
+     "datatype": "number(p,s)",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "MERIT_PAY_HRLY_RATE_AMT",
+     "datatype": "number(p,s)",
+     "precision": "4",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "MERIT_PAY_INCREASE_AMT",
+     "datatype": "number(p,s)",
+     "precision": "8",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "MERIT_PAY_PAID_OUT_IND",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "MERIT_PAY_PERF_PLAN_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "MERIT_PAY_PERF_PLAN_END_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "MERIT_PAY_PERF_SCORE_NUM",
+     "datatype": "number(p,s)",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "MERIT_PAY_POOL_DESIGNATOR_CD",
+     "datatype": "varchar2",
+     "precision": "5",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "MERIT_PAY_PRD_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "MERIT_PAY_SALARY_AMT",
+     "datatype": "number(p,s)",
+     "precision": "8",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "MERIT_PAY_SCALE_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "MERIT_PAY_STEP_CD",
+     "datatype": "number(p,s)",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "MIL_LV_CUR_FY_HRS",
+     "datatype": "number(p,s)",
+     "precision": "5",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "MIL_LV_EMERG_CUR_FY_HRS",
+     "datatype": "number(p,s)",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "MIL_RETIRED_PAY_RECPNT_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "MIL_RETIRED_PAY_WAIVER_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "MIL_RETMT_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "MIL_RETMT_OFFSET_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "MIL_RETMT_TOT_DED_AMT",
+     "datatype": "number(p,s)",
+     "precision": "7",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "MIL_SRVC_ACHVD_RANK_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "MIL_SRVC_BRANCH_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "MIL_SRVC_BRANCH_COMPONENT_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "NON_BAYLOR_BASE_HRLY_RATE_AMT",
+     "datatype": "number(p,s)",
+     "precision": "5",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "NON_FORGN_POST_DIF_PAY_PCT",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "3",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "NON_GOVT_RETMT_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "OTHER_PAY_AMT",
+     "datatype": "number(p,s)",
+     "precision": "5",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "OWCP_CUR_RECEIPT_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PAY_TABLE_NUM",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PERF_END1_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PERF_END2_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PERF_RATING_RECORD_LEVEL_CD",
+     "datatype": "varchar2",
+     "precision": "15",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "POST56_MIL_SRVC_DEPST_PAID_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PREMIUM_PAY_PCT",
+     "datatype": "number(p,s)",
+     "precision": "8",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "RECRUITMENT_BONUS_AMT",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "RECRUITMENT_EXP_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "REG_SCHLD_STANDBY_DUTY_PAY_PCT",
+     "datatype": "number(p,s)",
+     "precision": "8",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "RELOCATION_BONUS_AMT",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "RELOCATION_EXP_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "RETENTION_BONUS_BWKLY_AMT",
+     "datatype": "number(p,s)",
+     "precision": "5",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "RETENTION_BONUS_TOT_AMT",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "RETMT_REFUND_RECEIVED_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "RETMT_SCD_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "RETMT_SURVIVOR_ELECT_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "RETMT_TAX_WITH_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "RETND1_EFF_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "RETND1_EXP_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "RETND1_GRADE_CD",
+     "datatype": "varchar2",
+     "precision": "15",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "RETND1_MEDICAL_OFFICER_IND_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "RETND1_OCCUPATION_CD",
+     "datatype": "varchar2",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "RETND1_ORGTNL_COMPONENT_CD",
+     "datatype": "varchar2",
+     "precision": "11",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "RETND1_PAY_PLAN_CD",
+     "datatype": "varchar2",
+     "precision": "15",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "RETND1_STEP_CD",
+     "datatype": "varchar2",
+     "precision": "15",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "RETND2_EFF_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "RETND2_EXP_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "RETND2_GRADE_CD",
+     "datatype": "varchar2",
+     "precision": "15",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "RETND2_MEDICAL_OFFICER_IND_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "RETND2_OCCUPATION_CD",
+     "datatype": "varchar2",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "RETND2_ORGTNL_COMPONENT_CD",
+     "datatype": "varchar2",
+     "precision": "11",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "RETND2_PAY_PLAN_CD",
+     "datatype": "varchar2",
+     "precision": "15",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "RETND2_STEP_CD",
+     "datatype": "varchar2",
+     "precision": "15",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "RIF_RELEASE_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "RIF_SCD_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "RIF_VETERANS_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SAVE_RATE_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SBRS_ADTNL_BWKLY_DED_AMT",
+     "datatype": "number(p,s)",
+     "precision": "8",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SBRS_ADTNL_BWKLY_REDUCTN_AMT",
+     "datatype": "number(p,s)",
+     "precision": "8",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SBRS_BWKLY_DED_AMT",
+     "datatype": "number(p,s)",
+     "precision": "8",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SBRS_BWKLY_REDUCTN_AMT",
+     "datatype": "number(p,s)",
+     "precision": "8",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SBRS_CONTRACT_NUM",
+     "datatype": "varchar2",
+     "precision": "8",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SBRS_EMP_DED_PCT",
+     "datatype": "number(p,s)",
+     "precision": "3",
+     "scale": "3",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SBRS_EMP_OTHER_BWKLY_DED_AMT",
+     "datatype": "number(p,s)",
+     "precision": "8",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SBRS_EMP_OTHER_DED_PCT",
+     "datatype": "number(p,s)",
+     "precision": "3",
+     "scale": "3",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SBRS_EMP_REDUCTN_PCT",
+     "datatype": "number(p,s)",
+     "precision": "3",
+     "scale": "3",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SBRS_EMPLYR_OTHER_DED_PCT",
+     "datatype": "number(p,s)",
+     "precision": "3",
+     "scale": "3",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SBRS_EMPLYR_TIAA_CREF_DED_PCT",
+     "datatype": "number(p,s)",
+     "precision": "3",
+     "scale": "3",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SBRS_INSTN_CITY_NAME",
+     "datatype": "varchar2",
+     "precision": "23",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SBRS_INSTN_NAME",
+     "datatype": "varchar2",
+     "precision": "30",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SBRS_INSTN_POSTAL_CD",
+     "datatype": "varchar2",
+     "precision": "12",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SBRS_INSTN_ST_NAME",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SBRS_INSTN_STREET1_NAME",
+     "datatype": "varchar2",
+     "precision": "25",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SBRS_INSTN_STREET2_NAME",
+     "datatype": "varchar2",
+     "precision": "25",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SBRS_SRA_BWKLY_REDUCTN_AMT",
+     "datatype": "number(p,s)",
+     "precision": "8",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SBRS_SRA_REDUCTN_PCT",
+     "datatype": "number(p,s)",
+     "precision": "3",
+     "scale": "3",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SEP_ACCT_TYPE_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SEP_EMP_ACCT_NUM",
+     "datatype": "varchar2",
+     "precision": "17",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SEP_EMP_CITY_NAME",
+     "datatype": "varchar2",
+     "precision": "30",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SEP_EMP_POSTAL_CD",
+     "datatype": "varchar2",
+     "precision": "12",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SEP_EMP_ST_NAME",
+     "datatype": "varchar2",
+     "precision": "30",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SEP_EMP_STREET_NAME",
+     "datatype": "varchar2",
+     "precision": "40",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SEP_FED_TAX_MARTL_STATUS_CD",
+     "datatype": "varchar2",
+     "precision": "17",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SEP_FED_TAX_TOT_EXEMPT_COUNT",
+     "datatype": "number(p,s)",
+     "precision": "8",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SEP_FEHB_PLAN_CD",
+     "datatype": "varchar2",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SEP_FINCL_INSTN_NUM",
+     "datatype": "varchar2",
+     "precision": "10",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SEP_MAINT_ALLOWC_AMT",
+     "datatype": "number(p,s)",
+     "precision": "7",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SEP_REASON_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "STAFFING_DIF_BWKLY_AMT",
+     "datatype": "number(p,s)",
+     "precision": "5",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "STAFFING_DIF_TOT_AMT",
+     "datatype": "number(p,s)",
+     "precision": "5",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "STANDBY_PAY_PCT",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "3",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "STD_OPT_LIFE_INS_CD",
+     "datatype": "number(p,s)",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SUBSISTENCE_DED_AMT",
+     "datatype": "number(p,s)",
+     "precision": "7",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SUPERVSRY_DIF_BWKLY_AMT",
+     "datatype": "number(p,s)",
+     "precision": "5",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "SUPERVSRY_DIF_TOT_AMT",
+     "datatype": "number(p,s)",
+     "precision": "5",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "T38_PREM_HRLY_RATE_AMT",
+     "datatype": "number(p,s)",
+     "precision": "5",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TIAA_CERTIFICATE_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TIME_OFF_AWARD_AMT",
+     "datatype": "number(p,s)",
+     "precision": "7",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TIME_OFF_EFF_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TIME_OFF_FORFEITED_HRS",
+     "datatype": "number(p,s)",
+     "precision": "5",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TIME_OFF_FORFEITED_TOT_HRS",
+     "datatype": "number(p,s)",
+     "precision": "5",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TIME_OFF_GRANTED_HRS",
+     "datatype": "number(p,s)",
+     "precision": "5",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TIME_OFF_GRANTED_TOT_HRS",
+     "datatype": "number(p,s)",
+     "precision": "5",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TIME_OFF_USED_HRS",
+     "datatype": "number(p,s)",
+     "precision": "5",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TIME_OFF_USED_TOT_HRS",
+     "datatype": "number(p,s)",
+     "precision": "5",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TSP_ADJMT_AMT",
+     "datatype": "number(p,s)",
+     "precision": "7",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TSP_ADJMT_START_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TSP_ADJMT_STOP_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TSP_EMP_DED_AMT",
+     "datatype": "number(p,s)",
+     "precision": "7",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TSP_EMP_DED_RATE_PCT",
+     "datatype": "number(p,s)",
+     "precision": "8",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TSP_EMP_PP_UND_DED_AMT",
+     "datatype": "number(p,s)",
+     "precision": "9",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TSP_EMP_PP_UND_DED_PYMT_COUNT",
+     "datatype": "number(p,s)",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TSP_EMP_PREV_GOVT_CONTB_AMT",
+     "datatype": "number(p,s)",
+     "precision": "7",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TSP_EMP_UND_DED_OUTSTNDG_AMT",
+     "datatype": "number(p,s)",
+     "precision": "9",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TSP_GOVT_UND_DED_OUTSTNDG_AMT",
+     "datatype": "number(p,s)",
+     "precision": "9",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TSP_LOAN_PYMT_COUNT",
+     "datatype": "number(p,s)",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TSP_PAY_SUBJ_YTD_AMT",
+     "datatype": "number(p,s)",
+     "precision": "8",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TSP_PP_ADJMT_DED_AMT",
+     "datatype": "number(p,s)",
+     "precision": "7",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TSP_SCD_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TSP_STATUS_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TSP_STATUS_CHANGE_EFF_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TSP_UND_DED_DELAY_OPTION_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TSP_UND_DED_LTR_NUM",
+     "datatype": "number(p,s)",
+     "precision": "6",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TSP_UND_DED_OPTION_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TSP_UND_DED_STOP_OPTION_CD",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TSP_VESTING_CD",
+     "datatype": "varchar2",
+     "precision": "2",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TSPC_EMP_DIST_PCT",
+     "datatype": "number(p,s)",
+     "precision": "8",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TSPC_GOVT_DIST_PCT",
+     "datatype": "number(p,s)",
+     "precision": "5",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TSPF_EMP_DIST_PCT",
+     "datatype": "number(p,s)",
+     "precision": "15",
+     "scale": "4",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TSPF_GOVT_DIST_PCT",
+     "datatype": "number(p,s)",
+     "precision": "5",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TSPG_EMP_DIST_PCT",
+     "datatype": "number(p,s)",
+     "precision": "8",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TSPG_GOVT_DIST_PCT",
+     "datatype": "number(p,s)",
+     "precision": "5",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "UNIF_ALLOWC_ANN_AMT",
+     "datatype": "number(p,s)",
+     "precision": "7",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "UNIF_ALLOWC_HRLY_RATE_AMT",
+     "datatype": "number(p,s)",
+     "precision": "7",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "UNIF_ALLOWC_PP_AMT",
+     "datatype": "number(p,s)",
+     "precision": "7",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TSPA_HARDSHIP_STOP",
+     "datatype": "varchar2",
+     "precision": "8",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TSPA_HARDSHIP_NOA",
+     "datatype": "varchar2",
+     "precision": "4",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TEA_CHOICE_OPTION",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TEA_TRANSPORT_MODE",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TEA_PAYMENT_OPTION",
+     "datatype": "varchar2",
+     "precision": "1",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TEA_EMPLOYER_CONTR_AMT",
+     "datatype": "number(p,s)",
+     "precision": "7",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TEA_EMPLOYEE_DEDUCT",
+     "datatype": "number(p,s)",
+     "precision": "7",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TEA_CASH_OUT",
+     "datatype": "number(p,s)",
+     "precision": "7",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TEA_PRIOR_YR_HHS",
+     "datatype": "number(p,s)",
+     "precision": "7",
+     "scale": "2",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "TEA_COM_CHOICE_START_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "LWOP_START_DTE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "RETENTION_BONUS_END_DATE",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "LEO_SCD_DT",
+     "datatype": "date",
+     "precision": "19",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    },
+    {
+     "name": "PAYGROUP",
+     "datatype": "varchar2",
+     "precision": "3",
+     "scale": "0",
+     "nullable": "NULL",
+     "keytype": "NOT A KEY"
+    }
+   ]
+  }
+ }
+}
