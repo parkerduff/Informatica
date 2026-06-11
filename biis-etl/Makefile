@@ -5,6 +5,7 @@
 SHELL := /bin/bash
 .DEFAULT_GOAL := help
 
+PYTHON      ?= python3
 VENV        := venv
 PY          := $(VENV)/bin/python
 PIP         := $(VENV)/bin/pip
@@ -20,6 +21,10 @@ REPORT_DIR  := reports
 
 export BIIS_ENV
 export PYTHONPATH := $(CURDIR)
+# spark-submit's find-spark-home shells out to `python3`; point it (and the
+# executors) at the venv interpreter so the pip-installed pyspark is found.
+export PYSPARK_PYTHON := $(CURDIR)/$(VENV)/bin/python
+export PYSPARK_DRIVER_PYTHON := $(CURDIR)/$(VENV)/bin/python
 
 # Spark needs the SQL Server JDBC driver on its classpath; pulled via packages.
 SPARK_PKGS  := com.microsoft.sqlserver:mssql-jdbc:12.4.2.jre11
@@ -49,7 +54,7 @@ help:
 # Build infrastructure
 # ---------------------------------------------------------------------------
 $(VENV)/.installed: requirements.txt
-	python3 -m venv $(VENV)
+	$(PYTHON) -m venv $(VENV)
 	$(PIP) install --upgrade pip wheel setuptools
 	$(PIP) install -r requirements.txt
 	touch $(VENV)/.installed
