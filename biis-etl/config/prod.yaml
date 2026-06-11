@@ -1,0 +1,38 @@
+database:
+  driver: "com.microsoft.sqlserver.jdbc.SQLServerDriver"
+  host: "biis-prod.example.rds.amazonaws.com"
+  port: 1433
+  name: "biis_prod"
+  schema: "dbo"
+  user: null
+  password: null
+
+secrets:
+  provider: "aws"
+  region: "us-east-1"
+  db_secret_name: "biis/prod/sqlserver"
+  sftp_secret_name: "biis/prod/sftp"
+
+notifications:
+  provider: "ses"
+  region: "us-east-1"
+  sender: "biis-noreply@hhs.gov"
+  recipients: "peter.chen@hhs.gov,nathan.knight@hhs.gov,marvin.simon@hhs.gov"
+
+paths:
+  landing: "s3://biis-prod-etl/landing"
+  staging: "s3://biis-prod-etl/staging"
+  archive: "s3://biis-prod-etl/archive"
+
+sftp:
+  host: "m1csv301.hhs.gov"
+  port: 22
+  user: null
+  password: null
+  routes:
+    nih_cpm: "/opt/app/jail/sa-nihbiisu/outbound"
+    nih_les: "/opt/app/jail/sa-nihbiisu/outbound"
+    oig: "/opt/app/jail/sa-oigbiisu/outbound"
+    cdc: "/opt/app/jail/sa-cdcbiisu/outbound"
+    fda: "/opt/app/jail/sa-fdabiisu/outbound"
+    afps: "/opt/app/jail/sa-afpsbiisu/outbound"
