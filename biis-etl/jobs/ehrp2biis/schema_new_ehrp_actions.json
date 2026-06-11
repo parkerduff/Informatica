@@ -1,0 +1,1 @@
+[["EMPLID", "varchar2", 11, 0], ["EMPL_RCD", "number(p,s)", 38, 0], ["EFFDT", "date", 19, 0], ["EFFSEQ", "number(p,s)", 38, 0]]

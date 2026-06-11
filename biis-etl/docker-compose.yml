@@ -1,0 +1,62 @@
+# Optional SQL Server + Airflow stack for the prod-like path and DAG validation.
+# The default `make all` loop uses the self-contained SQLite backend and does NOT
+# require any of these services (see Makefile / utils/config.py).
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      SA_PASSWORD: "TestP@ssw0rd!"
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: "Developer"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+    healthcheck:
+      test: /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P "TestP@ssw0rd!" -Q "SELECT 1" -C
+      interval: 10s
+      retries: 10
+      start_period: 30s
+
+  localstack:
+    image: localstack/localstack
+    ports:
+      - "4566:4566"
+    environment:
+      SERVICES: "s3,secretsmanager"
+
+  sftp-mock:
+    image: atmoz/sftp
+    ports:
+      - "2222:22"
+    command: "testuser:testpass:::outbound"
+
+  # DAG parse validation: `docker compose run --rm airflow`
+  airflow:
+    image: apache/airflow:2.8.1-python3.11
+    environment:
+      AIRFLOW__CORE__EXECUTOR: "SequentialExecutor"
+      AIRFLOW__CORE__DAGS_FOLDER: "/opt/airflow/dags"
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: "sqlite:////opt/airflow/airflow.db"
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+    volumes:
+      - ./dags:/opt/airflow/dags
+    ports:
+      - "8080:8080"
+    command:
+      - bash
+      - -c
+      - |
+        airflow db migrate >/dev/null 2>&1
+        export PYTHONPATH=/opt/airflow/dags
+        python - <<'PY'
+        from airflow.models import DagBag
+        b = DagBag("/opt/airflow/dags", include_examples=False)
+        print("Parsed DAGs:", sorted(b.dags))
+        assert not b.import_errors, b.import_errors
+        assert len(b.dags) == 6, f"expected 6 DAGs, got {len(b.dags)}"
+        print("All DAGs parsed OK")
+        PY
+
+volumes:
+  sqlserver_data:

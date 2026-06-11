@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtual env
+.venv/
+venv/
+
+# Test / build artifacts (NOT committed)
+reports/
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Local backend / scratch state
+.biis-test/
+*.db
+
+# OS
+.DS_Store

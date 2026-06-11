@@ -1,0 +1,8 @@
+-- Auto-generated from utils.schemas for SQL Server
+IF OBJECT_ID('dbo.PROCESS_TABLE', 'U') IS NOT NULL DROP TABLE dbo.PROCESS_TABLE;
+GO
+CREATE TABLE PROCESS_TABLE (
+    P_NAME VARCHAR(30),
+    P_STARTDT DATETIME2
+);
+GO
