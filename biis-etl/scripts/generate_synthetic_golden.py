@@ -264,7 +264,7 @@ def gen_fda_leave(pp):
     for i in range(20):
         emp = f"{700000001 + i}"
         tatran.append({
-            "FDA_BATCH_ID": "B0001", "FDA_TK_NO": f"TK{i:03d}", "FDA_EMP_ID": emp,
+            "FDA_BATCH_ID": 1, "FDA_TK_NO": f"TK{i:03d}", "FDA_EMP_ID": emp,
             "FDA_PP_YEAR": pp["pp_end_year"], "FDA_PP_NUM": pp["pp_num"],
             "FDA_REC_TYPE": "L", "FDA_SEQ": i + 1, "FDA_DATA": f"LEAVE DATA {i + 1}",
         })
@@ -298,9 +298,17 @@ def gen_ehrp2biis(run_date):
     job_cols = [f["name"] for f in job_fields]
     actions, jobs = [], []
     for i in range(10):
-        emplid = f"{100000001 + i}"
+        emplid = f"{10000001 + i}"
         actions.append({"EMPLID": emplid, "EMPL_RCD": 0, "EFFDT": effdt, "EFFSEQ": 1})
-        jrow = {c: None for c in job_cols}
+        jrow = {}
+        for f in job_fields:
+            dt = (f.get("datatype") or "").lower()
+            if dt in ("date", "timestamp"):
+                jrow[f["name"]] = effdt
+            elif dt.startswith("number"):
+                jrow[f["name"]] = 0
+            else:
+                jrow[f["name"]] = "X"
         jrow.update({"EMPLID": emplid, "EMPL_RCD": 0, "EFFDT": effdt, "EFFSEQ": 1,
                      "GVT_WIP_STATUS": "P", "PAYGROUP": "GS", "UNION_CD": "U1"})
         jobs.append(jrow)
@@ -338,6 +346,8 @@ def gen_ehrp2biis(run_date):
             name = f["name"]
             if name == "EVENT_ID":
                 prow[name] = event_id
+            elif name == "LOAD_ID":
+                prow[name] = "EHRP"
             elif name == "LOAD_DATE":
                 prow[name] = None
             elif name in explicit:

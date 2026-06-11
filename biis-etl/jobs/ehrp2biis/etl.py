@@ -68,6 +68,8 @@ def build_target(joined, target_fields, base_event_id, explicit=None):
         name = f["name"]
         if name == "EVENT_ID":
             select_cols.append(F.col("EVENT_ID"))
+        elif name == "LOAD_ID":
+            select_cols.append(F.lit("EHRP").alias("LOAD_ID"))
         elif name == "LOAD_DATE":
             select_cols.append(F.current_timestamp().alias("LOAD_DATE"))
         elif name in explicit and explicit[name] in source_cols:
