@@ -1,6 +1,6 @@
 .PHONY: all setup build lint test test-unit test-functional test-regression test-performance \
         db-seed run-all run-pay-calendar run-comptime run-pseudossn run-fda-leave \
-        run-ehrp2biis run-cpm validate clean generate-golden \
+        run-ehrp2biis run-cpm validate report clean generate-golden \
         docker-up docker-down airflow-validate \
         phase-1 phase-2 phase-3 phase-4 phase-5 phase-6
 
@@ -23,10 +23,11 @@ REPORTS := reports
 export SETUPTOOLS_USE_DISTUTILS = local
 
 # ---- MASTER TARGET: setup + compile + run + test + validate ----
-all: setup build lint db-seed run-all test validate
+all: setup build lint db-seed run-all test validate report
 	@echo "=========================================="
 	@echo "ALL PHASES PASSED - ZERO DEPRECATION"
 	@echo "=========================================="
+	@echo "Test report: $(REPORTS)/test_report.html"
 
 # ---- STEP 1: SETUP (virtual env + dependencies) ----
 setup:
@@ -106,6 +107,7 @@ test-regression:
 
 test-performance:
 	@echo "=== Performance Tests (benchmark vs Informatica baselines) ==="
+	@mkdir -p $(REPORTS)
 	$(PYTEST) tests/performance/ -v --benchmark-json=$(REPORTS)/benchmark.json
 
 # ---- STEP 7: VALIDATE (source vs target reconciliation) ----
@@ -115,6 +117,18 @@ validate:
 	@echo "=== Checking for zero diffs ==="
 	$(PY) scripts/check_reconciliation.py --report-dir $(REPORTS)/reconciliation/
 	@echo "VALIDATION PASSED: Zero business logic deprecation"
+
+# ---- STEP 8: REPORT (self-contained downloadable HTML test report) ----
+# Re-runs the whole suite once with junit + benchmark capture, then renders a
+# single HTML file aggregating every test case, its validation and the 12
+# reconciliation targets.
+report:
+	@echo "=== Generating HTML test report ==="
+	@mkdir -p $(REPORTS)
+	$(PYTEST) tests/ --junitxml=$(REPORTS)/junit.xml \
+		--benchmark-json=$(REPORTS)/benchmark.json -q || true
+	$(PY) scripts/reconcile.py --env $(ENV) --modules all --report-dir $(REPORTS)/reconciliation/ || true
+	$(PY) scripts/generate_test_report.py --reports-dir $(REPORTS) --out $(REPORTS)/test_report.html
 
 # ---- Regenerate the synthetic golden fixtures ----
 generate-golden:

@@ -28,6 +28,10 @@ from scripts._common import GOLDEN_DIR, dump_table_to_csv  # noqa: E402
 from utils.schemas import column_names  # noqa: E402
 
 RUN_DATE = "2026-06-11"
+# Pay period that contains RUN_DATE (set current by pay_calendar). CPM extracts
+# only the current pay period's rows, so the CPM_NEWPAY fixture must use it too.
+CURRENT_PP_YEAR = 2026
+CURRENT_PP_NUM = 12
 FAKE_NAMES = ["SMITH", "JOHNSON", "WILLIAMS", "BROWN", "JONES", "GARCIA", "MILLER",
               "DAVIS", "RODRIGUEZ", "MARTINEZ", "HERNANDEZ", "LOPEZ", "WILSON"]
 FIRST_NAMES = ["ALEX", "JORDAN", "TAYLOR", "MORGAN", "CASEY", "RILEY", "JAMIE"]
@@ -162,8 +166,8 @@ def build_cpm_newpay() -> pd.DataFrame:
         row = {c: 0 for c in cols}
         for c in cols:
             row[c] = 0
-        row["PP_END_YEAR"] = 2026
-        row["PP_NUM"] = 26
+        row["PP_END_YEAR"] = CURRENT_PP_YEAR
+        row["PP_NUM"] = CURRENT_PP_NUM
         row["DFAS_PSEUDO_SSN"] = fake_ssn(i)
         row["BUSINESS_UNIT"] = bu
         row["ORG_CDE"] = org

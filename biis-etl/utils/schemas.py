@@ -47,7 +47,7 @@ COMP_TIME_DAILY_TBL: List[Column] = [
     ("PP_END_YEAR", "number(p,s)", 4, 0),
     ("PP_NUM", "number(p,s)", 2, 0),
     ("PP_YEAR_NUM", "number(p,s)", 6, 0),
-    ("SSN", "varchar2", 9, 0),
+    ("SSN", "varchar2", 64, 0),
     ("NAME", "varchar2", 30, 0),
     ("CURRENT_ACCT", "varchar2", 6, 0),
     ("CURRENT_ORG", "varchar2", 7, 0),

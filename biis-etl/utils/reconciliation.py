@@ -154,6 +154,14 @@ def reconcile_dataframes(
             if len(diff_rows) < 10:
                 diff_rows.append(f"key={key}: " + "; ".join(row_diffs))
 
+    # Extra rows present in actual output but absent from the golden expected set
+    # are deprecation too, so count them for a bidirectional gate.
+    for key in act_map:
+        if key not in exp_map:
+            result.diff_count += 1
+            if len(diff_rows) < 10:
+                diff_rows.append(f"key={key}: EXTRA in actual (not in expected)")
+
     result.diff_sample = "\n".join(diff_rows)
     return result
 

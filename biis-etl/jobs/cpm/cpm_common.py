@@ -58,12 +58,16 @@ def agency_filter(df: DataFrame, agency: str) -> DataFrame:
 
 
 def current_pay_period(spark, cfg) -> Tuple[int, int]:
-    row = (
+    rows = (
         db.read_table(spark, "PAY_PERIOD", cfg)
-        .agg(F.max("PP_END_YEAR").alias("y"), F.max("PP_NUM").alias("p"))
-        .collect()[0]
+        .filter(F.col("CURR_PP_FLAG") == "Y")
+        .select("PP_END_YEAR", "PP_NUM")
+        .limit(1)
+        .collect()
     )
-    return int(row["y"]), int(row["p"])
+    if not rows:
+        raise ValueError("No current pay period set in PAY_PERIOD")
+    return int(rows[0]["PP_END_YEAR"]), int(rows[0]["PP_NUM"])
 
 
 def to_staging(df: DataFrame, agency: str) -> DataFrame:

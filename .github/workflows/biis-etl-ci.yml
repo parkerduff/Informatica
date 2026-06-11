@@ -58,6 +58,10 @@ jobs:
       - name: Source-target reconciliation (zero-diff gate)
         run: make validate
 
+      - name: Generate HTML test report
+        if: always()
+        run: make report
+
       - name: Upload test reports
         if: always()
         uses: actions/upload-artifact@v4
