@@ -25,10 +25,6 @@ jobs:
           --health-interval 10s
           --health-retries 10
           --health-start-period 30s
-      sftp:
-        image: atmoz/sftp
-        ports: ["2222:22"]
-        options: "testuser:testpass:::outbound"
 
     steps:
       - uses: actions/checkout@v4
@@ -39,6 +35,10 @@ jobs:
         with:
           distribution: "temurin"
           java-version: "11"
+      - name: Start SFTP server
+        # atmoz/sftp takes its user spec as the container command, which GitHub
+        # service containers cannot supply, so run it directly instead.
+        run: docker run -d --name sftp -p 2222:22 atmoz/sftp testuser:testpass:::outbound
       - name: Install unixODBC + msodbcsql18
         run: |
           sudo ACCEPT_EULA=Y apt-get update
