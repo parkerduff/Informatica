@@ -1,0 +1,15 @@
+{
+  "detail_record_count": 10,
+  "comp_time_daily_tbl_rows": 10,
+  "counter_tbl_rows": 1,
+  "counter_value": 10,
+  "counter_description": "Number of detail records from the COMP TIME file.",
+  "sample_row_ssn_999000001": {
+    "PP_END_YEAR": 2026,
+    "PP_NUM": 12,
+    "PP_YEAR_NUM": 202612,
+    "COMP_TIME_CUR_BAL": 120.50,
+    "PP_END_DATE": "2026-06-13",
+    "DAILY_DATE_EARNED": "2026-06-10"
+  }
+}

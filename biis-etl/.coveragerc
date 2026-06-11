@@ -1,0 +1,14 @@
+[run]
+branch = False
+omit =
+    */tests/*
+    setup.py
+
+[report]
+exclude_lines =
+    pragma: no cover
+    if __name__ == .__main__.:
+    def main\(
+    def _build_spark\(
+    def read_table\(
+    def write_table\(
