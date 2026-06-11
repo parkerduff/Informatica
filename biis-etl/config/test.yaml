@@ -1,0 +1,15 @@
+database:
+  host: "localhost"
+  port: 1433
+  name: "biis_test"
+  user: "sa"
+  password: "TestP@ssw0rd!"
+  driver: "{ODBC Driver 18 for SQL Server}"
+  trust_cert: true
+
+spark:
+  master: "local[*]"
+  app_name: "biis-etl-test"
+
+notifications:
+  provider: "log"

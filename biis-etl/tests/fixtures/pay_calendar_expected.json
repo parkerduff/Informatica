@@ -1,0 +1,9 @@
+{
+  "after_reset": {"rows_with_Y": 0},
+  "after_set": {"pp_num": 12, "pp_end_year": 2026, "curr_pp_flag": "Y"},
+  "after_verify": {"current_count": 1, "status": "pass"},
+  "message": {
+    "subject_contains": "Pay Calendar Process Completed Successfully for: 2026-12",
+    "message_contains": "Current Pay Period = 12"
+  }
+}
