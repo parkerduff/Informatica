@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "biis-pyspark-etl"
+version = "1.0.0"
+description = "PySpark migration of the BIIS/EHRP Informatica PowerCenter 9.6.1 ETL project"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "pyspark>=3.4",
+    "oracledb>=1.4",
+    "paramiko>=3.0",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "ruff>=0.1",
+]
+
+[project.scripts]
+biis-etl = "pyspark_etl.main:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pyspark_etl*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
