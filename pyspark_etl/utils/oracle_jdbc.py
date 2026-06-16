@@ -63,7 +63,7 @@ def _connect() -> "oracledb.Connection":
     return oracledb.connect(
         user=connections.ORACLE_USER,
         password=connections.ORACLE_PASSWORD,
-        dsn=connections.ORACLE_DSN if hasattr(connections, "ORACLE_DSN") else None,
+        dsn=connections.ORACLE_DSN,
     )
 
 
@@ -87,34 +87,54 @@ def execute_sql(statements: List[str], connection_name: str = "default") -> None
         conn.close()
 
 
+# SQL*Plus directive lines that oracledb cannot execute. These are only treated
+# as directives at a statement boundary (empty buffer); the same keywords inside
+# a statement -- e.g. the SET clause of an UPDATE -- are left untouched.
+_DIRECTIVE = re.compile(
+    r"^(SPOOL|SET|COL|COLUMN|PROMPT|REM|REMARK|WHENEVER|@@?)\b", re.IGNORECASE
+)
+# SQL*Plus EXEC / EXECUTE is shorthand for an anonymous PL/SQL block.
+_EXEC = re.compile(r"^EXEC(UTE)?\s+(?P<call>.+)$", re.IGNORECASE | re.DOTALL)
+
+
+def _finalize(block: str, statements: List[str]) -> None:
+    block = block.strip().rstrip(";").strip()
+    if not block:
+        return
+    m = _EXEC.match(block)
+    if m:
+        # oracledb can't run "EXEC proc"; rewrite to "BEGIN proc; END;".
+        statements.append("BEGIN %s; END;" % m.group("call").strip())
+    else:
+        statements.append(block)
+
+
 def _split_sql_script(script: str) -> List[str]:
-    """Split a SQL script into individual statements.
+    """Split a SQL script into individual executable statements.
 
     PL/SQL blocks are terminated by a line containing only ``/``; plain SQL
-    statements are separated by semicolons.
+    statements are separated by semicolons. SQL*Plus-only directives (SPOOL, SET,
+    PROMPT, ...) are dropped, and ``EXEC``/``EXECUTE`` shorthands are rewritten as
+    anonymous PL/SQL blocks so oracledb can run them.
     """
     statements: List[str] = []
     buffer: List[str] = []
     for line in script.splitlines():
         stripped = line.strip()
+        # Only skip directives when we're between statements; inside a statement
+        # the same keyword (e.g. UPDATE ... SET) is a real part of the SQL.
+        if not buffer and (not stripped or _DIRECTIVE.match(stripped)):
+            continue
         if stripped == "/":
-            block = "\n".join(buffer).strip()
-            if block:
-                statements.append(block)
+            _finalize("\n".join(buffer), statements)
             buffer = []
             continue
         buffer.append(line)
         if stripped.endswith(";"):
-            block = "\n".join(buffer).strip().rstrip(";").strip()
-            if block:
-                statements.append(block)
+            _finalize("\n".join(buffer), statements)
             buffer = []
-    tail = "\n".join(buffer).strip()
-    if tail:
-        statements.append(tail)
-    # Drop SQL*Plus directives that oracledb cannot execute.
-    directives = re.compile(r"^(SPOOL|SET|COL|PROMPT|Prompt|@@?)", re.IGNORECASE)
-    return [s for s in statements if not directives.match(s.strip())]
+    _finalize("\n".join(buffer), statements)
+    return statements
 
 
 def execute_sql_file(file_path: str, connection_name: str = "default") -> None:

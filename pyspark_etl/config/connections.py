@@ -22,6 +22,10 @@ def _env(name: str, default: str = "") -> str:
 
 # --- Oracle (Spark JDBC + oracledb) -----------------------------------------
 ORACLE_JDBC_URL = _env("ORACLE_JDBC_URL")
+# Oracle connect string for the oracledb thin driver (e.g. host:port/service_name).
+# This is distinct from the JDBC URL used by Spark and is used by execute_sql /
+# execute_sql_file for imperative PL/SQL.
+ORACLE_DSN = _env("ORACLE_DSN")
 ORACLE_USER = _env("ORACLE_USER")
 ORACLE_PASSWORD = _env("ORACLE_PASSWORD")
 

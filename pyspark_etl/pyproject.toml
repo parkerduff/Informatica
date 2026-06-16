@@ -31,4 +31,11 @@ packages = [
     "transforms",
     "utils",
     "jobs",
+    "jobs.ehrp2biis",
+    "jobs.cpm",
+    "jobs.pseudossn",
+    "jobs.comptime",
+    "jobs.pay_calendar",
+    "transfers",
+    "maintenance",
 ]
