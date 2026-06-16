@@ -1,0 +1,13 @@
+-- ehrp2biis_preload_step01.sql
+--
+-- The original ehrp2biis_preload ksh script executes "@ $homedir/step01" via
+-- SQL*Plus. That step01 script lives on the BIIS server ($homedir =
+-- /data/BIISINT/bin/EHRP2BIIS) and is NOT checked into this repository, so it
+-- cannot be reproduced verbatim here.
+--
+-- Drop the real step01 contents in place of this file (or point
+-- jobs.ehrp2biis.preload at its location on the server). The preload job will
+-- execute every statement in this file via JDBC and email success/failure.
+--
+-- Placeholder no-op so the job runs end-to-end in a test environment:
+SELECT 1 FROM dual;
