@@ -1,0 +1,32 @@
+# Local stack for offline execution/validation without a live AWS account.
+#   * localstack  -> S3 / Step Functions / SNS emulation
+#   * postgres    -> Oracle-compatible shim hosting the PL/SQL-equivalent targets
+#
+# The pure-Python pipeline (migration/local/run_pipeline.py) runs end-to-end
+# WITHOUT these services; docker-compose is provided for a fuller AWS-like local
+# rehearsal (S3 prefixes, Step Functions execution, SNS topics).
+version: "3.8"
+
+services:
+  localstack:
+    image: localstack/localstack:3.5
+    ports:
+      - "4566:4566"
+    environment:
+      - SERVICES=s3,stepfunctions,sns,iam,events,lambda,sts
+      - DEBUG=0
+      - DEFAULT_REGION=us-east-1
+    volumes:
+      - "./.localstack:/var/lib/localstack"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+
+  postgres:
+    image: postgres:16
+    environment:
+      - POSTGRES_USER=biis
+      - POSTGRES_PASSWORD=biis
+      - POSTGRES_DB=biis_warehouse
+    ports:
+      - "5432:5432"
+    volumes:
+      - "./.pgdata:/var/lib/postgresql/data"

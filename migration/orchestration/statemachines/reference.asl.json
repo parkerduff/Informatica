@@ -1,0 +1,166 @@
+{
+  "Comment": "Workflow family 'reference' \u2014 parallel independent feeds",
+  "StartAt": "RunFeeds",
+  "States": {
+    "RunFeeds": {
+      "Type": "Parallel",
+      "Branches": [
+        {
+          "StartAt": "Pay_Calendar_Job",
+          "States": {
+            "Pay_Calendar_Job": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::glue:startJobRun.sync",
+              "Parameters": {
+                "JobName": "informatica-pay_calendar",
+                "Arguments": {
+                  "--folder": "Pay_Calendar",
+                  "--in-dir.$": "$.input_prefix",
+                  "--out-dir.$": "$.output_prefix"
+                }
+              },
+              "Retry": [
+                {
+                  "ErrorEquals": [
+                    "States.ALL"
+                  ],
+                  "MaxAttempts": 2,
+                  "IntervalSeconds": 30,
+                  "BackoffRate": 2.0
+                }
+              ],
+              "Catch": [
+                {
+                  "ErrorEquals": [
+                    "States.ALL"
+                  ],
+                  "Next": "NotifyFailure",
+                  "ResultPath": "$.error"
+                }
+              ],
+              "Next": "Pay_Calendar_SFTP"
+            },
+            "Pay_Calendar_SFTP": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::lambda:invoke",
+              "Comment": "SFTP delivery via AWS Transfer Family / Lambda",
+              "Parameters": {
+                "FunctionName": "informatica-sftp-delivery",
+                "Payload": {
+                  "folder": "Pay_Calendar",
+                  "target.$": "$.output_prefix"
+                }
+              },
+              "End": true
+            },
+            "NotifyFailure": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::sns:publish",
+              "Parameters": {
+                "TopicArn.$": "$.alert_topic_arn",
+                "Subject": "Informatica->Glue pipeline failure",
+                "Message.$": "$.error"
+              },
+              "Next": "FailState"
+            },
+            "FailState": {
+              "Type": "Fail",
+              "Error": "PipelineError"
+            }
+          }
+        },
+        {
+          "StartAt": "COMPTIME_Job",
+          "States": {
+            "COMPTIME_Job": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::glue:startJobRun.sync",
+              "Parameters": {
+                "JobName": "informatica-comptime",
+                "Arguments": {
+                  "--folder": "COMPTIME",
+                  "--in-dir.$": "$.input_prefix",
+                  "--out-dir.$": "$.output_prefix"
+                }
+              },
+              "Retry": [
+                {
+                  "ErrorEquals": [
+                    "States.ALL"
+                  ],
+                  "MaxAttempts": 2,
+                  "IntervalSeconds": 30,
+                  "BackoffRate": 2.0
+                }
+              ],
+              "Catch": [
+                {
+                  "ErrorEquals": [
+                    "States.ALL"
+                  ],
+                  "Next": "NotifyFailure",
+                  "ResultPath": "$.error"
+                }
+              ],
+              "Next": "COMPTIME_SFTP"
+            },
+            "COMPTIME_SFTP": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::lambda:invoke",
+              "Comment": "SFTP delivery via AWS Transfer Family / Lambda",
+              "Parameters": {
+                "FunctionName": "informatica-sftp-delivery",
+                "Payload": {
+                  "folder": "COMPTIME",
+                  "target.$": "$.output_prefix"
+                }
+              },
+              "End": true
+            },
+            "NotifyFailure": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::sns:publish",
+              "Parameters": {
+                "TopicArn.$": "$.alert_topic_arn",
+                "Subject": "Informatica->Glue pipeline failure",
+                "Message.$": "$.error"
+              },
+              "Next": "FailState"
+            },
+            "FailState": {
+              "Type": "Fail",
+              "Error": "PipelineError"
+            }
+          }
+        }
+      ],
+      "Next": "Done",
+      "Catch": [
+        {
+          "ErrorEquals": [
+            "States.ALL"
+          ],
+          "Next": "NotifyFailure",
+          "ResultPath": "$.error"
+        }
+      ]
+    },
+    "Done": {
+      "Type": "Succeed"
+    },
+    "NotifyFailure": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::sns:publish",
+      "Parameters": {
+        "TopicArn.$": "$.alert_topic_arn",
+        "Subject": "Informatica->Glue pipeline failure",
+        "Message.$": "$.error"
+      },
+      "Next": "FailState"
+    },
+    "FailState": {
+      "Type": "Fail",
+      "Error": "PipelineError"
+    }
+  }
+}

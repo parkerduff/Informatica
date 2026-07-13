@@ -1,0 +1,70 @@
+{
+  "folders": [
+    "COMPTIME",
+    "CPM_CDC",
+    "CPM_NIH",
+    "CPM_OIG",
+    "EHRP2BIIS_UPDATE",
+    "FDA_Leave",
+    "Pay_Calendar",
+    "Pseudossn"
+  ],
+  "counts": {
+    "COMPTIME": {
+      "sources": 2,
+      "targets": 4,
+      "mappings": 3,
+      "transformations": 19,
+      "workflows": 1
+    },
+    "CPM_CDC": {
+      "sources": 3,
+      "targets": 6,
+      "mappings": 6,
+      "transformations": 30,
+      "workflows": 1
+    },
+    "CPM_NIH": {
+      "sources": 3,
+      "targets": 6,
+      "mappings": 6,
+      "transformations": 30,
+      "workflows": 1
+    },
+    "CPM_OIG": {
+      "sources": 2,
+      "targets": 4,
+      "mappings": 4,
+      "transformations": 27,
+      "workflows": 1
+    },
+    "EHRP2BIIS_UPDATE": {
+      "sources": 2,
+      "targets": 3,
+      "mappings": 1,
+      "transformations": 13,
+      "workflows": 1
+    },
+    "FDA_Leave": {
+      "sources": 7,
+      "targets": 9,
+      "mappings": 10,
+      "transformations": 84,
+      "workflows": 1
+    },
+    "Pay_Calendar": {
+      "sources": 1,
+      "targets": 3,
+      "mappings": 4,
+      "transformations": 21,
+      "workflows": 1
+    },
+    "Pseudossn": {
+      "sources": 5,
+      "targets": 9,
+      "mappings": 10,
+      "transformations": 74,
+      "workflows": 1
+    }
+  }
+}

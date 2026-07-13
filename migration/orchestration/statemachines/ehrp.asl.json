@@ -1,0 +1,126 @@
+{
+  "Comment": "Workflow family 'ehrp' \u2014 parallel independent feeds",
+  "StartAt": "RunFeeds",
+  "States": {
+    "RunFeeds": {
+      "Type": "Parallel",
+      "Branches": [
+        {
+          "StartAt": "EHRP2BIIS_UPDATE_preload_ehrp2biis_preload",
+          "States": {
+            "EHRP2BIIS_UPDATE_preload_ehrp2biis_preload": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::glue:startJobRun.sync",
+              "Comment": "Push-down PL/SQL step: ehrp2biis_preload",
+              "Parameters": {
+                "JobName": "informatica-pushdown-sql",
+                "Arguments": {
+                  "--step": "ehrp2biis_preload"
+                }
+              },
+              "Next": "EHRP2BIIS_UPDATE_Job"
+            },
+            "EHRP2BIIS_UPDATE_Job": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::glue:startJobRun.sync",
+              "Parameters": {
+                "JobName": "informatica-ehrp2biis_update",
+                "Arguments": {
+                  "--folder": "EHRP2BIIS_UPDATE",
+                  "--in-dir.$": "$.input_prefix",
+                  "--out-dir.$": "$.output_prefix"
+                }
+              },
+              "Retry": [
+                {
+                  "ErrorEquals": [
+                    "States.ALL"
+                  ],
+                  "MaxAttempts": 2,
+                  "IntervalSeconds": 30,
+                  "BackoffRate": 2.0
+                }
+              ],
+              "Catch": [
+                {
+                  "ErrorEquals": [
+                    "States.ALL"
+                  ],
+                  "Next": "NotifyFailure",
+                  "ResultPath": "$.error"
+                }
+              ],
+              "Next": "EHRP2BIIS_UPDATE_afterload_ehrp2biis_afterload"
+            },
+            "EHRP2BIIS_UPDATE_afterload_ehrp2biis_afterload": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::glue:startJobRun.sync",
+              "Comment": "Push-down PL/SQL step: ehrp2biis_afterload",
+              "Parameters": {
+                "JobName": "informatica-pushdown-sql",
+                "Arguments": {
+                  "--step": "ehrp2biis_afterload"
+                }
+              },
+              "Next": "EHRP2BIIS_UPDATE_SFTP"
+            },
+            "EHRP2BIIS_UPDATE_SFTP": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::lambda:invoke",
+              "Comment": "SFTP delivery via AWS Transfer Family / Lambda",
+              "Parameters": {
+                "FunctionName": "informatica-sftp-delivery",
+                "Payload": {
+                  "folder": "EHRP2BIIS_UPDATE",
+                  "target.$": "$.output_prefix"
+                }
+              },
+              "End": true
+            },
+            "NotifyFailure": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::sns:publish",
+              "Parameters": {
+                "TopicArn.$": "$.alert_topic_arn",
+                "Subject": "Informatica->Glue pipeline failure",
+                "Message.$": "$.error"
+              },
+              "Next": "FailState"
+            },
+            "FailState": {
+              "Type": "Fail",
+              "Error": "PipelineError"
+            }
+          }
+        }
+      ],
+      "Next": "Done",
+      "Catch": [
+        {
+          "ErrorEquals": [
+            "States.ALL"
+          ],
+          "Next": "NotifyFailure",
+          "ResultPath": "$.error"
+        }
+      ]
+    },
+    "Done": {
+      "Type": "Succeed"
+    },
+    "NotifyFailure": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::sns:publish",
+      "Parameters": {
+        "TopicArn.$": "$.alert_topic_arn",
+        "Subject": "Informatica->Glue pipeline failure",
+        "Message.$": "$.error"
+      },
+      "Next": "FailState"
+    },
+    "FailState": {
+      "Type": "Fail",
+      "Error": "PipelineError"
+    }
+  }
+}
