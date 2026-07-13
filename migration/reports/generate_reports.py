@@ -257,7 +257,7 @@ def migration_report() -> str:
         parts.append('<table><tr><th>Target port</th><th>Source transform</th>'
                      '<th>Verbatim Informatica expression</th></tr>' + rows + more + '</table>')
 
-    return _page("EHRP&rarr;BIIS PowerCenter to AWS Glue — Migration Report",
+    return _page("EHRP→BIIS PowerCenter to AWS Glue — Migration Report",
                  "Exhaustive inventory, component mapping, and per-transformation traceability",
                  "".join(parts))
 
@@ -306,7 +306,7 @@ def data_analysis_report() -> str:
     if not func:
         parts.append('<div class="note">No reconciliation results found. Run '
                      '<code>./migration/run_local.sh functional</code> first.</div>')
-        return _page("EHRP&rarr;BIIS — Data Analysis / Reconciliation Report",
+        return _page("EHRP→BIIS — Data Analysis / Reconciliation Report",
                      "Field-level reconciliation vs golden baseline", "".join(parts))
 
     results = func["results"]
@@ -419,7 +419,7 @@ def data_analysis_report() -> str:
         parts.append('<table><tr><th>Job</th><th>Func rows</th><th>Func rows/s</th>'
                      '<th>Mass rows</th><th>Mass rows/s</th></tr>' + rows + '</table>')
 
-    return _page("EHRP&rarr;BIIS — Data Analysis / Reconciliation Report",
+    return _page("EHRP→BIIS — Data Analysis / Reconciliation Report",
                  "Field-level reconciliation vs spec-derived golden baseline + performance",
                  "".join(parts))
 
