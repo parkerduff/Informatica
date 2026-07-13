@@ -1,0 +1,3707 @@
+{
+  "folder": "Pay_Calendar",
+  "creation_date": "06/27/2019 19:02:47",
+  "repository": {
+    "name": "Prd_Repo_Srvc",
+    "codepage": "Latin1",
+    "database_type": "Oracle",
+    "version": "187"
+  },
+  "folder_name": "Pay_Calendar",
+  "folder_description": "",
+  "counts": {
+    "sources": 1,
+    "targets": 3,
+    "mappings": 4,
+    "transformations": 21,
+    "workflows": 1
+  },
+  "sources": [
+    {
+      "name": "PAY_PERIOD",
+      "database_type": "Oracle",
+      "dbdname": "ORA_BIIS",
+      "ownername": "HISTDBA",
+      "flatfile": null,
+      "fields": [
+        {
+          "name": "PP_NUM",
+          "datatype": "number(p,s)",
+          "precision": 2,
+          "scale": 0,
+          "length": 4,
+          "physicaloffset": 0,
+          "physicallength": 2,
+          "nullable": "NOTNULL",
+          "keytype": "PRIMARY KEY",
+          "fieldnumber": 1,
+          "picturetext": "",
+          "usage_flags": ""
+        },
+        {
+          "name": "PP_END_YEAR",
+          "datatype": "number(p,s)",
+          "precision": 4,
+          "scale": 0,
+          "length": 6,
+          "physicaloffset": 2,
+          "physicallength": 4,
+          "nullable": "NOTNULL",
+          "keytype": "PRIMARY KEY",
+          "fieldnumber": 2,
+          "picturetext": "",
+          "usage_flags": ""
+        },
+        {
+          "name": "PP_START_DTE",
+          "datatype": "date",
+          "precision": 19,
+          "scale": 0,
+          "length": 19,
+          "physicaloffset": 6,
+          "physicallength": 19,
+          "nullable": "NULL",
+          "keytype": "NOT A KEY",
+          "fieldnumber": 3,
+          "picturetext": "",
+          "usage_flags": ""
+        },
+        {
+          "name": "PP_END_DTE",
+          "datatype": "date",
+          "precision": 19,
+          "scale": 0,
+          "length": 19,
+          "physicaloffset": 25,
+          "physicallength": 19,
+          "nullable": "NULL",
+          "keytype": "NOT A KEY",
+          "fieldnumber": 4,
+          "picturetext": "",
+          "usage_flags": ""
+        },
+        {
+          "name": "LV_NUM",
+          "datatype": "number(p,s)",
+          "precision": 2,
+          "scale": 0,
+          "length": 4,
+          "physicaloffset": 44,
+          "physicallength": 2,
+          "nullable": "NULL",
+          "keytype": "NOT A KEY",
+          "fieldnumber": 5,
+          "picturetext": "",
+          "usage_flags": ""
+        },
+        {
+          "name": "LV_YEAR",
+          "datatype": "number(p,s)",
+          "precision": 4,
+          "scale": 0,
+          "length": 6,
+          "physicaloffset": 46,
+          "physicallength": 4,
+          "nullable": "NULL",
+          "keytype": "NOT A KEY",
+          "fieldnumber": 6,
+          "picturetext": "",
+          "usage_flags": ""
+        },
+        {
+          "name": "PAY_DTE",
+          "datatype": "date",
+          "precision": 19,
+          "scale": 0,
+          "length": 19,
+          "physicaloffset": 50,
+          "physicallength": 19,
+          "nullable": "NULL",
+          "keytype": "NOT A KEY",
+          "fieldnumber": 7,
+          "picturetext": "",
+          "usage_flags": ""
+        },
+        {
+          "name": "CURR_PP_FLAG",
+          "datatype": "varchar2",
+          "precision": 1,
+          "scale": 0,
+          "length": 0,
+          "physicaloffset": 69,
+          "physicallength": 1,
+          "nullable": "NULL",
+          "keytype": "NOT A KEY",
+          "fieldnumber": 8,
+          "picturetext": "",
+          "usage_flags": ""
+        },
+        {
+          "name": "HOLIDAY_1",
+          "datatype": "date",
+          "precision": 19,
+          "scale": 0,
+          "length": 19,
+          "physicaloffset": 70,
+          "physicallength": 19,
+          "nullable": "NULL",
+          "keytype": "NOT A KEY",
+          "fieldnumber": 9,
+          "picturetext": "",
+          "usage_flags": ""
+        },
+        {
+          "name": "HOLIDAY_2",
+          "datatype": "date",
+          "precision": 19,
+          "scale": 0,
+          "length": 19,
+          "physicaloffset": 89,
+          "physicallength": 19,
+          "nullable": "NULL",
+          "keytype": "NOT A KEY",
+          "fieldnumber": 10,
+          "picturetext": "",
+          "usage_flags": ""
+        }
+      ]
+    }
+  ],
+  "targets": [
+    {
+      "name": "PAY_PERIOD_VERIFY_FILE",
+      "database_type": "Flat File",
+      "flatfile": {
+        "codepage": "Latin1",
+        "delimited": false,
+        "delimiters": ",",
+        "quote_character": "NONE",
+        "null_character": "*",
+        "nullchartype": "ASCII",
+        "escape_character": "",
+        "linesequential": false,
+        "skiprows": 0,
+        "striptrailingblanks": false,
+        "rowdelimiter": "0",
+        "padbytes": 1
+      },
+      "fields": [
+        {
+          "name": "SUBJECT",
+          "datatype": "string",
+          "precision": 100,
+          "scale": 0,
+          "length": null,
+          "physicaloffset": null,
+          "physicallength": null,
+          "nullable": "NULL",
+          "keytype": "NOT A KEY",
+          "fieldnumber": 1,
+          "picturetext": "",
+          "usage_flags": null
+        }
+      ]
+    },
+    {
+      "name": "PAY_PERIOD_MESSAGE_FILE",
+      "database_type": "Flat File",
+      "flatfile": {
+        "codepage": "Latin1",
+        "delimited": false,
+        "delimiters": ",",
+        "quote_character": "NONE",
+        "null_character": "*",
+        "nullchartype": "ASCII",
+        "escape_character": "",
+        "linesequential": false,
+        "skiprows": 0,
+        "striptrailingblanks": false,
+        "rowdelimiter": "0",
+        "padbytes": 1
+      },
+      "fields": [
+        {
+          "name": "SUBJECT",
+          "datatype": "string",
+          "precision": 100,
+          "scale": 0,
+          "length": null,
+          "physicaloffset": null,
+          "physicallength": null,
+          "nullable": "NULL",
+          "keytype": "NOT A KEY",
+          "fieldnumber": 1,
+          "picturetext": "",
+          "usage_flags": null
+        },
+        {
+          "name": "MESSAGE",
+          "datatype": "string",
+          "precision": 300,
+          "scale": 0,
+          "length": null,
+          "physicaloffset": null,
+          "physicallength": null,
+          "nullable": "NULL",
+          "keytype": "NOT A KEY",
+          "fieldnumber": 2,
+          "picturetext": "",
+          "usage_flags": null
+        }
+      ]
+    },
+    {
+      "name": "PAY_PERIOD",
+      "database_type": "Oracle",
+      "flatfile": null,
+      "fields": [
+        {
+          "name": "PP_NUM",
+          "datatype": "number(p,s)",
+          "precision": 2,
+          "scale": 0,
+          "length": null,
+          "physicaloffset": null,
+          "physicallength": null,
+          "nullable": "NOTNULL",
+          "keytype": "PRIMARY KEY",
+          "fieldnumber": 1,
+          "picturetext": "",
+          "usage_flags": null
+        },
+        {
+          "name": "PP_END_YEAR",
+          "datatype": "number(p,s)",
+          "precision": 4,
+          "scale": 0,
+          "length": null,
+          "physicaloffset": null,
+          "physicallength": null,
+          "nullable": "NOTNULL",
+          "keytype": "PRIMARY KEY",
+          "fieldnumber": 2,
+          "picturetext": "",
+          "usage_flags": null
+        },
+        {
+          "name": "PP_START_DTE",
+          "datatype": "date",
+          "precision": 19,
+          "scale": 0,
+          "length": null,
+          "physicaloffset": null,
+          "physicallength": null,
+          "nullable": "NULL",
+          "keytype": "NOT A KEY",
+          "fieldnumber": 3,
+          "picturetext": "",
+          "usage_flags": null
+        },
+        {
+          "name": "PP_END_DTE",
+          "datatype": "date",
+          "precision": 19,
+          "scale": 0,
+          "length": null,
+          "physicaloffset": null,
+          "physicallength": null,
+          "nullable": "NULL",
+          "keytype": "NOT A KEY",
+          "fieldnumber": 4,
+          "picturetext": "",
+          "usage_flags": null
+        },
+        {
+          "name": "LV_NUM",
+          "datatype": "number(p,s)",
+          "precision": 2,
+          "scale": 0,
+          "length": null,
+          "physicaloffset": null,
+          "physicallength": null,
+          "nullable": "NULL",
+          "keytype": "NOT A KEY",
+          "fieldnumber": 5,
+          "picturetext": "",
+          "usage_flags": null
+        },
+        {
+          "name": "LV_YEAR",
+          "datatype": "number(p,s)",
+          "precision": 4,
+          "scale": 0,
+          "length": null,
+          "physicaloffset": null,
+          "physicallength": null,
+          "nullable": "NULL",
+          "keytype": "NOT A KEY",
+          "fieldnumber": 6,
+          "picturetext": "",
+          "usage_flags": null
+        },
+        {
+          "name": "PAY_DTE",
+          "datatype": "date",
+          "precision": 19,
+          "scale": 0,
+          "length": null,
+          "physicaloffset": null,
+          "physicallength": null,
+          "nullable": "NULL",
+          "keytype": "NOT A KEY",
+          "fieldnumber": 7,
+          "picturetext": "",
+          "usage_flags": null
+        },
+        {
+          "name": "CURR_PP_FLAG",
+          "datatype": "varchar2",
+          "precision": 1,
+          "scale": 0,
+          "length": null,
+          "physicaloffset": null,
+          "physicallength": null,
+          "nullable": "NULL",
+          "keytype": "NOT A KEY",
+          "fieldnumber": 8,
+          "picturetext": "",
+          "usage_flags": null
+        }
+      ]
+    }
+  ],
+  "mappings": [
+    {
+      "name": "m_Pay_Calendar_Verify_Pay_Calendar",
+      "instances": [
+        {
+          "name": "PAY_PERIOD_VERIFY_FILE",
+          "type": "TARGET",
+          "transformation_type": "Target Definition",
+          "transformation_name": "PAY_PERIOD_VERIFY_FILE",
+          "dbdname": null
+        },
+        {
+          "name": "PAY_PERIOD1",
+          "type": "SOURCE",
+          "transformation_type": "Source Definition",
+          "transformation_name": "PAY_PERIOD",
+          "dbdname": "ORA_BIIS"
+        },
+        {
+          "name": "SQ_PAY_PERIOD",
+          "type": "TRANSFORMATION",
+          "transformation_type": "Source Qualifier",
+          "transformation_name": "SQ_PAY_PERIOD",
+          "dbdname": null
+        },
+        {
+          "name": "exp_Initial",
+          "type": "TRANSFORMATION",
+          "transformation_type": "Expression",
+          "transformation_name": "exp_Initial",
+          "dbdname": null
+        },
+        {
+          "name": "lkp_Current_Pay_Period",
+          "type": "TRANSFORMATION",
+          "transformation_type": "Lookup Procedure",
+          "transformation_name": "lkp_Current_Pay_Period",
+          "dbdname": null
+        },
+        {
+          "name": "exp_Check_Current_Flag",
+          "type": "TRANSFORMATION",
+          "transformation_type": "Expression",
+          "transformation_name": "exp_Check_Current_Flag",
+          "dbdname": null
+        }
+      ],
+      "connectors": [
+        {
+          "from_instance": "exp_Check_Current_Flag",
+          "from_field": "o_CURRENT_FLAG_SET",
+          "to_instance": "PAY_PERIOD_VERIFY_FILE",
+          "to_field": "SUBJECT",
+          "from_instancetype": "Expression",
+          "to_instancetype": "Target Definition"
+        },
+        {
+          "from_instance": "PAY_PERIOD1",
+          "from_field": "PP_NUM",
+          "to_instance": "SQ_PAY_PERIOD",
+          "to_field": "PP_NUM",
+          "from_instancetype": "Source Definition",
+          "to_instancetype": "Source Qualifier"
+        },
+        {
+          "from_instance": "PAY_PERIOD1",
+          "from_field": "PP_END_YEAR",
+          "to_instance": "SQ_PAY_PERIOD",
+          "to_field": "PP_END_YEAR",
+          "from_instancetype": "Source Definition",
+          "to_instancetype": "Source Qualifier"
+        },
+        {
+          "from_instance": "PAY_PERIOD1",
+          "from_field": "PP_START_DTE",
+          "to_instance": "SQ_PAY_PERIOD",
+          "to_field": "PP_START_DTE",
+          "from_instancetype": "Source Definition",
+          "to_instancetype": "Source Qualifier"
+        },
+        {
+          "from_instance": "PAY_PERIOD1",
+          "from_field": "PP_END_DTE",
+          "to_instance": "SQ_PAY_PERIOD",
+          "to_field": "PP_END_DTE",
+          "from_instancetype": "Source Definition",
+          "to_instancetype": "Source Qualifier"
+        },
+        {
+          "from_instance": "PAY_PERIOD1",
+          "from_field": "LV_NUM",
+          "to_instance": "SQ_PAY_PERIOD",
+          "to_field": "LV_NUM",
+          "from_instancetype": "Source Definition",
+          "to_instancetype": "Source Qualifier"
+        },
+        {
+          "from_instance": "PAY_PERIOD1",
+          "from_field": "LV_YEAR",
+          "to_instance": "SQ_PAY_PERIOD",
+          "to_field": "LV_YEAR",
+          "from_instancetype": "Source Definition",
+          "to_instancetype": "Source Qualifier"
+        },
+        {
+          "from_instance": "PAY_PERIOD1",
+          "from_field": "PAY_DTE",
+          "to_instance": "SQ_PAY_PERIOD",
+          "to_field": "PAY_DTE",
+          "from_instancetype": "Source Definition",
+          "to_instancetype": "Source Qualifier"
+        },
+        {
+          "from_instance": "PAY_PERIOD1",
+          "from_field": "CURR_PP_FLAG",
+          "to_instance": "SQ_PAY_PERIOD",
+          "to_field": "CURR_PP_FLAG",
+          "from_instancetype": "Source Definition",
+          "to_instancetype": "Source Qualifier"
+        },
+        {
+          "from_instance": "SQ_PAY_PERIOD",
+          "from_field": "PP_NUM",
+          "to_instance": "exp_Initial",
+          "to_field": "PP_NUM",
+          "from_instancetype": "Source Qualifier",
+          "to_instancetype": "Expression"
+        },
+        {
+          "from_instance": "SQ_PAY_PERIOD",
+          "from_field": "PP_END_YEAR",
+          "to_instance": "exp_Initial",
+          "to_field": "PP_END_YEAR",
+          "from_instancetype": "Source Qualifier",
+          "to_instancetype": "Expression"
+        },
+        {
+          "from_instance": "exp_Initial",
+          "from_field": "o_MIN_PP_NUM",
+          "to_instance": "lkp_Current_Pay_Period",
+          "to_field": "in_MIN_PP_NUM",
+          "from_instancetype": "Expression",
+          "to_instancetype": "Lookup Procedure"
+        },
+        {
+          "from_instance": "exp_Initial",
+          "from_field": "PP_NUM",
+          "to_instance": "exp_Check_Current_Flag",
+          "to_field": "PP_NUM",
+          "from_instancetype": "Expression",
+          "to_instancetype": "Expression"
+        },
+        {
+          "from_instance": "lkp_Current_Pay_Period",
+          "from_field": "COUNT_CURRENT",
+          "to_instance": "exp_Check_Current_Flag",
+          "to_field": "lkp_COUNT_CURRENT",
+          "from_instancetype": "Lookup Procedure",
+          "to_instancetype": "Expression"
+        }
+      ],
+      "transformations": [
+        {
+          "name": "SQ_PAY_PERIOD",
+          "type": "Source Qualifier",
+          "reusable": "NO",
+          "fields": [
+            {
+              "name": "PP_NUM",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "decimal",
+              "precision": 2,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PP_END_YEAR",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "decimal",
+              "precision": 4,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PP_START_DTE",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "date/time",
+              "precision": 29,
+              "scale": 9,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PP_END_DTE",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "date/time",
+              "precision": 29,
+              "scale": 9,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "LV_NUM",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "decimal",
+              "precision": 2,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "LV_YEAR",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "decimal",
+              "precision": 4,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PAY_DTE",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "date/time",
+              "precision": 29,
+              "scale": 9,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "CURR_PP_FLAG",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "string",
+              "precision": 1,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            }
+          ],
+          "table_attributes": {
+            "Sql Query": "SELECT \r\n\tMAX(PAY_PERIOD.PP_NUM) PP_NUM , \r\n\tMAX(PAY_PERIOD.PP_END_YEAR) PP_END_YEAR \r\nFROM\r\n PAY_PERIOD",
+            "User Defined Join": "",
+            "Source Filter": "",
+            "Number Of Sorted Ports": "0",
+            "Tracing Level": "Normal",
+            "Select Distinct": "NO",
+            "Is Partitionable": "NO",
+            "Pre SQL": "",
+            "Post SQL": "",
+            "Output is deterministic": "NO",
+            "Output is repeatable": "Never"
+          }
+        },
+        {
+          "name": "exp_Initial",
+          "type": "Expression",
+          "reusable": "NO",
+          "fields": [
+            {
+              "name": "PP_NUM",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "decimal",
+              "precision": 2,
+              "scale": 0,
+              "expression": "PP_NUM",
+              "expressiontype": "GENERAL",
+              "default_value": ""
+            },
+            {
+              "name": "PP_END_YEAR",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "decimal",
+              "precision": 4,
+              "scale": 0,
+              "expression": "PP_END_YEAR",
+              "expressiontype": "GENERAL",
+              "default_value": ""
+            },
+            {
+              "name": "CURR_PP_FLAG",
+              "porttype": "INPUT",
+              "datatype": "string",
+              "precision": 1,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "o_CURR_PP_FLAG",
+              "porttype": "OUTPUT",
+              "datatype": "string",
+              "precision": 1,
+              "scale": 0,
+              "expression": "NULL",
+              "expressiontype": "GENERAL",
+              "default_value": "ERROR('transformation error')"
+            },
+            {
+              "name": "o_MIN_PP_NUM",
+              "porttype": "OUTPUT",
+              "datatype": "integer",
+              "precision": 10,
+              "scale": 0,
+              "expression": "1",
+              "expressiontype": "GENERAL",
+              "default_value": "ERROR('transformation error')"
+            }
+          ],
+          "table_attributes": {
+            "Tracing Level": "Normal"
+          }
+        },
+        {
+          "name": "lkp_Current_Pay_Period",
+          "type": "Lookup Procedure",
+          "reusable": "NO",
+          "fields": [
+            {
+              "name": "in_MIN_PP_NUM",
+              "porttype": "INPUT",
+              "datatype": "integer",
+              "precision": 10,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PP_NUM",
+              "porttype": "LOOKUP",
+              "datatype": "decimal",
+              "precision": 2,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PP_END_YEAR",
+              "porttype": "LOOKUP",
+              "datatype": "decimal",
+              "precision": 4,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PP_START_DTE",
+              "porttype": "LOOKUP",
+              "datatype": "date/time",
+              "precision": 29,
+              "scale": 9,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PP_END_DTE",
+              "porttype": "LOOKUP",
+              "datatype": "date/time",
+              "precision": 29,
+              "scale": 9,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "LV_NUM",
+              "porttype": "LOOKUP",
+              "datatype": "decimal",
+              "precision": 2,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "LV_YEAR",
+              "porttype": "LOOKUP",
+              "datatype": "decimal",
+              "precision": 4,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PAY_DTE",
+              "porttype": "LOOKUP",
+              "datatype": "date/time",
+              "precision": 29,
+              "scale": 9,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "CURR_PP_FLAG",
+              "porttype": "LOOKUP",
+              "datatype": "string",
+              "precision": 1,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "COUNT_CURRENT",
+              "porttype": "LOOKUP/OUTPUT",
+              "datatype": "integer",
+              "precision": 10,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            }
+          ],
+          "table_attributes": {
+            "Lookup Sql Override": "SELECT \r\n\tCOUNT(*) as COUNT_CURRENT\r\nFROM \r\n\tPAY_PERIOD\r\nWHERE\r\n\tCURR_PP_FLAG = 'Y'",
+            "Lookup table name": "PAY_PERIOD",
+            "Lookup Source Filter": "",
+            "Lookup caching enabled": "YES",
+            "Lookup policy on multiple match": "Use Any Value",
+            "Lookup condition": "COUNT_CURRENT >= in_MIN_PP_NUM",
+            "Connection Information": "$Target",
+            "Source Type": "Database",
+            "Recache if Stale": "NO",
+            "Tracing Level": "Normal",
+            "Lookup cache directory name": "$PMCacheDir",
+            "Lookup cache initialize": "NO",
+            "Lookup cache persistent": "NO",
+            "Lookup Data Cache Size": "Auto",
+            "Lookup Index Cache Size": "Auto",
+            "Dynamic Lookup Cache": "NO",
+            "Synchronize Dynamic Cache": "NO",
+            "Output Old Value On Update": "NO",
+            "Update Dynamic Cache Condition": "TRUE",
+            "Cache File Name Prefix": "",
+            "Re-cache from lookup source": "NO",
+            "Insert Else Update": "NO",
+            "Update Else Insert": "NO",
+            "Datetime Format": "",
+            "Thousand Separator": "None",
+            "Decimal Separator": ".",
+            "Case Sensitive String Comparison": "NO",
+            "Null ordering": "Null Is Highest Value",
+            "Sorted Input": "NO",
+            "Lookup source is static": "NO",
+            "Pre-build lookup cache": "Auto",
+            "Subsecond Precision": "6"
+          }
+        },
+        {
+          "name": "exp_Check_Current_Flag",
+          "type": "Expression",
+          "reusable": "NO",
+          "fields": [
+            {
+              "name": "PP_NUM",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "decimal",
+              "precision": 2,
+              "scale": 0,
+              "expression": "PP_NUM",
+              "expressiontype": "GENERAL",
+              "default_value": ""
+            },
+            {
+              "name": "lkp_PP_NUM",
+              "porttype": "INPUT",
+              "datatype": "decimal",
+              "precision": 2,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "lkp_COUNT_CURRENT",
+              "porttype": "INPUT",
+              "datatype": "integer",
+              "precision": 10,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "v_CURRENT_FLAG_SET",
+              "porttype": "LOCAL VARIABLE",
+              "datatype": "integer",
+              "precision": 10,
+              "scale": 0,
+              "expression": "IIF(lkp_COUNT_CURRENT =  1, \r\n       TRUE,\r\n        FALSE)",
+              "expressiontype": "GENERAL",
+              "default_value": ""
+            },
+            {
+              "name": "o_CURRENT_FLAG_SET",
+              "porttype": "OUTPUT",
+              "datatype": "string",
+              "precision": 30,
+              "scale": 0,
+              "expression": "DECODE(TRUE,\r\n\t\t\t\tv_CURRENT_FLAG_SET = TRUE, \r\n\t\t\t\t\t\t'!!!! Current flag has been properly set',\r\n\r\n\r\n\t\t\t\tv_CURRENT_FLAG_SET = FALSE AND \r\n\t\t\t\t(ISNULL (lkp_COUNT_CURRENT) OR lkp_COUNT_CURRENT = 0), \r\n\t\t\t\t\t       ABORT('!!!! There is no pay period set.'),\r\n\r\n\r\n\t\t\t\tv_CURRENT_FLAG_SET = FALSE AND \r\n\t\t\t\t\t\tlkp_COUNT_CURRENT > 1, \r\n       ABORT('!!!! There are more than one pay periods set to current.')\r\n)",
+              "expressiontype": "GENERAL",
+              "default_value": "ERROR('transformation error')"
+            }
+          ],
+          "table_attributes": {
+            "Tracing Level": "Normal"
+          }
+        }
+      ]
+    },
+    {
+      "name": "m_Pay_Calendar_Set_Pay_Calendar",
+      "instances": [
+        {
+          "name": "PAY_PERIOD_PARAM",
+          "type": "TARGET",
+          "transformation_type": "Target Definition",
+          "transformation_name": "PAY_PERIOD",
+          "dbdname": null
+        },
+        {
+          "name": "PAY_PERIOD",
+          "type": "TARGET",
+          "transformation_type": "Target Definition",
+          "transformation_name": "PAY_PERIOD",
+          "dbdname": null
+        },
+        {
+          "name": "rtr_Parameter_Non_Parameter",
+          "type": "TRANSFORMATION",
+          "transformation_type": "Router",
+          "transformation_name": "rtr_Parameter_Non_Parameter",
+          "dbdname": null
+        },
+        {
+          "name": "exp_Set_Date",
+          "type": "TRANSFORMATION",
+          "transformation_type": "Expression",
+          "transformation_name": "exp_Set_Date",
+          "dbdname": null
+        },
+        {
+          "name": "exp_Set_Current_Pay_Period_Non_Param",
+          "type": "TRANSFORMATION",
+          "transformation_type": "Expression",
+          "transformation_name": "exp_Set_Current_Pay_Period_Non_Param",
+          "dbdname": null
+        },
+        {
+          "name": "lkp_Existing_Pay_Period",
+          "type": "TRANSFORMATION",
+          "transformation_type": "Lookup Procedure",
+          "transformation_name": "lkp_Existing_Pay_Period",
+          "dbdname": null
+        },
+        {
+          "name": "exp_Determine_Parameters_Exist",
+          "type": "TRANSFORMATION",
+          "transformation_type": "Expression",
+          "transformation_name": "exp_Determine_Parameters_Exist",
+          "dbdname": null
+        },
+        {
+          "name": "lkp_New_Current_Pay_Period",
+          "type": "TRANSFORMATION",
+          "transformation_type": "Lookup Procedure",
+          "transformation_name": "lkp_New_Current_Pay_Period",
+          "dbdname": null
+        },
+        {
+          "name": "upd_Set_Current_PP_Non_Param",
+          "type": "TRANSFORMATION",
+          "transformation_type": "Update Strategy",
+          "transformation_name": "upd_Set_Current_PP_Non_Param",
+          "dbdname": null
+        },
+        {
+          "name": "upd_Set_Current_PP_Param",
+          "type": "TRANSFORMATION",
+          "transformation_type": "Update Strategy",
+          "transformation_name": "upd_Set_Current_PP_Param",
+          "dbdname": null
+        },
+        {
+          "name": "PAY_PERIOD1",
+          "type": "SOURCE",
+          "transformation_type": "Source Definition",
+          "transformation_name": "PAY_PERIOD",
+          "dbdname": "ORA_BIIS"
+        },
+        {
+          "name": "SQ_PAY_PERIOD",
+          "type": "TRANSFORMATION",
+          "transformation_type": "Source Qualifier",
+          "transformation_name": "SQ_PAY_PERIOD",
+          "dbdname": null
+        },
+        {
+          "name": "exp_Initial",
+          "type": "TRANSFORMATION",
+          "transformation_type": "Expression",
+          "transformation_name": "exp_Initial",
+          "dbdname": null
+        },
+        {
+          "name": "exp_Set_Current_Pay_Period_Param",
+          "type": "TRANSFORMATION",
+          "transformation_type": "Expression",
+          "transformation_name": "exp_Set_Current_Pay_Period_Param",
+          "dbdname": null
+        }
+      ],
+      "connectors": [
+        {
+          "from_instance": "upd_Set_Current_PP_Param",
+          "from_field": "PP_NUM",
+          "to_instance": "PAY_PERIOD_PARAM",
+          "to_field": "PP_NUM",
+          "from_instancetype": "Update Strategy",
+          "to_instancetype": "Target Definition"
+        },
+        {
+          "from_instance": "upd_Set_Current_PP_Param",
+          "from_field": "PP_END_YEAR",
+          "to_instance": "PAY_PERIOD_PARAM",
+          "to_field": "PP_END_YEAR",
+          "from_instancetype": "Update Strategy",
+          "to_instancetype": "Target Definition"
+        },
+        {
+          "from_instance": "upd_Set_Current_PP_Param",
+          "from_field": "CURR_PP_FLAG",
+          "to_instance": "PAY_PERIOD_PARAM",
+          "to_field": "CURR_PP_FLAG",
+          "from_instancetype": "Update Strategy",
+          "to_instancetype": "Target Definition"
+        },
+        {
+          "from_instance": "upd_Set_Current_PP_Non_Param",
+          "from_field": "PP_NUM",
+          "to_instance": "PAY_PERIOD",
+          "to_field": "PP_NUM",
+          "from_instancetype": "Update Strategy",
+          "to_instancetype": "Target Definition"
+        },
+        {
+          "from_instance": "upd_Set_Current_PP_Non_Param",
+          "from_field": "PP_END_YEAR",
+          "to_instance": "PAY_PERIOD",
+          "to_field": "PP_END_YEAR",
+          "from_instancetype": "Update Strategy",
+          "to_instancetype": "Target Definition"
+        },
+        {
+          "from_instance": "upd_Set_Current_PP_Non_Param",
+          "from_field": "CURR_PP_FLAG",
+          "to_instance": "PAY_PERIOD",
+          "to_field": "CURR_PP_FLAG",
+          "from_instancetype": "Update Strategy",
+          "to_instancetype": "Target Definition"
+        },
+        {
+          "from_instance": "exp_Determine_Parameters_Exist",
+          "from_field": "PP_NUM",
+          "to_instance": "rtr_Parameter_Non_Parameter",
+          "to_field": "PP_NUM",
+          "from_instancetype": "Expression",
+          "to_instancetype": "Router"
+        },
+        {
+          "from_instance": "exp_Determine_Parameters_Exist",
+          "from_field": "PP_END_YEAR",
+          "to_instance": "rtr_Parameter_Non_Parameter",
+          "to_field": "PP_END_YEAR",
+          "from_instancetype": "Expression",
+          "to_instancetype": "Router"
+        },
+        {
+          "from_instance": "exp_Determine_Parameters_Exist",
+          "from_field": "PARAM_PP_END_YEAR",
+          "to_instance": "rtr_Parameter_Non_Parameter",
+          "to_field": "PARAM_PP_END_YEAR",
+          "from_instancetype": "Expression",
+          "to_instancetype": "Router"
+        },
+        {
+          "from_instance": "exp_Determine_Parameters_Exist",
+          "from_field": "PARAM_PP_NUM",
+          "to_instance": "rtr_Parameter_Non_Parameter",
+          "to_field": "PARAM_PP_NUM",
+          "from_instancetype": "Expression",
+          "to_instancetype": "Router"
+        },
+        {
+          "from_instance": "exp_Determine_Parameters_Exist",
+          "from_field": "o_PARAM_EXISTS_FLAG",
+          "to_instance": "rtr_Parameter_Non_Parameter",
+          "to_field": "PARAM_EXISTS_FLAG",
+          "from_instancetype": "Expression",
+          "to_instancetype": "Router"
+        },
+        {
+          "from_instance": "rtr_Parameter_Non_Parameter",
+          "from_field": "PP_NUM3",
+          "to_instance": "exp_Set_Date",
+          "to_field": "PP_NUM",
+          "from_instancetype": "Router",
+          "to_instancetype": "Expression"
+        },
+        {
+          "from_instance": "rtr_Parameter_Non_Parameter",
+          "from_field": "PARAM_PP_END_YEAR1",
+          "to_instance": "exp_Set_Current_Pay_Period_Param",
+          "to_field": "PP_END_YEAR",
+          "from_instancetype": "Router",
+          "to_instancetype": "Expression"
+        },
+        {
+          "from_instance": "rtr_Parameter_Non_Parameter",
+          "from_field": "PARAM_PP_NUM1",
+          "to_instance": "exp_Set_Current_Pay_Period_Param",
+          "to_field": "PP_NUM",
+          "from_instancetype": "Router",
+          "to_instancetype": "Expression"
+        },
+        {
+          "from_instance": "exp_Set_Date",
+          "from_field": "o_CURRENT_DATE",
+          "to_instance": "lkp_New_Current_Pay_Period",
+          "to_field": "in_CURRENT_DATE",
+          "from_instancetype": "Expression",
+          "to_instancetype": "Lookup Procedure"
+        },
+        {
+          "from_instance": "lkp_New_Current_Pay_Period",
+          "from_field": "PP_NUM",
+          "to_instance": "exp_Set_Current_Pay_Period_Non_Param",
+          "to_field": "lkp_PP_NUM",
+          "from_instancetype": "Lookup Procedure",
+          "to_instancetype": "Expression"
+        },
+        {
+          "from_instance": "lkp_New_Current_Pay_Period",
+          "from_field": "PP_END_YEAR",
+          "to_instance": "exp_Set_Current_Pay_Period_Non_Param",
+          "to_field": "lkp_PP_END_YEAR",
+          "from_instancetype": "Lookup Procedure",
+          "to_instancetype": "Expression"
+        },
+        {
+          "from_instance": "lkp_New_Current_Pay_Period",
+          "from_field": "CURR_PP_FLAG",
+          "to_instance": "exp_Set_Current_Pay_Period_Non_Param",
+          "to_field": "lkp_CURR_PP_FLAG",
+          "from_instancetype": "Lookup Procedure",
+          "to_instancetype": "Expression"
+        },
+        {
+          "from_instance": "exp_Set_Current_Pay_Period_Non_Param",
+          "from_field": "lkp_PP_NUM",
+          "to_instance": "upd_Set_Current_PP_Non_Param",
+          "to_field": "PP_NUM",
+          "from_instancetype": "Expression",
+          "to_instancetype": "Update Strategy"
+        },
+        {
+          "from_instance": "exp_Set_Current_Pay_Period_Non_Param",
+          "from_field": "lkp_PP_END_YEAR",
+          "to_instance": "upd_Set_Current_PP_Non_Param",
+          "to_field": "PP_END_YEAR",
+          "from_instancetype": "Expression",
+          "to_instancetype": "Update Strategy"
+        },
+        {
+          "from_instance": "exp_Set_Current_Pay_Period_Non_Param",
+          "from_field": "o_CURR_PP_FLAG",
+          "to_instance": "upd_Set_Current_PP_Non_Param",
+          "to_field": "CURR_PP_FLAG",
+          "from_instancetype": "Expression",
+          "to_instancetype": "Update Strategy"
+        },
+        {
+          "from_instance": "exp_Initial",
+          "from_field": "o_PARAM_PP_NUM",
+          "to_instance": "lkp_Existing_Pay_Period",
+          "to_field": "in_PARAM_PP_NUM",
+          "from_instancetype": "Expression",
+          "to_instancetype": "Lookup Procedure"
+        },
+        {
+          "from_instance": "exp_Initial",
+          "from_field": "o_PARAM_PP_END_YEAR",
+          "to_instance": "lkp_Existing_Pay_Period",
+          "to_field": "in_PARAM_PP_END_YEAR",
+          "from_instancetype": "Expression",
+          "to_instancetype": "Lookup Procedure"
+        },
+        {
+          "from_instance": "lkp_Existing_Pay_Period",
+          "from_field": "PP_NUM",
+          "to_instance": "exp_Determine_Parameters_Exist",
+          "to_field": "lkp_PP_NUM",
+          "from_instancetype": "Lookup Procedure",
+          "to_instancetype": "Expression"
+        },
+        {
+          "from_instance": "exp_Initial",
+          "from_field": "PP_NUM",
+          "to_instance": "exp_Determine_Parameters_Exist",
+          "to_field": "PP_NUM",
+          "from_instancetype": "Expression",
+          "to_instancetype": "Expression"
+        },
+        {
+          "from_instance": "exp_Initial",
+          "from_field": "PP_END_YEAR",
+          "to_instance": "exp_Determine_Parameters_Exist",
+          "to_field": "PP_END_YEAR",
+          "from_instancetype": "Expression",
+          "to_instancetype": "Expression"
+        },
+        {
+          "from_instance": "exp_Initial",
+          "from_field": "o_PARAM_PP_END_YEAR",
+          "to_instance": "exp_Determine_Parameters_Exist",
+          "to_field": "PARAM_PP_END_YEAR",
+          "from_instancetype": "Expression",
+          "to_instancetype": "Expression"
+        },
+        {
+          "from_instance": "exp_Initial",
+          "from_field": "o_PARAM_PP_NUM",
+          "to_instance": "exp_Determine_Parameters_Exist",
+          "to_field": "PARAM_PP_NUM",
+          "from_instancetype": "Expression",
+          "to_instancetype": "Expression"
+        },
+        {
+          "from_instance": "exp_Set_Current_Pay_Period_Param",
+          "from_field": "PP_NUM",
+          "to_instance": "upd_Set_Current_PP_Param",
+          "to_field": "PP_NUM",
+          "from_instancetype": "Expression",
+          "to_instancetype": "Update Strategy"
+        },
+        {
+          "from_instance": "exp_Set_Current_Pay_Period_Param",
+          "from_field": "PP_END_YEAR",
+          "to_instance": "upd_Set_Current_PP_Param",
+          "to_field": "PP_END_YEAR",
+          "from_instancetype": "Expression",
+          "to_instancetype": "Update Strategy"
+        },
+        {
+          "from_instance": "exp_Set_Current_Pay_Period_Param",
+          "from_field": "o_CURR_PP_FLAG",
+          "to_instance": "upd_Set_Current_PP_Param",
+          "to_field": "CURR_PP_FLAG",
+          "from_instancetype": "Expression",
+          "to_instancetype": "Update Strategy"
+        },
+        {
+          "from_instance": "PAY_PERIOD1",
+          "from_field": "PP_END_YEAR",
+          "to_instance": "SQ_PAY_PERIOD",
+          "to_field": "PP_END_YEAR",
+          "from_instancetype": "Source Definition",
+          "to_instancetype": "Source Qualifier"
+        },
+        {
+          "from_instance": "PAY_PERIOD1",
+          "from_field": "PP_START_DTE",
+          "to_instance": "SQ_PAY_PERIOD",
+          "to_field": "PP_START_DTE",
+          "from_instancetype": "Source Definition",
+          "to_instancetype": "Source Qualifier"
+        },
+        {
+          "from_instance": "PAY_PERIOD1",
+          "from_field": "LV_YEAR",
+          "to_instance": "SQ_PAY_PERIOD",
+          "to_field": "LV_YEAR",
+          "from_instancetype": "Source Definition",
+          "to_instancetype": "Source Qualifier"
+        },
+        {
+          "from_instance": "PAY_PERIOD1",
+          "from_field": "PAY_DTE",
+          "to_instance": "SQ_PAY_PERIOD",
+          "to_field": "PAY_DTE",
+          "from_instancetype": "Source Definition",
+          "to_instancetype": "Source Qualifier"
+        },
+        {
+          "from_instance": "PAY_PERIOD1",
+          "from_field": "CURR_PP_FLAG",
+          "to_instance": "SQ_PAY_PERIOD",
+          "to_field": "CURR_PP_FLAG",
+          "from_instancetype": "Source Definition",
+          "to_instancetype": "Source Qualifier"
+        },
+        {
+          "from_instance": "PAY_PERIOD1",
+          "from_field": "PP_END_DTE",
+          "to_instance": "SQ_PAY_PERIOD",
+          "to_field": "PP_END_DTE",
+          "from_instancetype": "Source Definition",
+          "to_instancetype": "Source Qualifier"
+        },
+        {
+          "from_instance": "PAY_PERIOD1",
+          "from_field": "LV_NUM",
+          "to_instance": "SQ_PAY_PERIOD",
+          "to_field": "LV_NUM",
+          "from_instancetype": "Source Definition",
+          "to_instancetype": "Source Qualifier"
+        },
+        {
+          "from_instance": "PAY_PERIOD1",
+          "from_field": "PP_NUM",
+          "to_instance": "SQ_PAY_PERIOD",
+          "to_field": "PP_NUM",
+          "from_instancetype": "Source Definition",
+          "to_instancetype": "Source Qualifier"
+        },
+        {
+          "from_instance": "SQ_PAY_PERIOD",
+          "from_field": "PP_NUM",
+          "to_instance": "exp_Initial",
+          "to_field": "PP_NUM",
+          "from_instancetype": "Source Qualifier",
+          "to_instancetype": "Expression"
+        },
+        {
+          "from_instance": "SQ_PAY_PERIOD",
+          "from_field": "PP_END_YEAR",
+          "to_instance": "exp_Initial",
+          "to_field": "PP_END_YEAR",
+          "from_instancetype": "Source Qualifier",
+          "to_instancetype": "Expression"
+        }
+      ],
+      "transformations": [
+        {
+          "name": "rtr_Parameter_Non_Parameter",
+          "type": "Router",
+          "reusable": "NO",
+          "fields": [
+            {
+              "name": "PP_NUM",
+              "porttype": "INPUT",
+              "datatype": "decimal",
+              "precision": 2,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PP_END_YEAR",
+              "porttype": "INPUT",
+              "datatype": "decimal",
+              "precision": 4,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PARAM_PP_END_YEAR",
+              "porttype": "INPUT",
+              "datatype": "decimal",
+              "precision": 10,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PARAM_PP_NUM",
+              "porttype": "INPUT",
+              "datatype": "decimal",
+              "precision": 10,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PARAM_EXISTS_FLAG",
+              "porttype": "INPUT",
+              "datatype": "integer",
+              "precision": 10,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PP_NUM1",
+              "porttype": "OUTPUT",
+              "datatype": "decimal",
+              "precision": 2,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PP_END_YEAR1",
+              "porttype": "OUTPUT",
+              "datatype": "decimal",
+              "precision": 4,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PARAM_PP_END_YEAR1",
+              "porttype": "OUTPUT",
+              "datatype": "decimal",
+              "precision": 10,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PARAM_PP_NUM1",
+              "porttype": "OUTPUT",
+              "datatype": "decimal",
+              "precision": 10,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PARAM_EXISTS_FLAG1",
+              "porttype": "OUTPUT",
+              "datatype": "integer",
+              "precision": 10,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PP_NUM3",
+              "porttype": "OUTPUT",
+              "datatype": "decimal",
+              "precision": 2,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PP_END_YEAR3",
+              "porttype": "OUTPUT",
+              "datatype": "decimal",
+              "precision": 4,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PARAM_PP_END_YEAR3",
+              "porttype": "OUTPUT",
+              "datatype": "decimal",
+              "precision": 10,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PARAM_PP_NUM3",
+              "porttype": "OUTPUT",
+              "datatype": "decimal",
+              "precision": 10,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PARAM_EXISTS_FLAG3",
+              "porttype": "OUTPUT",
+              "datatype": "integer",
+              "precision": 10,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PP_NUM2",
+              "porttype": "OUTPUT",
+              "datatype": "decimal",
+              "precision": 2,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PP_END_YEAR2",
+              "porttype": "OUTPUT",
+              "datatype": "decimal",
+              "precision": 4,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PARAM_PP_END_YEAR2",
+              "porttype": "OUTPUT",
+              "datatype": "decimal",
+              "precision": 10,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PARAM_PP_NUM2",
+              "porttype": "OUTPUT",
+              "datatype": "decimal",
+              "precision": 10,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PARAM_EXISTS_FLAG2",
+              "porttype": "OUTPUT",
+              "datatype": "integer",
+              "precision": 10,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            }
+          ],
+          "table_attributes": {
+            "Tracing Level": "Normal"
+          }
+        },
+        {
+          "name": "exp_Set_Date",
+          "type": "Expression",
+          "reusable": "NO",
+          "fields": [
+            {
+              "name": "PP_NUM",
+              "porttype": "INPUT",
+              "datatype": "decimal",
+              "precision": 2,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "o_CURRENT_DATE",
+              "porttype": "OUTPUT",
+              "datatype": "date/time",
+              "precision": 29,
+              "scale": 9,
+              "expression": "TRUNC(SESSSTARTTIME)",
+              "expressiontype": "GENERAL",
+              "default_value": "ERROR('transformation error')"
+            }
+          ],
+          "table_attributes": {
+            "Tracing Level": "Normal"
+          }
+        },
+        {
+          "name": "exp_Set_Current_Pay_Period_Non_Param",
+          "type": "Expression",
+          "reusable": "NO",
+          "fields": [
+            {
+              "name": "lkp_PP_NUM",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "decimal",
+              "precision": 2,
+              "scale": 0,
+              "expression": "lkp_PP_NUM",
+              "expressiontype": "GENERAL",
+              "default_value": ""
+            },
+            {
+              "name": "lkp_PP_END_YEAR",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "decimal",
+              "precision": 4,
+              "scale": 0,
+              "expression": "lkp_PP_END_YEAR",
+              "expressiontype": "GENERAL",
+              "default_value": ""
+            },
+            {
+              "name": "lkp_CURR_PP_FLAG",
+              "porttype": "INPUT",
+              "datatype": "string",
+              "precision": 1,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "o_CURR_PP_FLAG",
+              "porttype": "OUTPUT",
+              "datatype": "string",
+              "precision": 1,
+              "scale": 0,
+              "expression": "'Y'",
+              "expressiontype": "GENERAL",
+              "default_value": "ERROR('transformation error')"
+            }
+          ],
+          "table_attributes": {
+            "Tracing Level": "Normal"
+          }
+        },
+        {
+          "name": "lkp_Existing_Pay_Period",
+          "type": "Lookup Procedure",
+          "reusable": "NO",
+          "fields": [
+            {
+              "name": "in_PARAM_PP_NUM",
+              "porttype": "INPUT",
+              "datatype": "decimal",
+              "precision": 2,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "in_PARAM_PP_END_YEAR",
+              "porttype": "INPUT",
+              "datatype": "decimal",
+              "precision": 4,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PP_NUM",
+              "porttype": "LOOKUP/RETURN/OUTPUT",
+              "datatype": "decimal",
+              "precision": 2,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PP_END_YEAR",
+              "porttype": "LOOKUP",
+              "datatype": "decimal",
+              "precision": 4,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PP_START_DTE",
+              "porttype": "LOOKUP",
+              "datatype": "date/time",
+              "precision": 29,
+              "scale": 9,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PP_END_DTE",
+              "porttype": "LOOKUP",
+              "datatype": "date/time",
+              "precision": 29,
+              "scale": 9,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "LV_NUM",
+              "porttype": "LOOKUP",
+              "datatype": "decimal",
+              "precision": 2,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "LV_YEAR",
+              "porttype": "LOOKUP",
+              "datatype": "decimal",
+              "precision": 4,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PAY_DTE",
+              "porttype": "LOOKUP",
+              "datatype": "date/time",
+              "precision": 29,
+              "scale": 9,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "CURR_PP_FLAG",
+              "porttype": "LOOKUP",
+              "datatype": "string",
+              "precision": 1,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            }
+          ],
+          "table_attributes": {
+            "Lookup Sql Override": "",
+            "Lookup table name": "PAY_PERIOD",
+            "Lookup Source Filter": "",
+            "Lookup caching enabled": "YES",
+            "Lookup policy on multiple match": "Use Any Value",
+            "Lookup condition": "PP_NUM = in_PARAM_PP_NUM AND PP_END_YEAR = in_PARAM_PP_END_YEAR",
+            "Connection Information": "$Target",
+            "Source Type": "Database",
+            "Recache if Stale": "NO",
+            "Tracing Level": "Normal",
+            "Lookup cache directory name": "$PMCacheDir",
+            "Lookup cache initialize": "NO",
+            "Lookup cache persistent": "NO",
+            "Lookup Data Cache Size": "Auto",
+            "Lookup Index Cache Size": "Auto",
+            "Dynamic Lookup Cache": "NO",
+            "Synchronize Dynamic Cache": "NO",
+            "Output Old Value On Update": "NO",
+            "Update Dynamic Cache Condition": "TRUE",
+            "Cache File Name Prefix": "",
+            "Re-cache from lookup source": "NO",
+            "Insert Else Update": "NO",
+            "Update Else Insert": "NO",
+            "Datetime Format": "",
+            "Thousand Separator": "None",
+            "Decimal Separator": ".",
+            "Case Sensitive String Comparison": "NO",
+            "Null ordering": "Null Is Highest Value",
+            "Sorted Input": "NO",
+            "Lookup source is static": "NO",
+            "Pre-build lookup cache": "Auto",
+            "Subsecond Precision": "6"
+          }
+        },
+        {
+          "name": "exp_Determine_Parameters_Exist",
+          "type": "Expression",
+          "reusable": "NO",
+          "fields": [
+            {
+              "name": "PP_NUM",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "decimal",
+              "precision": 2,
+              "scale": 0,
+              "expression": "PP_NUM",
+              "expressiontype": "GENERAL",
+              "default_value": ""
+            },
+            {
+              "name": "PP_END_YEAR",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "decimal",
+              "precision": 4,
+              "scale": 0,
+              "expression": "PP_END_YEAR",
+              "expressiontype": "GENERAL",
+              "default_value": ""
+            },
+            {
+              "name": "v_CURR_PP_FLAG",
+              "porttype": "LOCAL VARIABLE",
+              "datatype": "string",
+              "precision": 1,
+              "scale": 0,
+              "expression": "NULL",
+              "expressiontype": "GENERAL",
+              "default_value": ""
+            },
+            {
+              "name": "v_TEN_DAYS_AGO",
+              "porttype": "LOCAL VARIABLE",
+              "datatype": "date/time",
+              "precision": 29,
+              "scale": 9,
+              "expression": "ADD_TO_DATE(SESSSTARTTIME, 'D', -10)",
+              "expressiontype": "GENERAL",
+              "default_value": ""
+            },
+            {
+              "name": "PARAM_PP_END_YEAR",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "decimal",
+              "precision": 10,
+              "scale": 0,
+              "expression": "PARAM_PP_END_YEAR",
+              "expressiontype": "GENERAL",
+              "default_value": ""
+            },
+            {
+              "name": "PARAM_PP_NUM",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "decimal",
+              "precision": 10,
+              "scale": 0,
+              "expression": "PARAM_PP_NUM",
+              "expressiontype": "GENERAL",
+              "default_value": ""
+            },
+            {
+              "name": "lkp_PP_NUM",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "decimal",
+              "precision": 2,
+              "scale": 0,
+              "expression": "lkp_PP_NUM",
+              "expressiontype": "GENERAL",
+              "default_value": ""
+            },
+            {
+              "name": "o_PARAM_EXISTS_FLAG",
+              "porttype": "OUTPUT",
+              "datatype": "integer",
+              "precision": 10,
+              "scale": 0,
+              "expression": "IIF(NOT ISNULL(lkp_PP_NUM),\r\nTRUE,\r\nFALSE)",
+              "expressiontype": "GENERAL",
+              "default_value": "ERROR('transformation error')"
+            }
+          ],
+          "table_attributes": {
+            "Tracing Level": "Normal"
+          }
+        },
+        {
+          "name": "lkp_New_Current_Pay_Period",
+          "type": "Lookup Procedure",
+          "reusable": "NO",
+          "fields": [
+            {
+              "name": "in_CURRENT_DATE",
+              "porttype": "INPUT",
+              "datatype": "date/time",
+              "precision": 29,
+              "scale": 9,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PP_NUM",
+              "porttype": "LOOKUP/OUTPUT",
+              "datatype": "decimal",
+              "precision": 2,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PP_END_YEAR",
+              "porttype": "LOOKUP/OUTPUT",
+              "datatype": "decimal",
+              "precision": 4,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PP_START_DTE",
+              "porttype": "LOOKUP/OUTPUT",
+              "datatype": "date/time",
+              "precision": 29,
+              "scale": 9,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PP_END_DTE",
+              "porttype": "LOOKUP/OUTPUT",
+              "datatype": "date/time",
+              "precision": 29,
+              "scale": 9,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "LV_NUM",
+              "porttype": "LOOKUP/OUTPUT",
+              "datatype": "decimal",
+              "precision": 2,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "LV_YEAR",
+              "porttype": "LOOKUP/OUTPUT",
+              "datatype": "decimal",
+              "precision": 4,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PAY_DTE",
+              "porttype": "LOOKUP/OUTPUT",
+              "datatype": "date/time",
+              "precision": 29,
+              "scale": 9,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "CURR_PP_FLAG",
+              "porttype": "LOOKUP/OUTPUT",
+              "datatype": "string",
+              "precision": 1,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            }
+          ],
+          "table_attributes": {
+            "Lookup Sql Override": "",
+            "Lookup table name": "PAY_PERIOD",
+            "Lookup Source Filter": "",
+            "Lookup caching enabled": "YES",
+            "Lookup policy on multiple match": "Use Any Value",
+            "Lookup condition": "PP_START_DTE <= in_CURRENT_DATE AND PP_END_DTE >= in_CURRENT_DATE",
+            "Connection Information": "$Target",
+            "Source Type": "Database",
+            "Recache if Stale": "NO",
+            "Tracing Level": "Normal",
+            "Lookup cache directory name": "$PMCacheDir",
+            "Lookup cache initialize": "NO",
+            "Lookup cache persistent": "NO",
+            "Lookup Data Cache Size": "Auto",
+            "Lookup Index Cache Size": "Auto",
+            "Dynamic Lookup Cache": "NO",
+            "Synchronize Dynamic Cache": "NO",
+            "Output Old Value On Update": "NO",
+            "Update Dynamic Cache Condition": "TRUE",
+            "Cache File Name Prefix": "",
+            "Re-cache from lookup source": "NO",
+            "Insert Else Update": "NO",
+            "Update Else Insert": "NO",
+            "Datetime Format": "",
+            "Thousand Separator": "None",
+            "Decimal Separator": ".",
+            "Case Sensitive String Comparison": "NO",
+            "Null ordering": "Null Is Highest Value",
+            "Sorted Input": "NO",
+            "Lookup source is static": "NO",
+            "Pre-build lookup cache": "Auto",
+            "Subsecond Precision": "6"
+          }
+        },
+        {
+          "name": "upd_Set_Current_PP_Non_Param",
+          "type": "Update Strategy",
+          "reusable": "NO",
+          "fields": [
+            {
+              "name": "PP_NUM",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "decimal",
+              "precision": 2,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PP_END_YEAR",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "decimal",
+              "precision": 4,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "CURR_PP_FLAG",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "string",
+              "precision": 1,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            }
+          ],
+          "table_attributes": {
+            "Update Strategy Expression": "DD_UPDATE",
+            "Forward Rejected Rows": "YES",
+            "Tracing Level": "Normal"
+          }
+        },
+        {
+          "name": "upd_Set_Current_PP_Param",
+          "type": "Update Strategy",
+          "reusable": "NO",
+          "fields": [
+            {
+              "name": "PP_NUM",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "decimal",
+              "precision": 2,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PP_END_YEAR",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "decimal",
+              "precision": 4,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "CURR_PP_FLAG",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "string",
+              "precision": 1,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            }
+          ],
+          "table_attributes": {
+            "Update Strategy Expression": "DD_UPDATE",
+            "Forward Rejected Rows": "YES",
+            "Tracing Level": "Normal"
+          }
+        },
+        {
+          "name": "SQ_PAY_PERIOD",
+          "type": "Source Qualifier",
+          "reusable": "NO",
+          "fields": [
+            {
+              "name": "PP_NUM",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "decimal",
+              "precision": 2,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PP_END_YEAR",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "decimal",
+              "precision": 4,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PP_START_DTE",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "date/time",
+              "precision": 29,
+              "scale": 9,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PP_END_DTE",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "date/time",
+              "precision": 29,
+              "scale": 9,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "LV_NUM",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "decimal",
+              "precision": 2,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "LV_YEAR",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "decimal",
+              "precision": 4,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PAY_DTE",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "date/time",
+              "precision": 29,
+              "scale": 9,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "CURR_PP_FLAG",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "string",
+              "precision": 1,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            }
+          ],
+          "table_attributes": {
+            "Sql Query": "SELECT \r\n\tMAX(PAY_PERIOD.PP_NUM) PP_NUM , \r\n\tMAX(PAY_PERIOD.PP_END_YEAR) PP_END_YEAR \r\nFROM\r\n PAY_PERIOD",
+            "User Defined Join": "",
+            "Source Filter": "",
+            "Number Of Sorted Ports": "0",
+            "Tracing Level": "Normal",
+            "Select Distinct": "NO",
+            "Is Partitionable": "NO",
+            "Pre SQL": "",
+            "Post SQL": "",
+            "Output is deterministic": "NO",
+            "Output is repeatable": "Never"
+          }
+        },
+        {
+          "name": "exp_Initial",
+          "type": "Expression",
+          "reusable": "NO",
+          "fields": [
+            {
+              "name": "PP_NUM",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "decimal",
+              "precision": 2,
+              "scale": 0,
+              "expression": "PP_NUM",
+              "expressiontype": "GENERAL",
+              "default_value": ""
+            },
+            {
+              "name": "PP_END_YEAR",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "decimal",
+              "precision": 4,
+              "scale": 0,
+              "expression": "PP_END_YEAR",
+              "expressiontype": "GENERAL",
+              "default_value": ""
+            },
+            {
+              "name": "CURR_PP_FLAG",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "string",
+              "precision": 1,
+              "scale": 0,
+              "expression": "CURR_PP_FLAG",
+              "expressiontype": "GENERAL",
+              "default_value": ""
+            },
+            {
+              "name": "v_TEN_DAYS_AGO",
+              "porttype": "LOCAL VARIABLE",
+              "datatype": "date/time",
+              "precision": 29,
+              "scale": 9,
+              "expression": "ADD_TO_DATE(SESSSTARTTIME, 'D', -10)",
+              "expressiontype": "GENERAL",
+              "default_value": ""
+            },
+            {
+              "name": "v_PARAM_PP_END_YEAR",
+              "porttype": "LOCAL VARIABLE",
+              "datatype": "decimal",
+              "precision": 10,
+              "scale": 0,
+              "expression": "IIF(NOT IS_NUMBER($$PP_END_YEAR), 0, \r\n\tTO_DECIMAL($$PP_END_YEAR))",
+              "expressiontype": "GENERAL",
+              "default_value": ""
+            },
+            {
+              "name": "v_PARAM_PP_NUM",
+              "porttype": "LOCAL VARIABLE",
+              "datatype": "decimal",
+              "precision": 10,
+              "scale": 0,
+              "expression": "IIF(NOT IS_NUMBER($$PP_NUM), 0, \r\n\tTO_DECIMAL($$PP_NUM))",
+              "expressiontype": "GENERAL",
+              "default_value": ""
+            },
+            {
+              "name": "o_PARAM_PP_END_YEAR",
+              "porttype": "OUTPUT",
+              "datatype": "decimal",
+              "precision": 10,
+              "scale": 0,
+              "expression": "v_PARAM_PP_END_YEAR",
+              "expressiontype": "GENERAL",
+              "default_value": "ERROR('transformation error')"
+            },
+            {
+              "name": "o_PARAM_PP_NUM",
+              "porttype": "OUTPUT",
+              "datatype": "decimal",
+              "precision": 10,
+              "scale": 0,
+              "expression": "v_PARAM_PP_NUM",
+              "expressiontype": "GENERAL",
+              "default_value": "ERROR('transformation error')"
+            }
+          ],
+          "table_attributes": {
+            "Tracing Level": "Normal"
+          }
+        },
+        {
+          "name": "exp_Set_Current_Pay_Period_Param",
+          "type": "Expression",
+          "reusable": "NO",
+          "fields": [
+            {
+              "name": "PP_NUM",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "decimal",
+              "precision": 2,
+              "scale": 0,
+              "expression": "PP_NUM",
+              "expressiontype": "GENERAL",
+              "default_value": ""
+            },
+            {
+              "name": "PP_END_YEAR",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "decimal",
+              "precision": 4,
+              "scale": 0,
+              "expression": "PP_END_YEAR",
+              "expressiontype": "GENERAL",
+              "default_value": ""
+            },
+            {
+              "name": "lkp_CURR_PP_FLAG",
+              "porttype": "INPUT",
+              "datatype": "string",
+              "precision": 1,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "o_CURR_PP_FLAG",
+              "porttype": "OUTPUT",
+              "datatype": "string",
+              "precision": 1,
+              "scale": 0,
+              "expression": "'Y'",
+              "expressiontype": "GENERAL",
+              "default_value": "ERROR('transformation error')"
+            }
+          ],
+          "table_attributes": {
+            "Tracing Level": "Normal"
+          }
+        }
+      ]
+    },
+    {
+      "name": "m_Pay_Calendar_Build_Message",
+      "instances": [
+        {
+          "name": "PAY_PERIOD_MESSAGE_FILE",
+          "type": "TARGET",
+          "transformation_type": "Target Definition",
+          "transformation_name": "PAY_PERIOD_MESSAGE_FILE",
+          "dbdname": null
+        },
+        {
+          "name": "exp_Final",
+          "type": "TRANSFORMATION",
+          "transformation_type": "Expression",
+          "transformation_name": "exp_Final",
+          "dbdname": null
+        },
+        {
+          "name": "PAY_PERIOD1",
+          "type": "SOURCE",
+          "transformation_type": "Source Definition",
+          "transformation_name": "PAY_PERIOD",
+          "dbdname": "ORA_BIIS"
+        },
+        {
+          "name": "SQ_PAY_PERIOD",
+          "type": "TRANSFORMATION",
+          "transformation_type": "Source Qualifier",
+          "transformation_name": "SQ_PAY_PERIOD",
+          "dbdname": null
+        },
+        {
+          "name": "exp_Initial",
+          "type": "TRANSFORMATION",
+          "transformation_type": "Expression",
+          "transformation_name": "exp_Initial",
+          "dbdname": null
+        }
+      ],
+      "connectors": [
+        {
+          "from_instance": "exp_Final",
+          "from_field": "SUBJECT",
+          "to_instance": "PAY_PERIOD_MESSAGE_FILE",
+          "to_field": "SUBJECT",
+          "from_instancetype": "Expression",
+          "to_instancetype": "Target Definition"
+        },
+        {
+          "from_instance": "exp_Final",
+          "from_field": "MESSAGE",
+          "to_instance": "PAY_PERIOD_MESSAGE_FILE",
+          "to_field": "MESSAGE",
+          "from_instancetype": "Expression",
+          "to_instancetype": "Target Definition"
+        },
+        {
+          "from_instance": "exp_Initial",
+          "from_field": "o_MESSAGE",
+          "to_instance": "exp_Final",
+          "to_field": "MESSAGE",
+          "from_instancetype": "Expression",
+          "to_instancetype": "Expression"
+        },
+        {
+          "from_instance": "exp_Initial",
+          "from_field": "o_SUBJECT",
+          "to_instance": "exp_Final",
+          "to_field": "SUBJECT",
+          "from_instancetype": "Expression",
+          "to_instancetype": "Expression"
+        },
+        {
+          "from_instance": "PAY_PERIOD1",
+          "from_field": "PP_NUM",
+          "to_instance": "SQ_PAY_PERIOD",
+          "to_field": "PP_NUM",
+          "from_instancetype": "Source Definition",
+          "to_instancetype": "Source Qualifier"
+        },
+        {
+          "from_instance": "PAY_PERIOD1",
+          "from_field": "PP_END_YEAR",
+          "to_instance": "SQ_PAY_PERIOD",
+          "to_field": "PP_END_YEAR",
+          "from_instancetype": "Source Definition",
+          "to_instancetype": "Source Qualifier"
+        },
+        {
+          "from_instance": "PAY_PERIOD1",
+          "from_field": "PP_START_DTE",
+          "to_instance": "SQ_PAY_PERIOD",
+          "to_field": "PP_START_DTE",
+          "from_instancetype": "Source Definition",
+          "to_instancetype": "Source Qualifier"
+        },
+        {
+          "from_instance": "PAY_PERIOD1",
+          "from_field": "PP_END_DTE",
+          "to_instance": "SQ_PAY_PERIOD",
+          "to_field": "PP_END_DTE",
+          "from_instancetype": "Source Definition",
+          "to_instancetype": "Source Qualifier"
+        },
+        {
+          "from_instance": "PAY_PERIOD1",
+          "from_field": "LV_NUM",
+          "to_instance": "SQ_PAY_PERIOD",
+          "to_field": "LV_NUM",
+          "from_instancetype": "Source Definition",
+          "to_instancetype": "Source Qualifier"
+        },
+        {
+          "from_instance": "PAY_PERIOD1",
+          "from_field": "LV_YEAR",
+          "to_instance": "SQ_PAY_PERIOD",
+          "to_field": "LV_YEAR",
+          "from_instancetype": "Source Definition",
+          "to_instancetype": "Source Qualifier"
+        },
+        {
+          "from_instance": "PAY_PERIOD1",
+          "from_field": "PAY_DTE",
+          "to_instance": "SQ_PAY_PERIOD",
+          "to_field": "PAY_DTE",
+          "from_instancetype": "Source Definition",
+          "to_instancetype": "Source Qualifier"
+        },
+        {
+          "from_instance": "PAY_PERIOD1",
+          "from_field": "CURR_PP_FLAG",
+          "to_instance": "SQ_PAY_PERIOD",
+          "to_field": "CURR_PP_FLAG",
+          "from_instancetype": "Source Definition",
+          "to_instancetype": "Source Qualifier"
+        },
+        {
+          "from_instance": "SQ_PAY_PERIOD",
+          "from_field": "PP_NUM",
+          "to_instance": "exp_Initial",
+          "to_field": "PP_NUM",
+          "from_instancetype": "Source Qualifier",
+          "to_instancetype": "Expression"
+        },
+        {
+          "from_instance": "SQ_PAY_PERIOD",
+          "from_field": "PP_END_YEAR",
+          "to_instance": "exp_Initial",
+          "to_field": "PP_END_YEAR",
+          "from_instancetype": "Source Qualifier",
+          "to_instancetype": "Expression"
+        },
+        {
+          "from_instance": "SQ_PAY_PERIOD",
+          "from_field": "CURR_PP_FLAG",
+          "to_instance": "exp_Initial",
+          "to_field": "CURR_PP_FLAG",
+          "from_instancetype": "Source Qualifier",
+          "to_instancetype": "Expression"
+        },
+        {
+          "from_instance": "SQ_PAY_PERIOD",
+          "from_field": "PP_START_DTE",
+          "to_instance": "exp_Initial",
+          "to_field": "PP_START_DTE",
+          "from_instancetype": "Source Qualifier",
+          "to_instancetype": "Expression"
+        },
+        {
+          "from_instance": "SQ_PAY_PERIOD",
+          "from_field": "PP_END_DTE",
+          "to_instance": "exp_Initial",
+          "to_field": "PP_END_DTE",
+          "from_instancetype": "Source Qualifier",
+          "to_instancetype": "Expression"
+        },
+        {
+          "from_instance": "SQ_PAY_PERIOD",
+          "from_field": "PAY_DTE",
+          "to_instance": "exp_Initial",
+          "to_field": "PAY_DTE",
+          "from_instancetype": "Source Qualifier",
+          "to_instancetype": "Expression"
+        }
+      ],
+      "transformations": [
+        {
+          "name": "exp_Final",
+          "type": "Expression",
+          "reusable": "NO",
+          "fields": [
+            {
+              "name": "SUBJECT",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "string",
+              "precision": 100,
+              "scale": 0,
+              "expression": "SUBJECT",
+              "expressiontype": "GENERAL",
+              "default_value": ""
+            },
+            {
+              "name": "MESSAGE",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "string",
+              "precision": 600,
+              "scale": 0,
+              "expression": "MESSAGE",
+              "expressiontype": "GENERAL",
+              "default_value": ""
+            }
+          ],
+          "table_attributes": {
+            "Tracing Level": "Normal"
+          }
+        },
+        {
+          "name": "SQ_PAY_PERIOD",
+          "type": "Source Qualifier",
+          "reusable": "NO",
+          "fields": [
+            {
+              "name": "PP_NUM",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "decimal",
+              "precision": 2,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PP_END_YEAR",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "decimal",
+              "precision": 4,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PP_START_DTE",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "date/time",
+              "precision": 29,
+              "scale": 9,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PP_END_DTE",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "date/time",
+              "precision": 29,
+              "scale": 9,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "LV_NUM",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "decimal",
+              "precision": 2,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "LV_YEAR",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "decimal",
+              "precision": 4,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PAY_DTE",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "date/time",
+              "precision": 29,
+              "scale": 9,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "CURR_PP_FLAG",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "string",
+              "precision": 1,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            }
+          ],
+          "table_attributes": {
+            "Sql Query": "",
+            "User Defined Join": "",
+            "Source Filter": "PAY_PERIOD.CURR_PP_FLAG = 'Y'",
+            "Number Of Sorted Ports": "0",
+            "Tracing Level": "Normal",
+            "Select Distinct": "NO",
+            "Is Partitionable": "NO",
+            "Pre SQL": "",
+            "Post SQL": "",
+            "Output is deterministic": "NO",
+            "Output is repeatable": "Never"
+          }
+        },
+        {
+          "name": "exp_Initial",
+          "type": "Expression",
+          "reusable": "NO",
+          "fields": [
+            {
+              "name": "PP_NUM",
+              "porttype": "INPUT",
+              "datatype": "decimal",
+              "precision": 2,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PP_END_YEAR",
+              "porttype": "INPUT",
+              "datatype": "decimal",
+              "precision": 4,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PP_START_DTE",
+              "porttype": "INPUT",
+              "datatype": "date/time",
+              "precision": 29,
+              "scale": 9,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PP_END_DTE",
+              "porttype": "INPUT",
+              "datatype": "date/time",
+              "precision": 29,
+              "scale": 9,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PAY_DTE",
+              "porttype": "INPUT",
+              "datatype": "date/time",
+              "precision": 29,
+              "scale": 9,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "CURR_PP_FLAG",
+              "porttype": "INPUT",
+              "datatype": "string",
+              "precision": 1,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "v_PP_NUM",
+              "porttype": "LOCAL VARIABLE",
+              "datatype": "string",
+              "precision": 2,
+              "scale": 0,
+              "expression": "IIF(PP_NUM < 10,\r\n       LPAD(TO_CHAR(PP_NUM), 2, '0'),\r\n    TO_CHAR(PP_NUM)\r\n)",
+              "expressiontype": "GENERAL",
+              "default_value": ""
+            },
+            {
+              "name": "v_ENVIRONMENT",
+              "porttype": "LOCAL VARIABLE",
+              "datatype": "string",
+              "precision": 6,
+              "scale": 0,
+              "expression": "DECODE(SUBSTR($PMRepositoryServiceName, 1, 4),\r\n                       'Dev_', 'Dev: ',\r\n                       'Test',   'Test: ',\r\n                       'Prod',  'Prod: ')\r\n",
+              "expressiontype": "GENERAL",
+              "default_value": ""
+            },
+            {
+              "name": "v_SUBJECT",
+              "porttype": "LOCAL VARIABLE",
+              "datatype": "string",
+              "precision": 100,
+              "scale": 0,
+              "expression": "v_ENVIRONMENT ||\r\n'Pay Calendar Process Completed Successfully for: ' || \r\nTO_CHAR(PP_END_YEAR) || '-' || v_PP_NUM",
+              "expressiontype": "GENERAL",
+              "default_value": ""
+            },
+            {
+              "name": "o_SUBJECT",
+              "porttype": "OUTPUT",
+              "datatype": "string",
+              "precision": 100,
+              "scale": 0,
+              "expression": "SETVARIABLE($$MAP_SUBJECT, v_SUBJECT)",
+              "expressiontype": "GENERAL",
+              "default_value": "ERROR('transformation error')"
+            },
+            {
+              "name": "v_MESSAGE",
+              "porttype": "LOCAL VARIABLE",
+              "datatype": "string",
+              "precision": 300,
+              "scale": 0,
+              "expression": "'Current Pay Period = ' || v_PP_NUM || \r\n\r\nCHR(10)  || \r\n\r\n'Begin Date         = ' || TO_CHAR(PP_START_DTE, 'MM/DD/YYYY') || \r\n\r\nCHR(10)  || \r\n\r\n'End Date           = ' || TO_CHAR(PP_END_DTE, 'MM/DD/YYYY') ",
+              "expressiontype": "GENERAL",
+              "default_value": ""
+            },
+            {
+              "name": "o_MESSAGE",
+              "porttype": "OUTPUT",
+              "datatype": "string",
+              "precision": 300,
+              "scale": 0,
+              "expression": "SETVARIABLE($$MAP_MESSAGE, v_MESSAGE)",
+              "expressiontype": "GENERAL",
+              "default_value": "ERROR('transformation error')"
+            }
+          ],
+          "table_attributes": {
+            "Tracing Level": "Normal"
+          }
+        }
+      ]
+    },
+    {
+      "name": "m_Pay_Calendar_Reset_Pay_Calendar",
+      "instances": [
+        {
+          "name": "RESET_PAY_PERIOD",
+          "type": "TARGET",
+          "transformation_type": "Target Definition",
+          "transformation_name": "PAY_PERIOD",
+          "dbdname": null
+        },
+        {
+          "name": "PAY_PERIOD1",
+          "type": "SOURCE",
+          "transformation_type": "Source Definition",
+          "transformation_name": "PAY_PERIOD",
+          "dbdname": "ORA_BIIS"
+        },
+        {
+          "name": "SQ_PAY_PERIOD_RESET",
+          "type": "TRANSFORMATION",
+          "transformation_type": "Source Qualifier",
+          "transformation_name": "SQ_PAY_PERIOD_RESET",
+          "dbdname": null
+        },
+        {
+          "name": "exp_Initial",
+          "type": "TRANSFORMATION",
+          "transformation_type": "Expression",
+          "transformation_name": "exp_Initial",
+          "dbdname": null
+        },
+        {
+          "name": "upd_Reset_Current_PP",
+          "type": "TRANSFORMATION",
+          "transformation_type": "Update Strategy",
+          "transformation_name": "upd_Reset_Current_PP",
+          "dbdname": null
+        }
+      ],
+      "connectors": [
+        {
+          "from_instance": "upd_Reset_Current_PP",
+          "from_field": "PP_NUM",
+          "to_instance": "RESET_PAY_PERIOD",
+          "to_field": "PP_NUM",
+          "from_instancetype": "Update Strategy",
+          "to_instancetype": "Target Definition"
+        },
+        {
+          "from_instance": "upd_Reset_Current_PP",
+          "from_field": "PP_END_YEAR",
+          "to_instance": "RESET_PAY_PERIOD",
+          "to_field": "PP_END_YEAR",
+          "from_instancetype": "Update Strategy",
+          "to_instancetype": "Target Definition"
+        },
+        {
+          "from_instance": "upd_Reset_Current_PP",
+          "from_field": "CURR_PP_FLAG",
+          "to_instance": "RESET_PAY_PERIOD",
+          "to_field": "CURR_PP_FLAG",
+          "from_instancetype": "Update Strategy",
+          "to_instancetype": "Target Definition"
+        },
+        {
+          "from_instance": "PAY_PERIOD1",
+          "from_field": "PP_NUM",
+          "to_instance": "SQ_PAY_PERIOD_RESET",
+          "to_field": "PP_NUM",
+          "from_instancetype": "Source Definition",
+          "to_instancetype": "Source Qualifier"
+        },
+        {
+          "from_instance": "PAY_PERIOD1",
+          "from_field": "PP_END_YEAR",
+          "to_instance": "SQ_PAY_PERIOD_RESET",
+          "to_field": "PP_END_YEAR",
+          "from_instancetype": "Source Definition",
+          "to_instancetype": "Source Qualifier"
+        },
+        {
+          "from_instance": "PAY_PERIOD1",
+          "from_field": "PP_START_DTE",
+          "to_instance": "SQ_PAY_PERIOD_RESET",
+          "to_field": "PP_START_DTE",
+          "from_instancetype": "Source Definition",
+          "to_instancetype": "Source Qualifier"
+        },
+        {
+          "from_instance": "PAY_PERIOD1",
+          "from_field": "PP_END_DTE",
+          "to_instance": "SQ_PAY_PERIOD_RESET",
+          "to_field": "PP_END_DTE",
+          "from_instancetype": "Source Definition",
+          "to_instancetype": "Source Qualifier"
+        },
+        {
+          "from_instance": "PAY_PERIOD1",
+          "from_field": "LV_NUM",
+          "to_instance": "SQ_PAY_PERIOD_RESET",
+          "to_field": "LV_NUM",
+          "from_instancetype": "Source Definition",
+          "to_instancetype": "Source Qualifier"
+        },
+        {
+          "from_instance": "PAY_PERIOD1",
+          "from_field": "LV_YEAR",
+          "to_instance": "SQ_PAY_PERIOD_RESET",
+          "to_field": "LV_YEAR",
+          "from_instancetype": "Source Definition",
+          "to_instancetype": "Source Qualifier"
+        },
+        {
+          "from_instance": "PAY_PERIOD1",
+          "from_field": "PAY_DTE",
+          "to_instance": "SQ_PAY_PERIOD_RESET",
+          "to_field": "PAY_DTE",
+          "from_instancetype": "Source Definition",
+          "to_instancetype": "Source Qualifier"
+        },
+        {
+          "from_instance": "PAY_PERIOD1",
+          "from_field": "CURR_PP_FLAG",
+          "to_instance": "SQ_PAY_PERIOD_RESET",
+          "to_field": "CURR_PP_FLAG",
+          "from_instancetype": "Source Definition",
+          "to_instancetype": "Source Qualifier"
+        },
+        {
+          "from_instance": "SQ_PAY_PERIOD_RESET",
+          "from_field": "PP_NUM",
+          "to_instance": "exp_Initial",
+          "to_field": "PP_NUM",
+          "from_instancetype": "Source Qualifier",
+          "to_instancetype": "Expression"
+        },
+        {
+          "from_instance": "SQ_PAY_PERIOD_RESET",
+          "from_field": "PP_END_YEAR",
+          "to_instance": "exp_Initial",
+          "to_field": "PP_END_YEAR",
+          "from_instancetype": "Source Qualifier",
+          "to_instancetype": "Expression"
+        },
+        {
+          "from_instance": "SQ_PAY_PERIOD_RESET",
+          "from_field": "CURR_PP_FLAG",
+          "to_instance": "exp_Initial",
+          "to_field": "CURR_PP_FLAG",
+          "from_instancetype": "Source Qualifier",
+          "to_instancetype": "Expression"
+        },
+        {
+          "from_instance": "exp_Initial",
+          "from_field": "o_CURR_PP_FLAG",
+          "to_instance": "upd_Reset_Current_PP",
+          "to_field": "CURR_PP_FLAG",
+          "from_instancetype": "Expression",
+          "to_instancetype": "Update Strategy"
+        },
+        {
+          "from_instance": "exp_Initial",
+          "from_field": "PP_NUM",
+          "to_instance": "upd_Reset_Current_PP",
+          "to_field": "PP_NUM",
+          "from_instancetype": "Expression",
+          "to_instancetype": "Update Strategy"
+        },
+        {
+          "from_instance": "exp_Initial",
+          "from_field": "PP_END_YEAR",
+          "to_instance": "upd_Reset_Current_PP",
+          "to_field": "PP_END_YEAR",
+          "from_instancetype": "Expression",
+          "to_instancetype": "Update Strategy"
+        }
+      ],
+      "transformations": [
+        {
+          "name": "SQ_PAY_PERIOD_RESET",
+          "type": "Source Qualifier",
+          "reusable": "NO",
+          "fields": [
+            {
+              "name": "PP_NUM",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "decimal",
+              "precision": 2,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PP_END_YEAR",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "decimal",
+              "precision": 4,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PP_START_DTE",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "date/time",
+              "precision": 29,
+              "scale": 9,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PP_END_DTE",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "date/time",
+              "precision": 29,
+              "scale": 9,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "LV_NUM",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "decimal",
+              "precision": 2,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "LV_YEAR",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "decimal",
+              "precision": 4,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PAY_DTE",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "date/time",
+              "precision": 29,
+              "scale": 9,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "CURR_PP_FLAG",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "string",
+              "precision": 1,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            }
+          ],
+          "table_attributes": {
+            "Sql Query": "",
+            "User Defined Join": "",
+            "Source Filter": "PAY_PERIOD.CURR_PP_FLAG = 'Y'",
+            "Number Of Sorted Ports": "0",
+            "Tracing Level": "Normal",
+            "Select Distinct": "NO",
+            "Is Partitionable": "NO",
+            "Pre SQL": "",
+            "Post SQL": "",
+            "Output is deterministic": "NO",
+            "Output is repeatable": "Never"
+          }
+        },
+        {
+          "name": "exp_Initial",
+          "type": "Expression",
+          "reusable": "NO",
+          "fields": [
+            {
+              "name": "PP_NUM",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "decimal",
+              "precision": 2,
+              "scale": 0,
+              "expression": "PP_NUM",
+              "expressiontype": "GENERAL",
+              "default_value": ""
+            },
+            {
+              "name": "PP_END_YEAR",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "decimal",
+              "precision": 4,
+              "scale": 0,
+              "expression": "PP_END_YEAR",
+              "expressiontype": "GENERAL",
+              "default_value": ""
+            },
+            {
+              "name": "CURR_PP_FLAG",
+              "porttype": "INPUT",
+              "datatype": "string",
+              "precision": 1,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "o_CURR_PP_FLAG",
+              "porttype": "OUTPUT",
+              "datatype": "string",
+              "precision": 1,
+              "scale": 0,
+              "expression": "NULL",
+              "expressiontype": "GENERAL",
+              "default_value": "ERROR('transformation error')"
+            }
+          ],
+          "table_attributes": {
+            "Tracing Level": "Normal"
+          }
+        },
+        {
+          "name": "upd_Reset_Current_PP",
+          "type": "Update Strategy",
+          "reusable": "NO",
+          "fields": [
+            {
+              "name": "PP_NUM",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "decimal",
+              "precision": 2,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "PP_END_YEAR",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "decimal",
+              "precision": 4,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            },
+            {
+              "name": "CURR_PP_FLAG",
+              "porttype": "INPUT/OUTPUT",
+              "datatype": "string",
+              "precision": 1,
+              "scale": 0,
+              "expression": null,
+              "expressiontype": null,
+              "default_value": ""
+            }
+          ],
+          "table_attributes": {
+            "Update Strategy Expression": "DD_UPDATE",
+            "Forward Rejected Rows": "YES",
+            "Tracing Level": "Normal"
+          }
+        }
+      ]
+    }
+  ],
+  "workflows": [
+    {
+      "name": "wf_Pay_Calendar",
+      "tasks": [
+        {
+          "DESCRIPTION": "This session retrieves the record from the Pay Period table currently set to current and resets that record to the default.",
+          "FAIL_PARENT_IF_INSTANCE_DID_NOT_RUN": "NO",
+          "FAIL_PARENT_IF_INSTANCE_FAILS": "YES",
+          "ISENABLED": "YES",
+          "NAME": "s_Pay_Calendar_Reset_Pay_Calendar",
+          "REUSABLE": "NO",
+          "TASKNAME": "s_Pay_Calendar_Reset_Pay_Calendar",
+          "TASKTYPE": "Session",
+          "TREAT_INPUTLINK_AS_AND": "YES"
+        },
+        {
+          "DESCRIPTION": "This task uses the workflow variables WF_SUBJECT and WF_MESSAGE to notify operators of the Current Pay Period.",
+          "FAIL_PARENT_IF_INSTANCE_DID_NOT_RUN": "NO",
+          "FAIL_PARENT_IF_INSTANCE_FAILS": "YES",
+          "ISENABLED": "YES",
+          "NAME": "Email_Pay_Calendar",
+          "REUSABLE": "NO",
+          "TASKNAME": "Email_Pay_Calendar",
+          "TASKTYPE": "Email",
+          "TREAT_INPUTLINK_AS_AND": "YES"
+        },
+        {
+          "DESCRIPTION": "This session queries the Pay Calendar table for the record marked current and uses that record to build the subject and message for an email message. The subject and message built in this session  are assigned to workflow variables WF_MESSAGE and WF_SUBJECT respectively. They will be used by the following Email Task.",
+          "FAIL_PARENT_IF_INSTANCE_DID_NOT_RUN": "NO",
+          "FAIL_PARENT_IF_INSTANCE_FAILS": "YES",
+          "ISENABLED": "YES",
+          "NAME": "s_Pay_Calendar_Build_Message",
+          "REUSABLE": "NO",
+          "TASKNAME": "s_Pay_Calendar_Build_Message",
+          "TASKTYPE": "Session",
+          "TREAT_INPUTLINK_AS_AND": "YES"
+        },
+        {
+          "DESCRIPTION": "",
+          "ISENABLED": "YES",
+          "NAME": "Start",
+          "REUSABLE": "NO",
+          "TASKNAME": "Start",
+          "TASKTYPE": "Start"
+        },
+        {
+          "DESCRIPTION": "This session uses the contents of a parameter file to determine whether a row will be set to current on the Pay Period table. If the parameters within the parameter file are set, the values within the parameter file will be used to determine the current pay period. If the parameters within the parameter file are empty, the system date will be used to determine the current pay period.",
+          "FAIL_PARENT_IF_INSTANCE_DID_NOT_RUN": "NO",
+          "FAIL_PARENT_IF_INSTANCE_FAILS": "YES",
+          "ISENABLED": "YES",
+          "NAME": "s_Pay_Calendar_Set_Pay_Calendar",
+          "REUSABLE": "NO",
+          "TASKNAME": "s_Pay_Calendar_Set_Pay_Calendar",
+          "TASKTYPE": "Session",
+          "TREAT_INPUTLINK_AS_AND": "YES"
+        },
+        {
+          "DESCRIPTION": "",
+          "FAIL_PARENT_IF_INSTANCE_DID_NOT_RUN": "NO",
+          "FAIL_PARENT_IF_INSTANCE_FAILS": "NO",
+          "ISENABLED": "YES",
+          "NAME": "s_Pay_Calendar_Verify_Pay_Calendar",
+          "REUSABLE": "NO",
+          "TASKNAME": "s_Pay_Calendar_Verify_Pay_Calendar",
+          "TASKTYPE": "Session",
+          "TREAT_INPUTLINK_AS_AND": "YES"
+        }
+      ],
+      "links": [
+        {
+          "from": "Start",
+          "to": "s_Pay_Calendar_Reset_Pay_Calendar",
+          "condition": ""
+        },
+        {
+          "from": "s_Pay_Calendar_Build_Message",
+          "to": "Email_Pay_Calendar",
+          "condition": "$s_Pay_Calendar_Build_Message.Status = Succeeded"
+        },
+        {
+          "from": "s_Pay_Calendar_Verify_Pay_Calendar",
+          "to": "s_Pay_Calendar_Build_Message",
+          "condition": "$s_Pay_Calendar_Verify_Pay_Calendar.Status = Succeeded"
+        },
+        {
+          "from": "s_Pay_Calendar_Reset_Pay_Calendar",
+          "to": "s_Pay_Calendar_Set_Pay_Calendar",
+          "condition": "$s_Pay_Calendar_Reset_Pay_Calendar.Status = Succeeded"
+        },
+        {
+          "from": "s_Pay_Calendar_Set_Pay_Calendar",
+          "to": "s_Pay_Calendar_Verify_Pay_Calendar",
+          "condition": "$s_Pay_Calendar_Set_Pay_Calendar.Status = Succeeded"
+        }
+      ],
+      "sessions": [
+        {
+          "name": "s_Pay_Calendar_Reset_Pay_Calendar",
+          "mapping_name": "m_Pay_Calendar_Reset_Pay_Calendar",
+          "directories": {
+            "Reject file directory": "$PMBadFileDir\\",
+            "Session Log File directory": "$PMSessionLogDir\\"
+          },
+          "filenames": {
+            "Session Log File Name": "s_Pay_Calendar_Reset_Pay_Calendar.log"
+          },
+          "commands": [],
+          "attributes": {
+            "Email User Name": "$$WF_PAY_CALENDAR_EMAIL_LIST",
+            "Email Subject": "Error Resetting Pay Period",
+            "Email Text": "Session completed with errors.\r\n\\n\r\nSession name: %s\r\n\\n\r\nSession start time: %b\r\n\\n\r\nSession completion time: %c\r\n\\n\r\n\r\nPlease read the attached session log for further details.\r\n%g",
+            "Fail task if any command fails": "NO",
+            "Recovery Strategy": "Fail task and continue workflow",
+            "Target load type": "Normal",
+            "Insert": "YES",
+            "Update as Update": "YES",
+            "Update as Insert": "NO",
+            "Update else Insert": "NO",
+            "Delete": "YES",
+            "Truncate target table option": "NO",
+            "Reject filename": "reset_pay_period1.bad",
+            "Write Backward Compatible Session Log File": "NO",
+            "Enable Test Load": "NO",
+            "Treat source rows as": "Data driven",
+            "Commit Type": "Target",
+            "Commit Interval": "10000",
+            "Commit On End Of File": "YES",
+            "Rollback Transactions on Errors": "NO",
+            "DTM buffer size": "Auto",
+            "Collect performance data": "NO",
+            "Write performance data to repository": "NO",
+            "Incremental Aggregation": "NO",
+            "Enable high precision": "NO",
+            "Session retry on deadlock": "NO",
+            "Pushdown Optimization": "None",
+            "Allow Temporary View for Pushdown": "NO",
+            "Allow Temporary Sequence for Pushdown": "NO",
+            "Allow Pushdown for User Incompatible Connections": "NO"
+          },
+          "extensions": [
+            {
+              "instance_name": "RESET_PAY_PERIOD",
+              "dsq_instance": null,
+              "type": "WRITER",
+              "subtype": "Relational Writer",
+              "attributes": {
+                "Target load type": "Normal",
+                "Insert": "YES",
+                "Update as Update": "YES",
+                "Update as Insert": "NO",
+                "Update else Insert": "NO",
+                "Delete": "YES",
+                "Truncate target table option": "NO",
+                "Reject file directory": "$PMBadFileDir\\",
+                "Reject filename": "reset_pay_period1.bad"
+              },
+              "connections": [
+                {
+                  "CNXREFNAME": "DB Connection",
+                  "CONNECTIONNAME": "INFO_TARGET",
+                  "CONNECTIONNUMBER": "1",
+                  "CONNECTIONSUBTYPE": "Oracle",
+                  "CONNECTIONTYPE": "Relational",
+                  "VARIABLE": ""
+                }
+              ]
+            },
+            {
+              "instance_name": "PAY_PERIOD1",
+              "dsq_instance": "SQ_PAY_PERIOD_RESET",
+              "type": "READER",
+              "subtype": "Relational Reader",
+              "attributes": {},
+              "connections": []
+            },
+            {
+              "instance_name": "SQ_PAY_PERIOD_RESET",
+              "dsq_instance": null,
+              "type": "READER",
+              "subtype": "Relational Reader",
+              "attributes": {},
+              "connections": [
+                {
+                  "CNXREFNAME": "DB Connection",
+                  "CONNECTIONNAME": "INFO_TARGET",
+                  "CONNECTIONNUMBER": "1",
+                  "CONNECTIONSUBTYPE": "Oracle",
+                  "CONNECTIONTYPE": "Relational",
+                  "VARIABLE": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "s_Pay_Calendar_Build_Message",
+          "mapping_name": "m_Pay_Calendar_Build_Message",
+          "directories": {
+            "Merge File Directory": "$PMTargetFileDir\\",
+            "Create Target Directory": "NO",
+            "Output file directory": "$PMTargetFileDir\\",
+            "Reject file directory": "$PMBadFileDir\\",
+            "Session Log File directory": "$PMSessionLogDir\\"
+          },
+          "filenames": {
+            "Merge File Name": "pay_period_message_file.out",
+            "Session Log File Name": "s_Pay_Calendar_Build_Message.log"
+          },
+          "commands": [],
+          "attributes": {
+            "Fail task if any command fails": "NO",
+            "Recovery Strategy": "Fail task and continue workflow",
+            "Merge Type": "No Merge",
+            "Append if Exists": "NO",
+            "Header Options": "Output Field Names",
+            "Output Type": "File",
+            "Output filename": "pay_period_message_file.txt",
+            "Reject filename": "pay_period_message_file1.bad",
+            "Write Backward Compatible Session Log File": "NO",
+            "Enable Test Load": "NO",
+            "Treat source rows as": "Insert",
+            "Commit Type": "Target",
+            "Commit Interval": "10000",
+            "Commit On End Of File": "YES",
+            "Rollback Transactions on Errors": "NO",
+            "DTM buffer size": "Auto",
+            "Collect performance data": "NO",
+            "Write performance data to repository": "NO",
+            "Incremental Aggregation": "NO",
+            "Enable high precision": "NO",
+            "Session retry on deadlock": "NO",
+            "Pushdown Optimization": "None",
+            "Allow Temporary View for Pushdown": "NO",
+            "Allow Temporary Sequence for Pushdown": "NO",
+            "Allow Pushdown for User Incompatible Connections": "NO"
+          },
+          "extensions": [
+            {
+              "instance_name": "PAY_PERIOD1",
+              "dsq_instance": "SQ_PAY_PERIOD",
+              "type": "READER",
+              "subtype": "Relational Reader",
+              "attributes": {},
+              "connections": []
+            },
+            {
+              "instance_name": "SQ_PAY_PERIOD",
+              "dsq_instance": null,
+              "type": "READER",
+              "subtype": "Relational Reader",
+              "attributes": {},
+              "connections": [
+                {
+                  "CNXREFNAME": "DB Connection",
+                  "CONNECTIONNAME": "INFO_TARGET",
+                  "CONNECTIONNUMBER": "1",
+                  "CONNECTIONSUBTYPE": "Oracle",
+                  "CONNECTIONTYPE": "Relational",
+                  "VARIABLE": ""
+                }
+              ]
+            },
+            {
+              "instance_name": "PAY_PERIOD_MESSAGE_FILE",
+              "dsq_instance": null,
+              "type": "WRITER",
+              "subtype": "File Writer",
+              "attributes": {
+                "Merge Type": "No Merge",
+                "Merge File Directory": "$PMTargetFileDir\\",
+                "Merge File Name": "pay_period_message_file.out",
+                "Append if Exists": "NO",
+                "Create Target Directory": "NO",
+                "Header Options": "Output Field Names",
+                "Output Type": "File",
+                "Output file directory": "$PMTargetFileDir\\",
+                "Output filename": "pay_period_message_file.txt",
+                "Reject file directory": "$PMBadFileDir\\",
+                "Reject filename": "pay_period_message_file1.bad"
+              },
+              "connections": [
+                {
+                  "CNXREFNAME": "Connection",
+                  "CONNECTIONNAME": "",
+                  "CONNECTIONNUMBER": "1",
+                  "CONNECTIONSUBTYPE": "",
+                  "CONNECTIONTYPE": "",
+                  "VARIABLE": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "s_Pay_Calendar_Set_Pay_Calendar",
+          "mapping_name": "m_Pay_Calendar_Set_Pay_Calendar",
+          "directories": {
+            "Reject file directory": "$PMBadFileDir\\",
+            "Session Log File directory": "$PMSessionLogDir\\"
+          },
+          "filenames": {
+            "Session Log File Name": "s_Pay_Calendar_Set_Pay_Calendar.log"
+          },
+          "commands": [],
+          "attributes": {
+            "Email User Name": "$$WF_PAY_CALENDAR_EMAIL_LIST",
+            "Email Subject": "Error Setting Pay Period",
+            "Email Text": "Session completed with errors.\r\n\\n\r\nSession name: %s\r\n\\n\r\nSession start time: %b\r\n\\n\r\nSession completion time: %c\r\n\\n\r\n\r\nPlease read the attached session log for further details.\r\n%g",
+            "Fail task if any command fails": "NO",
+            "Recovery Strategy": "Fail task and continue workflow",
+            "Target load type": "Normal",
+            "Insert": "YES",
+            "Update as Update": "YES",
+            "Update as Insert": "NO",
+            "Update else Insert": "NO",
+            "Delete": "YES",
+            "Truncate target table option": "NO",
+            "Reject filename": "pay_period1.bad",
+            "Write Backward Compatible Session Log File": "NO",
+            "Enable Test Load": "NO",
+            "$Target connection value": "Relational:INFO_TARGET",
+            "Treat source rows as": "Data driven",
+            "Commit Type": "Target",
+            "Commit Interval": "10000",
+            "Commit On End Of File": "YES",
+            "Rollback Transactions on Errors": "NO",
+            "DTM buffer size": "Auto",
+            "Collect performance data": "NO",
+            "Write performance data to repository": "NO",
+            "Incremental Aggregation": "NO",
+            "Enable high precision": "NO",
+            "Session retry on deadlock": "NO",
+            "Pushdown Optimization": "None",
+            "Allow Temporary View for Pushdown": "NO",
+            "Allow Temporary Sequence for Pushdown": "NO",
+            "Allow Pushdown for User Incompatible Connections": "NO"
+          },
+          "extensions": [
+            {
+              "instance_name": "PAY_PERIOD_PARAM",
+              "dsq_instance": null,
+              "type": "WRITER",
+              "subtype": "Relational Writer",
+              "attributes": {
+                "Target load type": "Normal",
+                "Insert": "YES",
+                "Update as Update": "YES",
+                "Update as Insert": "NO",
+                "Update else Insert": "NO",
+                "Delete": "YES",
+                "Truncate target table option": "NO",
+                "Reject file directory": "$PMBadFileDir\\",
+                "Reject filename": "pay_period_param1.bad"
+              },
+              "connections": [
+                {
+                  "CNXREFNAME": "DB Connection",
+                  "CONNECTIONNAME": "INFO_TARGET",
+                  "CONNECTIONNUMBER": "1",
+                  "CONNECTIONSUBTYPE": "Oracle",
+                  "CONNECTIONTYPE": "Relational",
+                  "VARIABLE": ""
+                }
+              ]
+            },
+            {
+              "instance_name": "PAY_PERIOD",
+              "dsq_instance": null,
+              "type": "WRITER",
+              "subtype": "Relational Writer",
+              "attributes": {
+                "Target load type": "Normal",
+                "Insert": "YES",
+                "Update as Update": "YES",
+                "Update as Insert": "NO",
+                "Update else Insert": "NO",
+                "Delete": "YES",
+                "Truncate target table option": "NO",
+                "Reject file directory": "$PMBadFileDir\\",
+                "Reject filename": "pay_period1.bad"
+              },
+              "connections": [
+                {
+                  "CNXREFNAME": "DB Connection",
+                  "CONNECTIONNAME": "INFO_TARGET",
+                  "CONNECTIONNUMBER": "1",
+                  "CONNECTIONSUBTYPE": "Oracle",
+                  "CONNECTIONTYPE": "Relational",
+                  "VARIABLE": ""
+                }
+              ]
+            },
+            {
+              "instance_name": "lkp_New_Current_Pay_Period",
+              "dsq_instance": null,
+              "type": "LOOKUPEXTENSION",
+              "subtype": "Relational Lookup",
+              "attributes": {},
+              "connections": [
+                {
+                  "CNXREFNAME": "DB Connection",
+                  "CONNECTIONNAME": "",
+                  "CONNECTIONNUMBER": "1",
+                  "CONNECTIONSUBTYPE": "",
+                  "CONNECTIONTYPE": "Relational",
+                  "VARIABLE": "$Target"
+                }
+              ]
+            },
+            {
+              "instance_name": "PAY_PERIOD1",
+              "dsq_instance": "SQ_PAY_PERIOD",
+              "type": "READER",
+              "subtype": "Relational Reader",
+              "attributes": {},
+              "connections": []
+            },
+            {
+              "instance_name": "SQ_PAY_PERIOD",
+              "dsq_instance": null,
+              "type": "READER",
+              "subtype": "Relational Reader",
+              "attributes": {},
+              "connections": [
+                {
+                  "CNXREFNAME": "DB Connection",
+                  "CONNECTIONNAME": "INFO_TARGET",
+                  "CONNECTIONNUMBER": "1",
+                  "CONNECTIONSUBTYPE": "Oracle",
+                  "CONNECTIONTYPE": "Relational",
+                  "VARIABLE": ""
+                }
+              ]
+            },
+            {
+              "instance_name": "lkp_Existing_Pay_Period",
+              "dsq_instance": null,
+              "type": "LOOKUPEXTENSION",
+              "subtype": "Relational Lookup",
+              "attributes": {},
+              "connections": [
+                {
+                  "CNXREFNAME": "DB Connection",
+                  "CONNECTIONNAME": "",
+                  "CONNECTIONNUMBER": "1",
+                  "CONNECTIONSUBTYPE": "",
+                  "CONNECTIONTYPE": "Relational",
+                  "VARIABLE": "$Target"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "s_Pay_Calendar_Verify_Pay_Calendar",
+          "mapping_name": "m_Pay_Calendar_Verify_Pay_Calendar",
+          "directories": {
+            "Merge File Directory": "$PMTargetFileDir\\",
+            "Create Target Directory": "NO",
+            "Output file directory": "$PMTargetFileDir\\",
+            "Reject file directory": "$PMBadFileDir\\",
+            "Session Log File directory": "$PMSessionLogDir\\"
+          },
+          "filenames": {
+            "Merge File Name": "pay_period_verify_file.out",
+            "Session Log File Name": "s_Pay_Calendar_Verify_Pay_Calendar.log"
+          },
+          "commands": [],
+          "attributes": {
+            "Email User Name": "$$WF_PAY_CALENDAR_EMAIL_LIST",
+            "Email Subject": "Error Verifying Pay Period",
+            "Email Text": "Session completed with errors.\r\n\\n\r\nSession name: %s\r\n\\n\r\nSession start time: %b\r\n\\n\r\nSession completion time: %c\r\n\\n\r\n\r\nPlease read the attached session log for further details.\r\n%g",
+            "Fail task if any command fails": "NO",
+            "Recovery Strategy": "Fail task and continue workflow",
+            "Merge Type": "No Merge",
+            "Append if Exists": "NO",
+            "Header Options": "No Header",
+            "Output Type": "File",
+            "Output filename": "pay_period_verify_file.txt",
+            "Reject filename": "pay_period_verify_file1.bad",
+            "Write Backward Compatible Session Log File": "NO",
+            "Enable Test Load": "NO",
+            "$Target connection value": "Relational:INFO_TARGET",
+            "Treat source rows as": "Insert",
+            "Commit Type": "Target",
+            "Commit Interval": "10000",
+            "Commit On End Of File": "YES",
+            "Rollback Transactions on Errors": "NO",
+            "DTM buffer size": "Auto",
+            "Collect performance data": "NO",
+            "Write performance data to repository": "NO",
+            "Incremental Aggregation": "NO",
+            "Enable high precision": "NO",
+            "Session retry on deadlock": "NO",
+            "Pushdown Optimization": "None",
+            "Allow Temporary View for Pushdown": "NO",
+            "Allow Temporary Sequence for Pushdown": "NO",
+            "Allow Pushdown for User Incompatible Connections": "NO"
+          },
+          "extensions": [
+            {
+              "instance_name": "PAY_PERIOD1",
+              "dsq_instance": "SQ_PAY_PERIOD",
+              "type": "READER",
+              "subtype": "Relational Reader",
+              "attributes": {},
+              "connections": []
+            },
+            {
+              "instance_name": "SQ_PAY_PERIOD",
+              "dsq_instance": null,
+              "type": "READER",
+              "subtype": "Relational Reader",
+              "attributes": {},
+              "connections": [
+                {
+                  "CNXREFNAME": "DB Connection",
+                  "CONNECTIONNAME": "INFO_TARGET",
+                  "CONNECTIONNUMBER": "1",
+                  "CONNECTIONSUBTYPE": "Oracle",
+                  "CONNECTIONTYPE": "Relational",
+                  "VARIABLE": ""
+                }
+              ]
+            },
+            {
+              "instance_name": "lkp_Current_Pay_Period",
+              "dsq_instance": null,
+              "type": "LOOKUPEXTENSION",
+              "subtype": "Relational Lookup",
+              "attributes": {},
+              "connections": [
+                {
+                  "CNXREFNAME": "DB Connection",
+                  "CONNECTIONNAME": "",
+                  "CONNECTIONNUMBER": "1",
+                  "CONNECTIONSUBTYPE": "",
+                  "CONNECTIONTYPE": "Relational",
+                  "VARIABLE": "$Target"
+                }
+              ]
+            },
+            {
+              "instance_name": "PAY_PERIOD_VERIFY_FILE",
+              "dsq_instance": null,
+              "type": "WRITER",
+              "subtype": "File Writer",
+              "attributes": {
+                "Merge Type": "No Merge",
+                "Merge File Directory": "$PMTargetFileDir\\",
+                "Merge File Name": "pay_period_verify_file.out",
+                "Append if Exists": "NO",
+                "Create Target Directory": "NO",
+                "Header Options": "No Header",
+                "Output Type": "File",
+                "Output file directory": "$PMTargetFileDir\\",
+                "Output filename": "pay_period_verify_file.txt",
+                "Reject file directory": "$PMBadFileDir\\",
+                "Reject filename": "pay_period_verify_file1.bad"
+              },
+              "connections": [
+                {
+                  "CNXREFNAME": "Connection",
+                  "CONNECTIONNAME": "",
+                  "CONNECTIONNUMBER": "1",
+                  "CONNECTIONSUBTYPE": "",
+                  "CONNECTIONTYPE": "",
+                  "VARIABLE": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "folder_sessions": []
+}

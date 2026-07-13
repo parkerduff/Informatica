@@ -1,0 +1,19 @@
+# Generated synthetic data and local run outputs (reproducible via run_local.sh)
+local/data/
+local/out/
+reports/_results_*.json
+**/__pycache__/
+*.pyc
+.pytest_cache/
+spark-warehouse/
+metastore_db/
+derby.log
+
+# Terraform local state / provider binaries
+iac/.terraform/
+iac/.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+local/.localstack/
+local/.pgdata/
+local/*.db
